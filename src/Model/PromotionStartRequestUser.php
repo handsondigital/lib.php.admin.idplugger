@@ -1,6 +1,6 @@
 <?php
 /**
- * Metrics200Response
+ * PromotionStartRequestUser
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
- * Metrics200Response Class Doc Comment
+ * PromotionStartRequestUser Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotionAdmin
@@ -40,7 +40,7 @@ use \IdpluggerPromotionAdmin\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class PromotionStartRequestUser implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'metrics_200_response';
+    protected static $openAPIModelName = 'promotion_start_request_user';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'coupons' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'lucky_numbers' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]'
+        'username' => 'string',
+        'name' => 'string',
+        'email' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'users' => null,
-        'coupons' => null,
-        'lucky_numbers' => null
+        'username' => null,
+        'name' => null,
+        'email' => null
     ];
 
     /**
@@ -81,9 +81,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'users' => false,
-        'coupons' => false,
-        'lucky_numbers' => false
+        'username' => false,
+        'name' => false,
+        'email' => false
     ];
 
     /**
@@ -172,9 +172,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'users' => 'users',
-        'coupons' => 'coupons',
-        'lucky_numbers' => 'luckyNumbers'
+        'username' => 'username',
+        'name' => 'name',
+        'email' => 'email'
     ];
 
     /**
@@ -183,9 +183,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'users' => 'setUsers',
-        'coupons' => 'setCoupons',
-        'lucky_numbers' => 'setLuckyNumbers'
+        'username' => 'setUsername',
+        'name' => 'setName',
+        'email' => 'setEmail'
     ];
 
     /**
@@ -194,9 +194,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'users' => 'getUsers',
-        'coupons' => 'getCoupons',
-        'lucky_numbers' => 'getLuckyNumbers'
+        'username' => 'getUsername',
+        'name' => 'getName',
+        'email' => 'getEmail'
     ];
 
     /**
@@ -256,9 +256,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('users', $data ?? [], null);
-        $this->setIfExists('coupons', $data ?? [], null);
-        $this->setIfExists('lucky_numbers', $data ?? [], null);
+        $this->setIfExists('username', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
     }
 
     /**
@@ -304,82 +304,82 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets users
+     * Gets username
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return string|null
      */
-    public function getUsers()
+    public function getUsername()
     {
-        return $this->container['users'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets users
+     * Sets username
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $users users
+     * @param string|null $username username
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setUsername($username)
     {
-        if (is_null($users)) {
-            throw new \InvalidArgumentException('non-nullable users cannot be null');
+        if (is_null($username)) {
+            throw new \InvalidArgumentException('non-nullable username cannot be null');
         }
-        $this->container['users'] = $users;
+        $this->container['username'] = $username;
 
         return $this;
     }
 
     /**
-     * Gets coupons
+     * Gets name
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return string|null
      */
-    public function getCoupons()
+    public function getName()
     {
-        return $this->container['coupons'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets coupons
+     * Sets name
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $coupons coupons
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setCoupons($coupons)
+    public function setName($name)
     {
-        if (is_null($coupons)) {
-            throw new \InvalidArgumentException('non-nullable coupons cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['coupons'] = $coupons;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets lucky_numbers
+     * Gets email
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return string|null
      */
-    public function getLuckyNumbers()
+    public function getEmail()
     {
-        return $this->container['lucky_numbers'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets lucky_numbers
+     * Sets email
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $lucky_numbers lucky_numbers
+     * @param string|null $email email
      *
      * @return self
      */
-    public function setLuckyNumbers($lucky_numbers)
+    public function setEmail($email)
     {
-        if (is_null($lucky_numbers)) {
-            throw new \InvalidArgumentException('non-nullable lucky_numbers cannot be null');
+        if (is_null($email)) {
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        $this->container['lucky_numbers'] = $lucky_numbers;
+        $this->container['email'] = $email;
 
         return $this;
     }

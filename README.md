@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**authMe**](docs/Api/AuthApi.md#authme) | **GET** /v3/me | Dados na API
 *MetricsApi* | [**metrics**](docs/Api/MetricsApi.md#metrics) | **GET** /v3/metrics | Devolve as métricas da promoção
 *PromotionApi* | [**promotionPullConfiguration**](docs/Api/PromotionApi.md#promotionpullconfiguration) | **POST** /v3/admin/pullconfiguration | Adicionar/Atualizar configurações de uma promoção ao orquestrador
+*PromotionApi* | [**promotionStart**](docs/Api/PromotionApi.md#promotionstart) | **POST** /v3/admin/promotion/start | Iniciar uma promoção na API
 *StepsApi* | [**stepsAllow**](docs/Api/StepsApi.md#stepsallow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint
 *StepsApi* | [**stepsIndex**](docs/Api/StepsApi.md#stepsindex) | **GET** /v3/steps | Retorna todas as steps existentes
 *StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/unallow | Remove uma Step de um determinado endpoint
@@ -164,6 +165,8 @@ Class | Method | HTTP request | Description
 - [PromotionPullConfiguration500Response](docs/Model/PromotionPullConfiguration500Response.md)
 - [PromotionPullConfigurationRequest](docs/Model/PromotionPullConfigurationRequest.md)
 - [PromotionPullConfigurationRequestDb](docs/Model/PromotionPullConfigurationRequestDb.md)
+- [PromotionStartRequest](docs/Model/PromotionStartRequest.md)
+- [PromotionStartRequestUser](docs/Model/PromotionStartRequestUser.md)
 - [StepsAllow201Response](docs/Model/StepsAllow201Response.md)
 - [StepsAllow409Response](docs/Model/StepsAllow409Response.md)
 - [StepsAllowRequest](docs/Model/StepsAllowRequest.md)

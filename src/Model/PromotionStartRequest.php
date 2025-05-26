@@ -1,6 +1,6 @@
 <?php
 /**
- * Metrics200Response
+ * PromotionStartRequest
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
- * Metrics200Response Class Doc Comment
+ * PromotionStartRequest Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotionAdmin
@@ -40,7 +40,7 @@ use \IdpluggerPromotionAdmin\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'metrics_200_response';
+    protected static $openAPIModelName = 'promotion_start_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'coupons' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'lucky_numbers' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]'
+        'db' => '\IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb',
+        'user' => '\IdpluggerPromotionAdmin\Model\PromotionStartRequestUser',
+        'permissions' => 'string[]'
     ];
 
     /**
@@ -70,9 +70,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'users' => null,
-        'coupons' => null,
-        'lucky_numbers' => null
+        'db' => null,
+        'user' => null,
+        'permissions' => null
     ];
 
     /**
@@ -81,9 +81,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'users' => false,
-        'coupons' => false,
-        'lucky_numbers' => false
+        'db' => false,
+        'user' => false,
+        'permissions' => false
     ];
 
     /**
@@ -172,9 +172,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'users' => 'users',
-        'coupons' => 'coupons',
-        'lucky_numbers' => 'luckyNumbers'
+        'db' => 'db',
+        'user' => 'user',
+        'permissions' => 'permissions'
     ];
 
     /**
@@ -183,9 +183,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'users' => 'setUsers',
-        'coupons' => 'setCoupons',
-        'lucky_numbers' => 'setLuckyNumbers'
+        'db' => 'setDb',
+        'user' => 'setUser',
+        'permissions' => 'setPermissions'
     ];
 
     /**
@@ -194,9 +194,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'users' => 'getUsers',
-        'coupons' => 'getCoupons',
-        'lucky_numbers' => 'getLuckyNumbers'
+        'db' => 'getDb',
+        'user' => 'getUser',
+        'permissions' => 'getPermissions'
     ];
 
     /**
@@ -240,6 +240,103 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
+    public const PERMISSIONS_PROMOTION_USERS_INDEX = 'promotion.users.index';
+    public const PERMISSIONS_PROMOTION_USERS_CREATE = 'promotion.users.create';
+    public const PERMISSIONS_PROMOTION_ARTICLES_INDEX = 'promotion.articles.index';
+    public const PERMISSIONS_PROMOTION_ARTICLES_CREATE = 'promotion.articles.create';
+    public const PERMISSIONS_PROMOTION_ARTICLES_DELETE = 'promotion.articles.delete';
+    public const PERMISSIONS_PROMOTION_AWARDEDS_INDEX = 'promotion.awardeds.index';
+    public const PERMISSIONS_PROMOTION_AWARDS_INDEX = 'promotion.awards.index';
+    public const PERMISSIONS_PROMOTION_AWARDS_CREATE = 'promotion.awards.create';
+    public const PERMISSIONS_PROMOTION_AWARDS_DELETE = 'promotion.awards.delete';
+    public const PERMISSIONS_PROMOTION_BRANDING_INDEX = 'promotion.branding.index';
+    public const PERMISSIONS_PROMOTION_BRANDING_CREATE = 'promotion.branding.create';
+    public const PERMISSIONS_PROMOTION_DOCUMENT_RULES_INDEX = 'promotion.document_rules.index';
+    public const PERMISSIONS_PROMOTION_DOCUMENT_RULES_CREATE = 'promotion.document_rules.create';
+    public const PERMISSIONS_PROMOTION_FAQ_INDEX = 'promotion.faq.index';
+    public const PERMISSIONS_PROMOTION_FAQ_CREATE = 'promotion.faq.create';
+    public const PERMISSIONS_PROMOTION_FAQ_DELETE = 'promotion.faq.delete';
+    public const PERMISSIONS_PROMOTION_LUCKY_NUMBERS_INDEX = 'promotion.lucky_numbers.index';
+    public const PERMISSIONS_PROMOTION_LUCKY_NUMBERS_CREATE = 'promotion.lucky_numbers.create';
+    public const PERMISSIONS_PROMOTION_LUCKY_NUMBERS_UPDATE = 'promotion.lucky_numbers.update';
+    public const PERMISSIONS_PROMOTION_LUCKY_NUMBERS_DELETE = 'promotion.lucky_numbers.delete';
+    public const PERMISSIONS_PROMOTION_RAFFLES_INDEX = 'promotion.raffles.index';
+    public const PERMISSIONS_PROMOTION_RAFFLES_CREATE = 'promotion.raffles.create';
+    public const PERMISSIONS_PROMOTION_RAFFLES_DELETE = 'promotion.raffles.delete';
+    public const PERMISSIONS_PROMOTION_TICKETS_INDEX = 'promotion.tickets.index';
+    public const PERMISSIONS_PROMOTION_TICKETS_CREATE = 'promotion.tickets.create';
+    public const PERMISSIONS_PROMOTION_TICKETS_DELETE = 'promotion.tickets.delete';
+    public const PERMISSIONS_PROMOTION_BLACKLIST_INDEX = 'promotion.blacklist.index';
+    public const PERMISSIONS_PROMOTION_BLACKLIST_CREATE = 'promotion.blacklist.create';
+    public const PERMISSIONS_PROMOTION_BLACKLIST_DELETE = 'promotion.blacklist.delete';
+    public const PERMISSIONS_PROMOTION_ORDERS_INDEX = 'promotion.orders.index';
+    public const PERMISSIONS_PROMOTION_ORDERS_CREATE = 'promotion.orders.create';
+    public const PERMISSIONS_PROMOTION_COUPONS_INDEX = 'promotion.coupons.index';
+    public const PERMISSIONS_PROMOTION_COUPONS_CREATE = 'promotion.coupons.create';
+    public const PERMISSIONS_PROMOTION_COUPONS_DELETE = 'promotion.coupons.delete';
+    public const PERMISSIONS_PROMOTION_CONFIGS_INDEX = 'promotion.configs.index';
+    public const PERMISSIONS_PROMOTION_USERS_DELETE = 'promotion.users.delete';
+    public const PERMISSIONS_PROMOTION_PRODUCTS_INDEX = 'promotion.products.index';
+    public const PERMISSIONS_PROMOTION_PRODUCTS_CREATE = 'promotion.products.create';
+    public const PERMISSIONS_PROMOTION_PRODUCTS_DELETE = 'promotion.products.delete';
+    public const PERMISSIONS_PROMOTION_STORES_INDEX = 'promotion.stores.index';
+    public const PERMISSIONS_PROMOTION_STORES_CREATE = 'promotion.stores.create';
+    public const PERMISSIONS_PROMOTION_STORES_DELETE = 'promotion.stores.delete';
+    public const PERMISSIONS_PROMOTION_CONFIGS_WEBHOOK_CONFIG = 'promotion.configs.webhook_config';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPermissionsAllowableValues()
+    {
+        return [
+            self::PERMISSIONS_PROMOTION_USERS_INDEX,
+            self::PERMISSIONS_PROMOTION_USERS_CREATE,
+            self::PERMISSIONS_PROMOTION_ARTICLES_INDEX,
+            self::PERMISSIONS_PROMOTION_ARTICLES_CREATE,
+            self::PERMISSIONS_PROMOTION_ARTICLES_DELETE,
+            self::PERMISSIONS_PROMOTION_AWARDEDS_INDEX,
+            self::PERMISSIONS_PROMOTION_AWARDS_INDEX,
+            self::PERMISSIONS_PROMOTION_AWARDS_CREATE,
+            self::PERMISSIONS_PROMOTION_AWARDS_DELETE,
+            self::PERMISSIONS_PROMOTION_BRANDING_INDEX,
+            self::PERMISSIONS_PROMOTION_BRANDING_CREATE,
+            self::PERMISSIONS_PROMOTION_DOCUMENT_RULES_INDEX,
+            self::PERMISSIONS_PROMOTION_DOCUMENT_RULES_CREATE,
+            self::PERMISSIONS_PROMOTION_FAQ_INDEX,
+            self::PERMISSIONS_PROMOTION_FAQ_CREATE,
+            self::PERMISSIONS_PROMOTION_FAQ_DELETE,
+            self::PERMISSIONS_PROMOTION_LUCKY_NUMBERS_INDEX,
+            self::PERMISSIONS_PROMOTION_LUCKY_NUMBERS_CREATE,
+            self::PERMISSIONS_PROMOTION_LUCKY_NUMBERS_UPDATE,
+            self::PERMISSIONS_PROMOTION_LUCKY_NUMBERS_DELETE,
+            self::PERMISSIONS_PROMOTION_RAFFLES_INDEX,
+            self::PERMISSIONS_PROMOTION_RAFFLES_CREATE,
+            self::PERMISSIONS_PROMOTION_RAFFLES_DELETE,
+            self::PERMISSIONS_PROMOTION_TICKETS_INDEX,
+            self::PERMISSIONS_PROMOTION_TICKETS_CREATE,
+            self::PERMISSIONS_PROMOTION_TICKETS_DELETE,
+            self::PERMISSIONS_PROMOTION_BLACKLIST_INDEX,
+            self::PERMISSIONS_PROMOTION_BLACKLIST_CREATE,
+            self::PERMISSIONS_PROMOTION_BLACKLIST_DELETE,
+            self::PERMISSIONS_PROMOTION_ORDERS_INDEX,
+            self::PERMISSIONS_PROMOTION_ORDERS_CREATE,
+            self::PERMISSIONS_PROMOTION_COUPONS_INDEX,
+            self::PERMISSIONS_PROMOTION_COUPONS_CREATE,
+            self::PERMISSIONS_PROMOTION_COUPONS_DELETE,
+            self::PERMISSIONS_PROMOTION_CONFIGS_INDEX,
+            self::PERMISSIONS_PROMOTION_USERS_DELETE,
+            self::PERMISSIONS_PROMOTION_PRODUCTS_INDEX,
+            self::PERMISSIONS_PROMOTION_PRODUCTS_CREATE,
+            self::PERMISSIONS_PROMOTION_PRODUCTS_DELETE,
+            self::PERMISSIONS_PROMOTION_STORES_INDEX,
+            self::PERMISSIONS_PROMOTION_STORES_CREATE,
+            self::PERMISSIONS_PROMOTION_STORES_DELETE,
+            self::PERMISSIONS_PROMOTION_CONFIGS_WEBHOOK_CONFIG,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -256,9 +353,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('users', $data ?? [], null);
-        $this->setIfExists('coupons', $data ?? [], null);
-        $this->setIfExists('lucky_numbers', $data ?? [], null);
+        $this->setIfExists('db', $data ?? [], null);
+        $this->setIfExists('user', $data ?? [], null);
+        $this->setIfExists('permissions', $data ?? [], null);
     }
 
     /**
@@ -304,82 +401,91 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets users
+     * Gets db
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null
      */
-    public function getUsers()
+    public function getDb()
     {
-        return $this->container['users'];
+        return $this->container['db'];
     }
 
     /**
-     * Sets users
+     * Sets db
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $users users
+     * @param \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null $db db
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setDb($db)
     {
-        if (is_null($users)) {
-            throw new \InvalidArgumentException('non-nullable users cannot be null');
+        if (is_null($db)) {
+            throw new \InvalidArgumentException('non-nullable db cannot be null');
         }
-        $this->container['users'] = $users;
+        $this->container['db'] = $db;
 
         return $this;
     }
 
     /**
-     * Gets coupons
+     * Gets user
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return \IdpluggerPromotionAdmin\Model\PromotionStartRequestUser|null
      */
-    public function getCoupons()
+    public function getUser()
     {
-        return $this->container['coupons'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets coupons
+     * Sets user
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $coupons coupons
+     * @param \IdpluggerPromotionAdmin\Model\PromotionStartRequestUser|null $user user
      *
      * @return self
      */
-    public function setCoupons($coupons)
+    public function setUser($user)
     {
-        if (is_null($coupons)) {
-            throw new \InvalidArgumentException('non-nullable coupons cannot be null');
+        if (is_null($user)) {
+            throw new \InvalidArgumentException('non-nullable user cannot be null');
         }
-        $this->container['coupons'] = $coupons;
+        $this->container['user'] = $user;
 
         return $this;
     }
 
     /**
-     * Gets lucky_numbers
+     * Gets permissions
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return string[]|null
      */
-    public function getLuckyNumbers()
+    public function getPermissions()
     {
-        return $this->container['lucky_numbers'];
+        return $this->container['permissions'];
     }
 
     /**
-     * Sets lucky_numbers
+     * Sets permissions
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $lucky_numbers lucky_numbers
+     * @param string[]|null $permissions permissions
      *
      * @return self
      */
-    public function setLuckyNumbers($lucky_numbers)
+    public function setPermissions($permissions)
     {
-        if (is_null($lucky_numbers)) {
-            throw new \InvalidArgumentException('non-nullable lucky_numbers cannot be null');
+        if (is_null($permissions)) {
+            throw new \InvalidArgumentException('non-nullable permissions cannot be null');
         }
-        $this->container['lucky_numbers'] = $lucky_numbers;
+        $allowedValues = $this->getPermissionsAllowableValues();
+        if (array_diff($permissions, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'permissions', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['permissions'] = $permissions;
 
         return $this;
     }
