@@ -431,7 +431,7 @@ class PromotionApi
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration500Response
+     * @return \IdpluggerPromotionAdmin\Model\PromotionStart200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration500Response
      */
     public function promotionStart($promotion_start_request = null, string $contentType = self::contentTypes['promotionStart'][0])
     {
@@ -449,7 +449,7 @@ class PromotionApi
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\PromotionStart200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function promotionStartWithHttpInfo($promotion_start_request = null, string $contentType = self::contentTypes['promotionStart'][0])
     {
@@ -481,7 +481,7 @@ class PromotionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response',
+                        '\IdpluggerPromotionAdmin\Model\PromotionStart200Response',
                         $request,
                         $response,
                     );
@@ -515,7 +515,7 @@ class PromotionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response',
+                '\IdpluggerPromotionAdmin\Model\PromotionStart200Response',
                 $request,
                 $response,
             );
@@ -524,7 +524,7 @@ class PromotionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response',
+                        '\IdpluggerPromotionAdmin\Model\PromotionStart200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -586,7 +586,7 @@ class PromotionApi
      */
     public function promotionStartAsyncWithHttpInfo($promotion_start_request = null, string $contentType = self::contentTypes['promotionStart'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\PromotionStart200Response';
         $request = $this->promotionStartRequest($promotion_start_request, $contentType);
 
         return $this->client

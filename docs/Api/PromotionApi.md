@@ -69,7 +69,7 @@ try {
 ## `promotionStart()`
 
 ```php
-promotionStart($promotion_start_request): \IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response
+promotionStart($promotion_start_request): \IdpluggerPromotionAdmin\Model\PromotionStart200Response
 ```
 
 Iniciar uma promoção na API
@@ -109,7 +109,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response**](../Model/PromotionPullConfiguration200Response.md)
+[**\IdpluggerPromotionAdmin\Model\PromotionStart200Response**](../Model/PromotionStart200Response.md)
 
 ### Authorization
 

@@ -19,6 +19,8 @@ docs/Model/PromotionPullConfiguration200Response.md
 docs/Model/PromotionPullConfiguration500Response.md
 docs/Model/PromotionPullConfigurationRequest.md
 docs/Model/PromotionPullConfigurationRequestDb.md
+docs/Model/PromotionStart200Response.md
+docs/Model/PromotionStart200ResponseUser.md
 docs/Model/PromotionStartRequest.md
 docs/Model/PromotionStartRequestUser.md
 docs/Model/StepsAllow201Response.md
@@ -58,6 +60,8 @@ src/Model/PromotionPullConfiguration200Response.php
 src/Model/PromotionPullConfiguration500Response.php
 src/Model/PromotionPullConfigurationRequest.php
 src/Model/PromotionPullConfigurationRequestDb.php
+src/Model/PromotionStart200Response.php
+src/Model/PromotionStart200ResponseUser.php
 src/Model/PromotionStartRequest.php
 src/Model/PromotionStartRequestUser.php
 src/Model/StepsAllow201Response.php
@@ -75,5 +79,5 @@ src/Model/UserRegister200ResponseUserInner.php
 src/Model/UserRegister500Response.php
 src/Model/UserRegisterRequest.php
 src/ObjectSerializer.php
-test/Model/PromotionStartRequestTest.php
-test/Model/PromotionStartRequestUserTest.php
+test/Model/PromotionStart200ResponseTest.php
+test/Model/PromotionStart200ResponseUserTest.php

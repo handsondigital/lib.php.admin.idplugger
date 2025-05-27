@@ -165,6 +165,8 @@ Class | Method | HTTP request | Description
 - [PromotionPullConfiguration500Response](docs/Model/PromotionPullConfiguration500Response.md)
 - [PromotionPullConfigurationRequest](docs/Model/PromotionPullConfigurationRequest.md)
 - [PromotionPullConfigurationRequestDb](docs/Model/PromotionPullConfigurationRequestDb.md)
+- [PromotionStart200Response](docs/Model/PromotionStart200Response.md)
+- [PromotionStart200ResponseUser](docs/Model/PromotionStart200ResponseUser.md)
 - [PromotionStartRequest](docs/Model/PromotionStartRequest.md)
 - [PromotionStartRequestUser](docs/Model/PromotionStartRequestUser.md)
 - [StepsAllow201Response](docs/Model/StepsAllow201Response.md)
