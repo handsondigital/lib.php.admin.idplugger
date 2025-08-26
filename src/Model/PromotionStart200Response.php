@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * PromotionStart200Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class PromotionStart200Response implements ModelInterface, ArrayAccess, \JsonSer
         'result' => 'string',
         'message' => 'string',
         'promotion_id' => 'string',
-        'user' => '\IdpluggerPromotion\Model\PromotionStart200ResponseUser'
+        'user' => '\IdpluggerPromotionAdmin\Model\PromotionStart200ResponseUser'
     ];
 
     /**
@@ -428,7 +428,7 @@ class PromotionStart200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets user
      *
-     * @return \IdpluggerPromotion\Model\PromotionStart200ResponseUser|null
+     * @return \IdpluggerPromotionAdmin\Model\PromotionStart200ResponseUser|null
      */
     public function getUser()
     {
@@ -438,7 +438,7 @@ class PromotionStart200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets user
      *
-     * @param \IdpluggerPromotion\Model\PromotionStart200ResponseUser|null $user user
+     * @param \IdpluggerPromotionAdmin\Model\PromotionStart200ResponseUser|null $user user
      *
      * @return self
      */

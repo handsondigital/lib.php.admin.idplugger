@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * PromotionStartRequest Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'db' => '\IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb',
-        'user' => '\IdpluggerPromotion\Model\PromotionStartRequestUser',
+        'db' => '\IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb',
+        'user' => '\IdpluggerPromotionAdmin\Model\PromotionStartRequestUser',
         'permissions' => 'string[]'
     ];
 
@@ -403,7 +403,7 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets db
      *
-     * @return \IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb|null
+     * @return \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null
      */
     public function getDb()
     {
@@ -413,7 +413,7 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets db
      *
-     * @param \IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb|null $db db
+     * @param \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null $db db
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets user
      *
-     * @return \IdpluggerPromotion\Model\PromotionStartRequestUser|null
+     * @return \IdpluggerPromotionAdmin\Model\PromotionStartRequestUser|null
      */
     public function getUser()
     {
@@ -440,7 +440,7 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets user
      *
-     * @param \IdpluggerPromotion\Model\PromotionStartRequestUser|null $user user
+     * @param \IdpluggerPromotionAdmin\Model\PromotionStartRequestUser|null $user user
      *
      * @return self
      */

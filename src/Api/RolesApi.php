@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Api;
+namespace IdpluggerPromotionAdmin\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotion\ApiException;
-use IdpluggerPromotion\Configuration;
-use IdpluggerPromotion\FormDataProcessor;
-use IdpluggerPromotion\HeaderSelector;
-use IdpluggerPromotion\ObjectSerializer;
+use IdpluggerPromotionAdmin\ApiException;
+use IdpluggerPromotionAdmin\Configuration;
+use IdpluggerPromotionAdmin\FormDataProcessor;
+use IdpluggerPromotionAdmin\HeaderSelector;
+use IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * RolesApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,12 +149,12 @@ class RolesApi
      * Atualizar permissões de uma role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request roles_attach_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request roles_attach_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesAttachPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesAttachPermissions200Response|\IdpluggerPromotion\Model\RolesAttachPermissions422Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response|\IdpluggerPromotionAdmin\Model\RolesAttachPermissions422Response
      */
     public function rolesAttachPermissions($id, $roles_attach_permissions_request = null, string $contentType = self::contentTypes['rolesAttachPermissions'][0])
     {
@@ -168,12 +168,12 @@ class RolesApi
      * Atualizar permissões de uma role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesAttachPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesAttachPermissions200Response|\IdpluggerPromotion\Model\RolesAttachPermissions422Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response|\IdpluggerPromotionAdmin\Model\RolesAttachPermissions422Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesAttachPermissionsWithHttpInfo($id, $roles_attach_permissions_request = null, string $contentType = self::contentTypes['rolesAttachPermissions'][0])
     {
@@ -205,13 +205,13 @@ class RolesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesAttachPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesAttachPermissions422Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions422Response',
                         $request,
                         $response,
                     );
@@ -233,7 +233,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesAttachPermissions200Response',
+                '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response',
                 $request,
                 $response,
             );
@@ -242,7 +242,7 @@ class RolesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesAttachPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class RolesApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesAttachPermissions422Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions422Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -268,7 +268,7 @@ class RolesApi
      * Atualizar permissões de uma role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesAttachPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -290,7 +290,7 @@ class RolesApi
      * Atualizar permissões de uma role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesAttachPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -298,7 +298,7 @@ class RolesApi
      */
     public function rolesAttachPermissionsAsyncWithHttpInfo($id, $roles_attach_permissions_request = null, string $contentType = self::contentTypes['rolesAttachPermissions'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesAttachPermissions200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response';
         $request = $this->rolesAttachPermissionsRequest($id, $roles_attach_permissions_request, $contentType);
 
         return $this->client
@@ -341,7 +341,7 @@ class RolesApi
      * Create request for operation 'rolesAttachPermissions'
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest|null $roles_attach_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesAttachPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -450,7 +450,7 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesDestroy'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -467,7 +467,7 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesDestroy'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -504,7 +504,7 @@ class RolesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesDestroy400Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesDestroy400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -679,9 +679,9 @@ class RolesApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesIndex'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesIndex200Response|\IdpluggerPromotion\Model\RolesIndex500Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesIndex200Response|\IdpluggerPromotionAdmin\Model\RolesIndex500Response
      */
     public function rolesIndex(string $contentType = self::contentTypes['rolesIndex'][0])
     {
@@ -696,9 +696,9 @@ class RolesApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesIndex'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesIndex200Response|\IdpluggerPromotion\Model\RolesIndex500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesIndex200Response|\IdpluggerPromotionAdmin\Model\RolesIndex500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesIndexWithHttpInfo(string $contentType = self::contentTypes['rolesIndex'][0])
     {
@@ -730,13 +730,13 @@ class RolesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesIndex200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesIndex200Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesIndex500Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesIndex500Response',
                         $request,
                         $response,
                     );
@@ -758,7 +758,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesIndex200Response',
+                '\IdpluggerPromotionAdmin\Model\RolesIndex200Response',
                 $request,
                 $response,
             );
@@ -767,7 +767,7 @@ class RolesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesIndex200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesIndex200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -775,7 +775,7 @@ class RolesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesIndex500Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesIndex500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -819,7 +819,7 @@ class RolesApi
      */
     public function rolesIndexAsyncWithHttpInfo(string $contentType = self::contentTypes['rolesIndex'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesIndex200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesIndex200Response';
         $request = $this->rolesIndexRequest($contentType);
 
         return $this->client
@@ -946,9 +946,9 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesPermissions200Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesPermissions200Response
      */
     public function rolesPermissions($id, string $contentType = self::contentTypes['rolesPermissions'][0])
     {
@@ -964,9 +964,9 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesPermissions200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesPermissions200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesPermissionsWithHttpInfo($id, string $contentType = self::contentTypes['rolesPermissions'][0])
     {
@@ -998,7 +998,7 @@ class RolesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesPermissions200Response',
                         $request,
                         $response,
                     );
@@ -1020,7 +1020,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesPermissions200Response',
+                '\IdpluggerPromotionAdmin\Model\RolesPermissions200Response',
                 $request,
                 $response,
             );
@@ -1029,7 +1029,7 @@ class RolesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesPermissions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1075,7 +1075,7 @@ class RolesApi
      */
     public function rolesPermissionsAsyncWithHttpInfo($id, string $contentType = self::contentTypes['rolesPermissions'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesPermissions200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesPermissions200Response';
         $request = $this->rolesPermissionsRequest($id, $contentType);
 
         return $this->client
@@ -1218,9 +1218,9 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesShow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesShow200Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesShow200Response
      */
     public function rolesShow($id, string $contentType = self::contentTypes['rolesShow'][0])
     {
@@ -1236,9 +1236,9 @@ class RolesApi
      * @param  int $id ID da role (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesShow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesShow200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesShow200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesShowWithHttpInfo($id, string $contentType = self::contentTypes['rolesShow'][0])
     {
@@ -1270,7 +1270,7 @@ class RolesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesShow200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesShow200Response',
                         $request,
                         $response,
                     );
@@ -1292,7 +1292,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesShow200Response',
+                '\IdpluggerPromotionAdmin\Model\RolesShow200Response',
                 $request,
                 $response,
             );
@@ -1301,7 +1301,7 @@ class RolesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesShow200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesShow200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1347,7 +1347,7 @@ class RolesApi
      */
     public function rolesShowAsyncWithHttpInfo($id, string $contentType = self::contentTypes['rolesShow'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesShow200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesShow200Response';
         $request = $this->rolesShowRequest($id, $contentType);
 
         return $this->client
@@ -1487,12 +1487,12 @@ class RolesApi
      *
      * Criar role
      *
-     * @param  \IdpluggerPromotion\Model\RolesStoreRequest|null $roles_store_request roles_store_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesStoreRequest|null $roles_store_request roles_store_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesStore'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesStore201Response|\IdpluggerPromotion\Model\RolesStore422Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesStore201Response|\IdpluggerPromotionAdmin\Model\RolesStore422Response
      */
     public function rolesStore($roles_store_request = null, string $contentType = self::contentTypes['rolesStore'][0])
     {
@@ -1505,12 +1505,12 @@ class RolesApi
      *
      * Criar role
      *
-     * @param  \IdpluggerPromotion\Model\RolesStoreRequest|null $roles_store_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesStoreRequest|null $roles_store_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesStore'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesStore201Response|\IdpluggerPromotion\Model\RolesStore422Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesStore201Response|\IdpluggerPromotionAdmin\Model\RolesStore422Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesStoreWithHttpInfo($roles_store_request = null, string $contentType = self::contentTypes['rolesStore'][0])
     {
@@ -1542,13 +1542,13 @@ class RolesApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesStore201Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesStore201Response',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesStore422Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesStore422Response',
                         $request,
                         $response,
                     );
@@ -1570,7 +1570,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesStore201Response',
+                '\IdpluggerPromotionAdmin\Model\RolesStore201Response',
                 $request,
                 $response,
             );
@@ -1579,7 +1579,7 @@ class RolesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesStore201Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesStore201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1587,7 +1587,7 @@ class RolesApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesStore422Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesStore422Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1604,7 +1604,7 @@ class RolesApi
      *
      * Criar role
      *
-     * @param  \IdpluggerPromotion\Model\RolesStoreRequest|null $roles_store_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesStoreRequest|null $roles_store_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1625,7 +1625,7 @@ class RolesApi
      *
      * Criar role
      *
-     * @param  \IdpluggerPromotion\Model\RolesStoreRequest|null $roles_store_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesStoreRequest|null $roles_store_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1633,7 +1633,7 @@ class RolesApi
      */
     public function rolesStoreAsyncWithHttpInfo($roles_store_request = null, string $contentType = self::contentTypes['rolesStore'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesStore201Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesStore201Response';
         $request = $this->rolesStoreRequest($roles_store_request, $contentType);
 
         return $this->client
@@ -1675,7 +1675,7 @@ class RolesApi
     /**
      * Create request for operation 'rolesStore'
      *
-     * @param  \IdpluggerPromotion\Model\RolesStoreRequest|null $roles_store_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesStoreRequest|null $roles_store_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1767,12 +1767,12 @@ class RolesApi
      * Atualizar role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesUpdateRequest|null $roles_update_request roles_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesUpdateRequest|null $roles_update_request roles_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesUpdate'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\RolesUpdate200Response
+     * @return \IdpluggerPromotionAdmin\Model\RolesUpdate200Response
      */
     public function rolesUpdate($id, $roles_update_request = null, string $contentType = self::contentTypes['rolesUpdate'][0])
     {
@@ -1786,12 +1786,12 @@ class RolesApi
      * Atualizar role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesUpdateRequest|null $roles_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesUpdateRequest|null $roles_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesUpdate'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\RolesUpdate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\RolesUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function rolesUpdateWithHttpInfo($id, $roles_update_request = null, string $contentType = self::contentTypes['rolesUpdate'][0])
     {
@@ -1823,7 +1823,7 @@ class RolesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\RolesUpdate200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesUpdate200Response',
                         $request,
                         $response,
                     );
@@ -1845,7 +1845,7 @@ class RolesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\RolesUpdate200Response',
+                '\IdpluggerPromotionAdmin\Model\RolesUpdate200Response',
                 $request,
                 $response,
             );
@@ -1854,7 +1854,7 @@ class RolesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\RolesUpdate200Response',
+                        '\IdpluggerPromotionAdmin\Model\RolesUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1872,7 +1872,7 @@ class RolesApi
      * Atualizar role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesUpdateRequest|null $roles_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesUpdateRequest|null $roles_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1894,7 +1894,7 @@ class RolesApi
      * Atualizar role
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesUpdateRequest|null $roles_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesUpdateRequest|null $roles_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1902,7 +1902,7 @@ class RolesApi
      */
     public function rolesUpdateAsyncWithHttpInfo($id, $roles_update_request = null, string $contentType = self::contentTypes['rolesUpdate'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\RolesUpdate200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\RolesUpdate200Response';
         $request = $this->rolesUpdateRequest($id, $roles_update_request, $contentType);
 
         return $this->client
@@ -1945,7 +1945,7 @@ class RolesApi
      * Create request for operation 'rolesUpdate'
      *
      * @param  int $id ID da role (required)
-     * @param  \IdpluggerPromotion\Model\RolesUpdateRequest|null $roles_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\RolesUpdateRequest|null $roles_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rolesUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

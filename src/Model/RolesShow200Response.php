@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * RolesShow200Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class RolesShow200Response implements ModelInterface, ArrayAccess, \JsonSerializ
         'action' => 'string',
         'result' => 'string',
         'message' => 'string',
-        'role' => '\IdpluggerPromotion\Model\RolesShow200ResponseRole',
-        'permissions' => '\IdpluggerPromotion\Model\RolesShow200ResponsePermissionsInner[]'
+        'role' => '\IdpluggerPromotionAdmin\Model\RolesShow200ResponseRole',
+        'permissions' => '\IdpluggerPromotionAdmin\Model\RolesShow200ResponsePermissionsInner[]'
     ];
 
     /**
@@ -401,7 +401,7 @@ class RolesShow200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets role
      *
-     * @return \IdpluggerPromotion\Model\RolesShow200ResponseRole|null
+     * @return \IdpluggerPromotionAdmin\Model\RolesShow200ResponseRole|null
      */
     public function getRole()
     {
@@ -411,7 +411,7 @@ class RolesShow200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets role
      *
-     * @param \IdpluggerPromotion\Model\RolesShow200ResponseRole|null $role role
+     * @param \IdpluggerPromotionAdmin\Model\RolesShow200ResponseRole|null $role role
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class RolesShow200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets permissions
      *
-     * @return \IdpluggerPromotion\Model\RolesShow200ResponsePermissionsInner[]|null
+     * @return \IdpluggerPromotionAdmin\Model\RolesShow200ResponsePermissionsInner[]|null
      */
     public function getPermissions()
     {
@@ -438,7 +438,7 @@ class RolesShow200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets permissions
      *
-     * @param \IdpluggerPromotion\Model\RolesShow200ResponsePermissionsInner[]|null $permissions permissions
+     * @param \IdpluggerPromotionAdmin\Model\RolesShow200ResponsePermissionsInner[]|null $permissions permissions
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * StepsUnallow409Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

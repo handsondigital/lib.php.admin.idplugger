@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Api;
+namespace IdpluggerPromotionAdmin\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotion\ApiException;
-use IdpluggerPromotion\Configuration;
-use IdpluggerPromotion\FormDataProcessor;
-use IdpluggerPromotion\HeaderSelector;
-use IdpluggerPromotion\ObjectSerializer;
+use IdpluggerPromotionAdmin\ApiException;
+use IdpluggerPromotionAdmin\Configuration;
+use IdpluggerPromotionAdmin\FormDataProcessor;
+use IdpluggerPromotionAdmin\HeaderSelector;
+use IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * AuthApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -142,12 +142,12 @@ class AuthApi
      *
      * Solicita envio de token de login por email
      *
-     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request admin_auth_request_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request admin_auth_request_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\AdminAuthRequestToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     * @return \IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
      */
     public function adminAuthRequestToken($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
     {
@@ -160,12 +160,12 @@ class AuthApi
      *
      * Solicita envio de token de login por email
      *
-     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\AdminAuthRequestToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function adminAuthRequestTokenWithHttpInfo($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
     {
@@ -197,13 +197,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -225,7 +225,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                '\IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response',
                 $request,
                 $response,
             );
@@ -234,7 +234,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,7 +242,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -259,7 +259,7 @@ class AuthApi
      *
      * Solicita envio de token de login por email
      *
-     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -280,7 +280,7 @@ class AuthApi
      *
      * Solicita envio de token de login por email
      *
-     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -288,7 +288,7 @@ class AuthApi
      */
     public function adminAuthRequestTokenAsyncWithHttpInfo($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response';
         $request = $this->adminAuthRequestTokenRequest($admin_auth_request_token_request, $contentType);
 
         return $this->client
@@ -330,7 +330,7 @@ class AuthApi
     /**
      * Create request for operation 'adminAuthRequestToken'
      *
-     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -417,12 +417,12 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request auth_login_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\AuthLogin200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     * @return \IdpluggerPromotionAdmin\Model\AuthLogin200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
      */
     public function authLogin($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
@@ -435,12 +435,12 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\AuthLogin200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\AuthLogin200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authLoginWithHttpInfo($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
@@ -472,13 +472,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -500,7 +500,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\AuthLogin200Response',
+                '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
                 $request,
                 $response,
             );
@@ -509,7 +509,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -517,7 +517,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -534,7 +534,7 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -555,7 +555,7 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -563,7 +563,7 @@ class AuthApi
      */
     public function authLoginAsyncWithHttpInfo($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\AuthLogin200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\AuthLogin200Response';
         $request = $this->authLoginRequest($auth_login_request, $contentType);
 
         return $this->client
@@ -605,7 +605,7 @@ class AuthApi
     /**
      * Create request for operation 'authLogin'
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -692,12 +692,12 @@ class AuthApi
      *
      * Login na API via e-mail e token
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request auth_login_by_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request auth_login_by_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     * @return \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
      */
     public function authLoginByToken($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
     {
@@ -710,12 +710,12 @@ class AuthApi
      *
      * Login na API via e-mail e token
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authLoginByTokenWithHttpInfo($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
     {
@@ -747,13 +747,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -775,7 +775,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                 $request,
                 $response,
             );
@@ -784,7 +784,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -792,7 +792,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -809,7 +809,7 @@ class AuthApi
      *
      * Login na API via e-mail e token
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -830,7 +830,7 @@ class AuthApi
      *
      * Login na API via e-mail e token
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -838,7 +838,7 @@ class AuthApi
      */
     public function authLoginByTokenAsyncWithHttpInfo($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\AuthLoginByToken200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response';
         $request = $this->authLoginByTokenRequest($auth_login_by_token_request, $contentType);
 
         return $this->client
@@ -880,7 +880,7 @@ class AuthApi
     /**
      * Create request for operation 'authLoginByToken'
      *
-     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -969,9 +969,9 @@ class AuthApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authMe'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\AuthMe200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     * @return \IdpluggerPromotionAdmin\Model\AuthMe200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
      */
     public function authMe(string $contentType = self::contentTypes['authMe'][0])
     {
@@ -986,9 +986,9 @@ class AuthApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authMe'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\AuthMe200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\AuthMe200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authMeWithHttpInfo(string $contentType = self::contentTypes['authMe'][0])
     {
@@ -1020,13 +1020,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthMe200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -1048,7 +1048,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\AuthMe200Response',
+                '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
                 $request,
                 $response,
             );
@@ -1057,7 +1057,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthMe200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1065,7 +1065,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1109,7 +1109,7 @@ class AuthApi
      */
     public function authMeAsyncWithHttpInfo(string $contentType = self::contentTypes['authMe'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\AuthMe200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\AuthMe200Response';
         $request = $this->authMeRequest($contentType);
 
         return $this->client
@@ -1233,12 +1233,12 @@ class AuthApi
      *
      * Renova o do token de autenticação
      *
-     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request auth_refresh_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request auth_refresh_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     * @return \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
      */
     public function authRefreshToken($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
     {
@@ -1251,12 +1251,12 @@ class AuthApi
      *
      * Renova o do token de autenticação
      *
-     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authRefreshTokenWithHttpInfo($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
     {
@@ -1288,13 +1288,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -1316,7 +1316,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                 $request,
                 $response,
             );
@@ -1325,7 +1325,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1333,7 +1333,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1350,7 +1350,7 @@ class AuthApi
      *
      * Renova o do token de autenticação
      *
-     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1371,7 +1371,7 @@ class AuthApi
      *
      * Renova o do token de autenticação
      *
-     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1379,7 +1379,7 @@ class AuthApi
      */
     public function authRefreshTokenAsyncWithHttpInfo($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\AuthLoginByToken200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response';
         $request = $this->authRefreshTokenRequest($auth_refresh_token_request, $contentType);
 
         return $this->client
@@ -1421,7 +1421,7 @@ class AuthApi
     /**
      * Create request for operation 'authRefreshToken'
      *
-     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

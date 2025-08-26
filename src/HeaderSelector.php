@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,13 +25,13 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion;
+namespace IdpluggerPromotionAdmin;
 
 /**
  * HeaderSelector Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

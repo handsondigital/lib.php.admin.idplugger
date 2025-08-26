@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Api;
+namespace IdpluggerPromotionAdmin\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotion\ApiException;
-use IdpluggerPromotion\Configuration;
-use IdpluggerPromotion\FormDataProcessor;
-use IdpluggerPromotion\HeaderSelector;
-use IdpluggerPromotion\ObjectSerializer;
+use IdpluggerPromotionAdmin\ApiException;
+use IdpluggerPromotionAdmin\Configuration;
+use IdpluggerPromotionAdmin\FormDataProcessor;
+use IdpluggerPromotionAdmin\HeaderSelector;
+use IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * UserApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -139,12 +139,12 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\UserGrantPermissions200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserGrantPermissions500Response
+     * @return \IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response
      */
     public function userGrantPermissions($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
@@ -157,12 +157,12 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\UserGrantPermissions200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserGrantPermissions500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userGrantPermissionsWithHttpInfo($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
@@ -194,19 +194,19 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserGrantPermissions500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response',
                         $request,
                         $response,
                     );
@@ -228,7 +228,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
+                '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
                 $request,
                 $response,
             );
@@ -237,7 +237,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -245,7 +245,7 @@ class UserApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -253,7 +253,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserGrantPermissions500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -270,7 +270,7 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -291,7 +291,7 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -299,7 +299,7 @@ class UserApi
      */
     public function userGrantPermissionsAsyncWithHttpInfo($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\UserGrantPermissions200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response';
         $request = $this->userGrantPermissionsRequest($user_grant_permissions_request, $contentType);
 
         return $this->client
@@ -341,7 +341,7 @@ class UserApi
     /**
      * Create request for operation 'userGrantPermissions'
      *
-     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -432,12 +432,12 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request user_register_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\UserRegister200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserRegister500Response
+     * @return \IdpluggerPromotionAdmin\Model\UserRegister200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserRegister500Response
      */
     public function userRegister($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
@@ -450,12 +450,12 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\UserRegister200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserRegister500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\UserRegister200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserRegister500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userRegisterWithHttpInfo($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
@@ -487,19 +487,19 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserRegister200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserRegister500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserRegister500Response',
                         $request,
                         $response,
                     );
@@ -521,7 +521,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\UserRegister200Response',
+                '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
                 $request,
                 $response,
             );
@@ -530,7 +530,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserRegister200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -538,7 +538,7 @@ class UserApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -546,7 +546,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserRegister500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserRegister500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -563,7 +563,7 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -584,7 +584,7 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -592,7 +592,7 @@ class UserApi
      */
     public function userRegisterAsyncWithHttpInfo($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\UserRegister200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\UserRegister200Response';
         $request = $this->userRegisterRequest($user_register_request, $contentType);
 
         return $this->client
@@ -634,7 +634,7 @@ class UserApi
     /**
      * Create request for operation 'userRegister'
      *
-     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -728,9 +728,9 @@ class UserApi
      * @param  string $uuid UUID do usuário a ser visualizado (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\UserShow200Response|\IdpluggerPromotion\Model\UserShow404Response|\IdpluggerPromotion\Model\UserShow500Response
+     * @return \IdpluggerPromotionAdmin\Model\UserShow200Response|\IdpluggerPromotionAdmin\Model\UserShow404Response|\IdpluggerPromotionAdmin\Model\UserShow500Response
      */
     public function userShow($uuid, string $contentType = self::contentTypes['userShow'][0])
     {
@@ -746,9 +746,9 @@ class UserApi
      * @param  string $uuid UUID do usuário a ser visualizado (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\UserShow200Response|\IdpluggerPromotion\Model\UserShow404Response|\IdpluggerPromotion\Model\UserShow500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\UserShow200Response|\IdpluggerPromotionAdmin\Model\UserShow404Response|\IdpluggerPromotionAdmin\Model\UserShow500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userShowWithHttpInfo($uuid, string $contentType = self::contentTypes['userShow'][0])
     {
@@ -780,19 +780,19 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserShow200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow200Response',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserShow404Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow404Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserShow500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow500Response',
                         $request,
                         $response,
                     );
@@ -814,7 +814,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\UserShow200Response',
+                '\IdpluggerPromotionAdmin\Model\UserShow200Response',
                 $request,
                 $response,
             );
@@ -823,7 +823,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserShow200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -831,7 +831,7 @@ class UserApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserShow404Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow404Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -839,7 +839,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserShow500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserShow500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -885,7 +885,7 @@ class UserApi
      */
     public function userShowAsyncWithHttpInfo($uuid, string $contentType = self::contentTypes['userShow'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\UserShow200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\UserShow200Response';
         $request = $this->userShowRequest($uuid, $contentType);
 
         return $this->client
@@ -1026,12 +1026,12 @@ class UserApi
      * Atualizar nome do usuário na API
      *
      * @param  string $uuid UUID do usuário a ser atualizado (required)
-     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request user_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserUpdateRequest|null $user_update_request user_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\UserUpdate200Response|\IdpluggerPromotion\Model\UserUpdate404Response|\IdpluggerPromotion\Model\UserUpdate422Response|\IdpluggerPromotion\Model\UserUpdate500Response
+     * @return \IdpluggerPromotionAdmin\Model\UserUpdate200Response|\IdpluggerPromotionAdmin\Model\UserUpdate404Response|\IdpluggerPromotionAdmin\Model\UserUpdate422Response|\IdpluggerPromotionAdmin\Model\UserUpdate500Response
      */
     public function userUpdate($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
     {
@@ -1045,12 +1045,12 @@ class UserApi
      * Atualizar nome do usuário na API
      *
      * @param  string $uuid UUID do usuário a ser atualizado (required)
-     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserUpdateRequest|null $user_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\UserUpdate200Response|\IdpluggerPromotion\Model\UserUpdate404Response|\IdpluggerPromotion\Model\UserUpdate422Response|\IdpluggerPromotion\Model\UserUpdate500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\UserUpdate200Response|\IdpluggerPromotionAdmin\Model\UserUpdate404Response|\IdpluggerPromotionAdmin\Model\UserUpdate422Response|\IdpluggerPromotionAdmin\Model\UserUpdate500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userUpdateWithHttpInfo($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
     {
@@ -1082,25 +1082,25 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserUpdate200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate200Response',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserUpdate404Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate404Response',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserUpdate422Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate422Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\UserUpdate500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate500Response',
                         $request,
                         $response,
                     );
@@ -1122,7 +1122,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\UserUpdate200Response',
+                '\IdpluggerPromotionAdmin\Model\UserUpdate200Response',
                 $request,
                 $response,
             );
@@ -1131,7 +1131,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserUpdate200Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1139,7 +1139,7 @@ class UserApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserUpdate404Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate404Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1147,7 +1147,7 @@ class UserApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserUpdate422Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate422Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1155,7 +1155,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\UserUpdate500Response',
+                        '\IdpluggerPromotionAdmin\Model\UserUpdate500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1173,7 +1173,7 @@ class UserApi
      * Atualizar nome do usuário na API
      *
      * @param  string $uuid UUID do usuário a ser atualizado (required)
-     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserUpdateRequest|null $user_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1195,7 +1195,7 @@ class UserApi
      * Atualizar nome do usuário na API
      *
      * @param  string $uuid UUID do usuário a ser atualizado (required)
-     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserUpdateRequest|null $user_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1203,7 +1203,7 @@ class UserApi
      */
     public function userUpdateAsyncWithHttpInfo($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\UserUpdate200Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\UserUpdate200Response';
         $request = $this->userUpdateRequest($uuid, $user_update_request, $contentType);
 
         return $this->client
@@ -1246,7 +1246,7 @@ class UserApi
      * Create request for operation 'userUpdate'
      *
      * @param  string $uuid UUID do usuário a ser atualizado (required)
-     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\UserUpdateRequest|null $user_update_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

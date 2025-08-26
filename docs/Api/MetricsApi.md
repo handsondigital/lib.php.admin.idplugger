@@ -1,4 +1,4 @@
-# IdpluggerPromotion\MetricsApi
+# IdpluggerPromotionAdmin\MetricsApi
 
 All URIs are relative to https://api.idplugger.com, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `metrics()`
 
 ```php
-metrics($promotion_id, $keys, $start_date, $end_date, $limit, $resolution): \IdpluggerPromotion\Model\Metrics200Response
+metrics($promotion_id, $keys, $start_date, $end_date, $limit, $resolution): \IdpluggerPromotionAdmin\Model\Metrics200Response
 ```
 
 Devolve as métricas da promoção
@@ -23,10 +23,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\MetricsApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\MetricsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\Metrics200Response**](../Model/Metrics200Response.md)
+[**\IdpluggerPromotionAdmin\Model\Metrics200Response**](../Model/Metrics200Response.md)
 
 ### Authorization
 

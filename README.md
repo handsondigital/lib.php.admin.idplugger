@@ -124,13 +124,13 @@ $apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$auth_login_request = new \IdpluggerPromotionAdmin\Model\AuthLoginRequest(); // \IdpluggerPromotionAdmin\Model\AuthLoginRequest
+$admin_auth_request_token_request = new \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest(); // \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest
 
 try {
-    $result = $apiInstance->authLogin($auth_login_request);
+    $result = $apiInstance->adminAuthRequestToken($admin_auth_request_token_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->authLogin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->adminAuthRequestToken: ', $e->getMessage(), PHP_EOL;
 }
 
 ```

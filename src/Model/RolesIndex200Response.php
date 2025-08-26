@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * RolesIndex200Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class RolesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
         'action' => 'string',
         'result' => 'string',
         'message' => 'string',
-        'roles' => '\IdpluggerPromotion\Model\RolesIndex200ResponseRolesInner[]'
+        'roles' => '\IdpluggerPromotionAdmin\Model\RolesIndex200ResponseRolesInner[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class RolesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets roles
      *
-     * @return \IdpluggerPromotion\Model\RolesIndex200ResponseRolesInner[]|null
+     * @return \IdpluggerPromotionAdmin\Model\RolesIndex200ResponseRolesInner[]|null
      */
     public function getRoles()
     {
@@ -404,7 +404,7 @@ class RolesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets roles
      *
-     * @param \IdpluggerPromotion\Model\RolesIndex200ResponseRolesInner[]|null $roles roles
+     * @param \IdpluggerPromotionAdmin\Model\RolesIndex200ResponseRolesInner[]|null $roles roles
      *
      * @return self
      */

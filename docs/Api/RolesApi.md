@@ -1,4 +1,4 @@
-# IdpluggerPromotion\RolesApi
+# IdpluggerPromotionAdmin\RolesApi
 
 All URIs are relative to https://api.idplugger.com, except if the operation defines another base path.
 
@@ -16,7 +16,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `rolesAttachPermissions()`
 
 ```php
-rolesAttachPermissions($id, $roles_attach_permissions_request): \IdpluggerPromotion\Model\RolesAttachPermissions200Response
+rolesAttachPermissions($id, $roles_attach_permissions_request): \IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response
 ```
 
 Atualizar permissões de uma role
@@ -29,17 +29,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | ID da role
-$roles_attach_permissions_request = new \IdpluggerPromotion\Model\RolesAttachPermissionsRequest(); // \IdpluggerPromotion\Model\RolesAttachPermissionsRequest
+$roles_attach_permissions_request = new \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest(); // \IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest
 
 try {
     $result = $apiInstance->rolesAttachPermissions($id, $roles_attach_permissions_request);
@@ -54,11 +54,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| ID da role | |
-| **roles_attach_permissions_request** | [**\IdpluggerPromotion\Model\RolesAttachPermissionsRequest**](../Model/RolesAttachPermissionsRequest.md)|  | [optional] |
+| **roles_attach_permissions_request** | [**\IdpluggerPromotionAdmin\Model\RolesAttachPermissionsRequest**](../Model/RolesAttachPermissionsRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesAttachPermissions200Response**](../Model/RolesAttachPermissions200Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesAttachPermissions200Response**](../Model/RolesAttachPermissions200Response.md)
 
 ### Authorization
 
@@ -89,10 +89,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -133,7 +133,7 @@ void (empty response body)
 ## `rolesIndex()`
 
 ```php
-rolesIndex(): \IdpluggerPromotion\Model\RolesIndex200Response
+rolesIndex(): \IdpluggerPromotionAdmin\Model\RolesIndex200Response
 ```
 
 Listar roles
@@ -146,10 +146,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesIndex200Response**](../Model/RolesIndex200Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesIndex200Response**](../Model/RolesIndex200Response.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ This endpoint does not need any parameter.
 ## `rolesPermissions()`
 
 ```php
-rolesPermissions($id): \IdpluggerPromotion\Model\RolesPermissions200Response
+rolesPermissions($id): \IdpluggerPromotionAdmin\Model\RolesPermissions200Response
 ```
 
 Listar permissões de uma role
@@ -201,10 +201,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -228,7 +228,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesPermissions200Response**](../Model/RolesPermissions200Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesPermissions200Response**](../Model/RolesPermissions200Response.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ try {
 ## `rolesShow()`
 
 ```php
-rolesShow($id): \IdpluggerPromotion\Model\RolesShow200Response
+rolesShow($id): \IdpluggerPromotionAdmin\Model\RolesShow200Response
 ```
 
 Exibir detalhes da role
@@ -259,10 +259,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -286,7 +286,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesShow200Response**](../Model/RolesShow200Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesShow200Response**](../Model/RolesShow200Response.md)
 
 ### Authorization
 
@@ -304,7 +304,7 @@ try {
 ## `rolesStore()`
 
 ```php
-rolesStore($roles_store_request): \IdpluggerPromotion\Model\RolesStore201Response
+rolesStore($roles_store_request): \IdpluggerPromotionAdmin\Model\RolesStore201Response
 ```
 
 Criar role
@@ -317,16 +317,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$roles_store_request = new \IdpluggerPromotion\Model\RolesStoreRequest(); // \IdpluggerPromotion\Model\RolesStoreRequest
+$roles_store_request = new \IdpluggerPromotionAdmin\Model\RolesStoreRequest(); // \IdpluggerPromotionAdmin\Model\RolesStoreRequest
 
 try {
     $result = $apiInstance->rolesStore($roles_store_request);
@@ -340,11 +340,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roles_store_request** | [**\IdpluggerPromotion\Model\RolesStoreRequest**](../Model/RolesStoreRequest.md)|  | [optional] |
+| **roles_store_request** | [**\IdpluggerPromotionAdmin\Model\RolesStoreRequest**](../Model/RolesStoreRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesStore201Response**](../Model/RolesStore201Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesStore201Response**](../Model/RolesStore201Response.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ try {
 ## `rolesUpdate()`
 
 ```php
-rolesUpdate($id, $roles_update_request): \IdpluggerPromotion\Model\RolesUpdate200Response
+rolesUpdate($id, $roles_update_request): \IdpluggerPromotionAdmin\Model\RolesUpdate200Response
 ```
 
 Atualizar role
@@ -375,17 +375,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\RolesApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\RolesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | ID da role
-$roles_update_request = new \IdpluggerPromotion\Model\RolesUpdateRequest(); // \IdpluggerPromotion\Model\RolesUpdateRequest
+$roles_update_request = new \IdpluggerPromotionAdmin\Model\RolesUpdateRequest(); // \IdpluggerPromotionAdmin\Model\RolesUpdateRequest
 
 try {
     $result = $apiInstance->rolesUpdate($id, $roles_update_request);
@@ -400,11 +400,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| ID da role | |
-| **roles_update_request** | [**\IdpluggerPromotion\Model\RolesUpdateRequest**](../Model/RolesUpdateRequest.md)|  | [optional] |
+| **roles_update_request** | [**\IdpluggerPromotionAdmin\Model\RolesUpdateRequest**](../Model/RolesUpdateRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\RolesUpdate200Response**](../Model/RolesUpdate200Response.md)
+[**\IdpluggerPromotionAdmin\Model\RolesUpdate200Response**](../Model/RolesUpdate200Response.md)
 
 ### Authorization
 

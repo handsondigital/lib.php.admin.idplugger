@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Api;
+namespace IdpluggerPromotionAdmin\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotion\ApiException;
-use IdpluggerPromotion\Configuration;
-use IdpluggerPromotion\FormDataProcessor;
-use IdpluggerPromotion\HeaderSelector;
-use IdpluggerPromotion\ObjectSerializer;
+use IdpluggerPromotionAdmin\ApiException;
+use IdpluggerPromotionAdmin\Configuration;
+use IdpluggerPromotionAdmin\FormDataProcessor;
+use IdpluggerPromotionAdmin\HeaderSelector;
+use IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * StepsApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,12 +136,12 @@ class StepsApi
      *
      * Inclui uma Step em um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsAllow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\StepsAllow201Response|\IdpluggerPromotion\Model\StepsAllow409Response
+     * @return \IdpluggerPromotionAdmin\Model\StepsAllow201Response|\IdpluggerPromotionAdmin\Model\StepsAllow409Response
      */
     public function stepsAllow($steps_allow_request = null, string $contentType = self::contentTypes['stepsAllow'][0])
     {
@@ -154,12 +154,12 @@ class StepsApi
      *
      * Inclui uma Step em um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsAllow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\StepsAllow201Response|\IdpluggerPromotion\Model\StepsAllow409Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\StepsAllow201Response|\IdpluggerPromotionAdmin\Model\StepsAllow409Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function stepsAllowWithHttpInfo($steps_allow_request = null, string $contentType = self::contentTypes['stepsAllow'][0])
     {
@@ -191,13 +191,13 @@ class StepsApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\StepsAllow201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsAllow201Response',
                         $request,
                         $response,
                     );
                 case 409:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\StepsAllow409Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsAllow409Response',
                         $request,
                         $response,
                     );
@@ -219,7 +219,7 @@ class StepsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\StepsAllow201Response',
+                '\IdpluggerPromotionAdmin\Model\StepsAllow201Response',
                 $request,
                 $response,
             );
@@ -228,7 +228,7 @@ class StepsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\StepsAllow201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsAllow201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -236,7 +236,7 @@ class StepsApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\StepsAllow409Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsAllow409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -253,7 +253,7 @@ class StepsApi
      *
      * Inclui uma Step em um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsAllow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -274,7 +274,7 @@ class StepsApi
      *
      * Inclui uma Step em um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsAllow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -282,7 +282,7 @@ class StepsApi
      */
     public function stepsAllowAsyncWithHttpInfo($steps_allow_request = null, string $contentType = self::contentTypes['stepsAllow'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\StepsAllow201Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\StepsAllow201Response';
         $request = $this->stepsAllowRequest($steps_allow_request, $contentType);
 
         return $this->client
@@ -324,7 +324,7 @@ class StepsApi
     /**
      * Create request for operation 'stepsAllow'
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsAllow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -417,9 +417,9 @@ class StepsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\StepsIndex201Response
+     * @return \IdpluggerPromotionAdmin\Model\StepsIndex201Response
      */
     public function stepsIndex(string $contentType = self::contentTypes['stepsIndex'][0])
     {
@@ -434,9 +434,9 @@ class StepsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\StepsIndex201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\StepsIndex201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function stepsIndexWithHttpInfo(string $contentType = self::contentTypes['stepsIndex'][0])
     {
@@ -468,7 +468,7 @@ class StepsApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\StepsIndex201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
                         $request,
                         $response,
                     );
@@ -490,7 +490,7 @@ class StepsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\StepsIndex201Response',
+                '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
                 $request,
                 $response,
             );
@@ -499,7 +499,7 @@ class StepsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\StepsIndex201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -543,7 +543,7 @@ class StepsApi
      */
     public function stepsIndexAsyncWithHttpInfo(string $contentType = self::contentTypes['stepsIndex'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\StepsIndex201Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\StepsIndex201Response';
         $request = $this->stepsIndexRequest($contentType);
 
         return $this->client
@@ -667,12 +667,12 @@ class StepsApi
      *
      * Remove uma Step de um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsUnallow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\StepsUnallow201Response|\IdpluggerPromotion\Model\StepsUnallow409Response
+     * @return \IdpluggerPromotionAdmin\Model\StepsUnallow201Response|\IdpluggerPromotionAdmin\Model\StepsUnallow409Response
      */
     public function stepsUnallow($steps_allow_request = null, string $contentType = self::contentTypes['stepsUnallow'][0])
     {
@@ -685,12 +685,12 @@ class StepsApi
      *
      * Remove uma Step de um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsUnallow'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\StepsUnallow201Response|\IdpluggerPromotion\Model\StepsUnallow409Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\StepsUnallow201Response|\IdpluggerPromotionAdmin\Model\StepsUnallow409Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function stepsUnallowWithHttpInfo($steps_allow_request = null, string $contentType = self::contentTypes['stepsUnallow'][0])
     {
@@ -722,13 +722,13 @@ class StepsApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\StepsUnallow201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsUnallow201Response',
                         $request,
                         $response,
                     );
                 case 409:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\StepsUnallow409Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsUnallow409Response',
                         $request,
                         $response,
                     );
@@ -750,7 +750,7 @@ class StepsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\StepsUnallow201Response',
+                '\IdpluggerPromotionAdmin\Model\StepsUnallow201Response',
                 $request,
                 $response,
             );
@@ -759,7 +759,7 @@ class StepsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\StepsUnallow201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsUnallow201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -767,7 +767,7 @@ class StepsApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\StepsUnallow409Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsUnallow409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -784,7 +784,7 @@ class StepsApi
      *
      * Remove uma Step de um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsUnallow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -805,7 +805,7 @@ class StepsApi
      *
      * Remove uma Step de um determinado endpoint
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsUnallow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -813,7 +813,7 @@ class StepsApi
      */
     public function stepsUnallowAsyncWithHttpInfo($steps_allow_request = null, string $contentType = self::contentTypes['stepsUnallow'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\StepsUnallow201Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\StepsUnallow201Response';
         $request = $this->stepsUnallowRequest($steps_allow_request, $contentType);
 
         return $this->client
@@ -855,7 +855,7 @@ class StepsApi
     /**
      * Create request for operation 'stepsUnallow'
      *
-     * @param  \IdpluggerPromotion\Model\StepsAllowRequest|null $steps_allow_request (optional)
+     * @param  \IdpluggerPromotionAdmin\Model\StepsAllowRequest|null $steps_allow_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsUnallow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

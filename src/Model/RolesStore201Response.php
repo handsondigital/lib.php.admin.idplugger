@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotion\Model;
+namespace IdpluggerPromotionAdmin\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotion\ObjectSerializer;
+use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
  * RolesStore201Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotion
+ * @package  IdpluggerPromotionAdmin
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class RolesStore201Response implements ModelInterface, ArrayAccess, \JsonSeriali
         'action' => 'string',
         'result' => 'string',
         'message' => 'string',
-        'role' => '\IdpluggerPromotion\Model\RolesStore201ResponseRole'
+        'role' => '\IdpluggerPromotionAdmin\Model\RolesStore201ResponseRole'
     ];
 
     /**
@@ -394,7 +394,7 @@ class RolesStore201Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets role
      *
-     * @return \IdpluggerPromotion\Model\RolesStore201ResponseRole|null
+     * @return \IdpluggerPromotionAdmin\Model\RolesStore201ResponseRole|null
      */
     public function getRole()
     {
@@ -404,7 +404,7 @@ class RolesStore201Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets role
      *
-     * @param \IdpluggerPromotion\Model\RolesStore201ResponseRole|null $role role
+     * @param \IdpluggerPromotionAdmin\Model\RolesStore201ResponseRole|null $role role
      *
      * @return self
      */

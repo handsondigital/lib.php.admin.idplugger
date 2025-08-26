@@ -1,4 +1,4 @@
-# IdpluggerPromotion\AuthApi
+# IdpluggerPromotionAdmin\AuthApi
 
 All URIs are relative to https://api.idplugger.com, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `adminAuthRequestToken()`
 
 ```php
-adminAuthRequestToken($admin_auth_request_token_request): \IdpluggerPromotion\Model\AdminAuthRequestToken200Response
+adminAuthRequestToken($admin_auth_request_token_request): \IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response
 ```
 
 Solicita envio de token de login por email
@@ -27,12 +27,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new IdpluggerPromotion\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$admin_auth_request_token_request = new \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest(); // \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest
+$admin_auth_request_token_request = new \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest(); // \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest
 
 try {
     $result = $apiInstance->adminAuthRequestToken($admin_auth_request_token_request);
@@ -46,11 +46,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **admin_auth_request_token_request** | [**\IdpluggerPromotion\Model\AdminAuthRequestTokenRequest**](../Model/AdminAuthRequestTokenRequest.md)|  | [optional] |
+| **admin_auth_request_token_request** | [**\IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest**](../Model/AdminAuthRequestTokenRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\AdminAuthRequestToken200Response**](../Model/AdminAuthRequestToken200Response.md)
+[**\IdpluggerPromotionAdmin\Model\AdminAuthRequestToken200Response**](../Model/AdminAuthRequestToken200Response.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ No authorization required
 ## `authLogin()`
 
 ```php
-authLogin($auth_login_request): \IdpluggerPromotion\Model\AuthLogin200Response
+authLogin($auth_login_request): \IdpluggerPromotionAdmin\Model\AuthLogin200Response
 ```
 
 Login na API
@@ -81,12 +81,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new IdpluggerPromotion\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$auth_login_request = new \IdpluggerPromotion\Model\AuthLoginRequest(); // \IdpluggerPromotion\Model\AuthLoginRequest
+$auth_login_request = new \IdpluggerPromotionAdmin\Model\AuthLoginRequest(); // \IdpluggerPromotionAdmin\Model\AuthLoginRequest
 
 try {
     $result = $apiInstance->authLogin($auth_login_request);
@@ -100,11 +100,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **auth_login_request** | [**\IdpluggerPromotion\Model\AuthLoginRequest**](../Model/AuthLoginRequest.md)|  | [optional] |
+| **auth_login_request** | [**\IdpluggerPromotionAdmin\Model\AuthLoginRequest**](../Model/AuthLoginRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\AuthLogin200Response**](../Model/AuthLogin200Response.md)
+[**\IdpluggerPromotionAdmin\Model\AuthLogin200Response**](../Model/AuthLogin200Response.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ No authorization required
 ## `authLoginByToken()`
 
 ```php
-authLoginByToken($auth_login_by_token_request): \IdpluggerPromotion\Model\AuthLoginByToken200Response
+authLoginByToken($auth_login_by_token_request): \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response
 ```
 
 Login na API via e-mail e token
@@ -135,12 +135,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new IdpluggerPromotion\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$auth_login_by_token_request = new \IdpluggerPromotion\Model\AuthLoginByTokenRequest(); // \IdpluggerPromotion\Model\AuthLoginByTokenRequest
+$auth_login_by_token_request = new \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest(); // \IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest
 
 try {
     $result = $apiInstance->authLoginByToken($auth_login_by_token_request);
@@ -154,11 +154,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **auth_login_by_token_request** | [**\IdpluggerPromotion\Model\AuthLoginByTokenRequest**](../Model/AuthLoginByTokenRequest.md)|  | [optional] |
+| **auth_login_by_token_request** | [**\IdpluggerPromotionAdmin\Model\AuthLoginByTokenRequest**](../Model/AuthLoginByTokenRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\AuthLoginByToken200Response**](../Model/AuthLoginByToken200Response.md)
+[**\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response**](../Model/AuthLoginByToken200Response.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ No authorization required
 ## `authMe()`
 
 ```php
-authMe(): \IdpluggerPromotion\Model\AuthMe200Response
+authMe(): \IdpluggerPromotionAdmin\Model\AuthMe200Response
 ```
 
 Dados na API
@@ -189,10 +189,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotion\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\AuthMe200Response**](../Model/AuthMe200Response.md)
+[**\IdpluggerPromotionAdmin\Model\AuthMe200Response**](../Model/AuthMe200Response.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ This endpoint does not need any parameter.
 ## `authRefreshToken()`
 
 ```php
-authRefreshToken($auth_refresh_token_request): \IdpluggerPromotion\Model\AuthLoginByToken200Response
+authRefreshToken($auth_refresh_token_request): \IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response
 ```
 
 Renova o do token de autenticação
@@ -244,12 +244,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new IdpluggerPromotion\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$auth_refresh_token_request = new \IdpluggerPromotion\Model\AuthRefreshTokenRequest(); // \IdpluggerPromotion\Model\AuthRefreshTokenRequest
+$auth_refresh_token_request = new \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest(); // \IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest
 
 try {
     $result = $apiInstance->authRefreshToken($auth_refresh_token_request);
@@ -263,11 +263,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **auth_refresh_token_request** | [**\IdpluggerPromotion\Model\AuthRefreshTokenRequest**](../Model/AuthRefreshTokenRequest.md)|  | [optional] |
+| **auth_refresh_token_request** | [**\IdpluggerPromotionAdmin\Model\AuthRefreshTokenRequest**](../Model/AuthRefreshTokenRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\AuthLoginByToken200Response**](../Model/AuthLoginByToken200Response.md)
+[**\IdpluggerPromotionAdmin\Model\AuthLoginByToken200Response**](../Model/AuthLoginByToken200Response.md)
 
 ### Authorization
 
