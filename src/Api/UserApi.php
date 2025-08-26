@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Api;
+namespace IdpluggerPromotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotionAdmin\ApiException;
-use IdpluggerPromotionAdmin\Configuration;
-use IdpluggerPromotionAdmin\FormDataProcessor;
-use IdpluggerPromotionAdmin\HeaderSelector;
-use IdpluggerPromotionAdmin\ObjectSerializer;
+use IdpluggerPromotion\ApiException;
+use IdpluggerPromotion\Configuration;
+use IdpluggerPromotion\FormDataProcessor;
+use IdpluggerPromotion\HeaderSelector;
+use IdpluggerPromotion\ObjectSerializer;
 
 /**
  * UserApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -78,6 +78,12 @@ class UserApi
             'application/json',
         ],
         'userRegister' => [
+            'application/json',
+        ],
+        'userShow' => [
+            'application/json',
+        ],
+        'userUpdate' => [
             'application/json',
         ],
     ];
@@ -133,12 +139,12 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response
+     * @return \IdpluggerPromotion\Model\UserGrantPermissions200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserGrantPermissions500Response
      */
     public function userGrantPermissions($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
@@ -151,12 +157,12 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\UserGrantPermissions200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserGrantPermissions500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userGrantPermissionsWithHttpInfo($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
@@ -188,19 +194,19 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
+                        '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response',
+                        '\IdpluggerPromotion\Model\UserGrantPermissions500Response',
                         $request,
                         $response,
                     );
@@ -222,7 +228,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
+                '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
                 $request,
                 $response,
             );
@@ -231,7 +237,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response',
+                        '\IdpluggerPromotion\Model\UserGrantPermissions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -239,7 +245,7 @@ class UserApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -247,7 +253,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\UserGrantPermissions500Response',
+                        '\IdpluggerPromotion\Model\UserGrantPermissions500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +270,7 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -285,7 +291,7 @@ class UserApi
      *
      * Dar permissões a um usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -293,7 +299,7 @@ class UserApi
      */
     public function userGrantPermissionsAsyncWithHttpInfo($user_grant_permissions_request = null, string $contentType = self::contentTypes['userGrantPermissions'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200Response';
+        $returnType = '\IdpluggerPromotion\Model\UserGrantPermissions200Response';
         $request = $this->userGrantPermissionsRequest($user_grant_permissions_request, $contentType);
 
         return $this->client
@@ -335,7 +341,7 @@ class UserApi
     /**
      * Create request for operation 'userGrantPermissions'
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserGrantPermissionsRequest|null $user_grant_permissions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userGrantPermissions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -426,12 +432,12 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request user_register_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\UserRegister200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserRegister500Response
+     * @return \IdpluggerPromotion\Model\UserRegister200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserRegister500Response
      */
     public function userRegister($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
@@ -444,12 +450,12 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\UserRegister200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\UserRegister500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\UserRegister200Response|\IdpluggerPromotion\Model\AuthLogin401Response|\IdpluggerPromotion\Model\UserRegister500Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function userRegisterWithHttpInfo($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
@@ -481,19 +487,19 @@ class UserApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
+                        '\IdpluggerPromotion\Model\UserRegister200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\UserRegister500Response',
+                        '\IdpluggerPromotion\Model\UserRegister500Response',
                         $request,
                         $response,
                     );
@@ -515,7 +521,7 @@ class UserApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
+                '\IdpluggerPromotion\Model\UserRegister200Response',
                 $request,
                 $response,
             );
@@ -524,7 +530,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\UserRegister200Response',
+                        '\IdpluggerPromotion\Model\UserRegister200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -532,7 +538,7 @@ class UserApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -540,7 +546,7 @@ class UserApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\UserRegister500Response',
+                        '\IdpluggerPromotion\Model\UserRegister500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +563,7 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -578,7 +584,7 @@ class UserApi
      *
      * Registrar usuário na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -586,7 +592,7 @@ class UserApi
      */
     public function userRegisterAsyncWithHttpInfo($user_register_request = null, string $contentType = self::contentTypes['userRegister'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\UserRegister200Response';
+        $returnType = '\IdpluggerPromotion\Model\UserRegister200Response';
         $request = $this->userRegisterRequest($user_register_request, $contentType);
 
         return $this->client
@@ -628,7 +634,7 @@ class UserApi
     /**
      * Create request for operation 'userRegister'
      *
-     * @param  \IdpluggerPromotionAdmin\Model\UserRegisterRequest|null $user_register_request (optional)
+     * @param  \IdpluggerPromotion\Model\UserRegisterRequest|null $user_register_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userRegister'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -708,6 +714,633 @@ class UserApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation userShow
+     *
+     * Visualizar dados do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser visualizado (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\UserShow200Response|\IdpluggerPromotion\Model\UserShow404Response|\IdpluggerPromotion\Model\UserShow500Response
+     */
+    public function userShow($uuid, string $contentType = self::contentTypes['userShow'][0])
+    {
+        list($response) = $this->userShowWithHttpInfo($uuid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation userShowWithHttpInfo
+     *
+     * Visualizar dados do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser visualizado (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\UserShow200Response|\IdpluggerPromotion\Model\UserShow404Response|\IdpluggerPromotion\Model\UserShow500Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function userShowWithHttpInfo($uuid, string $contentType = self::contentTypes['userShow'][0])
+    {
+        $request = $this->userShowRequest($uuid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserShow200Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserShow404Response',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserShow500Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\UserShow200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserShow200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserShow404Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserShow500Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation userShowAsync
+     *
+     * Visualizar dados do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser visualizado (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userShowAsync($uuid, string $contentType = self::contentTypes['userShow'][0])
+    {
+        return $this->userShowAsyncWithHttpInfo($uuid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation userShowAsyncWithHttpInfo
+     *
+     * Visualizar dados do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser visualizado (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userShowAsyncWithHttpInfo($uuid, string $contentType = self::contentTypes['userShow'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\UserShow200Response';
+        $request = $this->userShowRequest($uuid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'userShow'
+     *
+     * @param  string $uuid UUID do usuário a ser visualizado (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userShow'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function userShowRequest($uuid, string $contentType = self::contentTypes['userShow'][0])
+    {
+
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling userShow'
+            );
+        }
+
+
+        $resourcePath = '/v3/admin/user/{uuid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation userUpdate
+     *
+     * Atualizar nome do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser atualizado (required)
+     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request user_update_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\UserUpdate200Response|\IdpluggerPromotion\Model\UserUpdate404Response|\IdpluggerPromotion\Model\UserUpdate422Response|\IdpluggerPromotion\Model\UserUpdate500Response
+     */
+    public function userUpdate($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
+    {
+        list($response) = $this->userUpdateWithHttpInfo($uuid, $user_update_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation userUpdateWithHttpInfo
+     *
+     * Atualizar nome do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser atualizado (required)
+     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\UserUpdate200Response|\IdpluggerPromotion\Model\UserUpdate404Response|\IdpluggerPromotion\Model\UserUpdate422Response|\IdpluggerPromotion\Model\UserUpdate500Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function userUpdateWithHttpInfo($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
+    {
+        $request = $this->userUpdateRequest($uuid, $user_update_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserUpdate200Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserUpdate404Response',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserUpdate422Response',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\UserUpdate500Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\UserUpdate200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserUpdate200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserUpdate404Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserUpdate422Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\UserUpdate500Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation userUpdateAsync
+     *
+     * Atualizar nome do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser atualizado (required)
+     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userUpdateAsync($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
+    {
+        return $this->userUpdateAsyncWithHttpInfo($uuid, $user_update_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation userUpdateAsyncWithHttpInfo
+     *
+     * Atualizar nome do usuário na API
+     *
+     * @param  string $uuid UUID do usuário a ser atualizado (required)
+     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userUpdateAsyncWithHttpInfo($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\UserUpdate200Response';
+        $request = $this->userUpdateRequest($uuid, $user_update_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'userUpdate'
+     *
+     * @param  string $uuid UUID do usuário a ser atualizado (required)
+     * @param  \IdpluggerPromotion\Model\UserUpdateRequest|null $user_update_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userUpdate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function userUpdateRequest($uuid, $user_update_request = null, string $contentType = self::contentTypes['userUpdate'][0])
+    {
+
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling userUpdate'
+            );
+        }
+
+
+
+        $resourcePath = '/v3/admin/user/{uuid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($user_update_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($user_update_request));
+            } else {
+                $httpBody = $user_update_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PATCH',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

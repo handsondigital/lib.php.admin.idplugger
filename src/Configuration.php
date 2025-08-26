@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,14 +25,14 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin;
+namespace IdpluggerPromotion;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -429,7 +429,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (IdpluggerPromotionAdmin) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (IdpluggerPromotion) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 3.0.0' . PHP_EOL;

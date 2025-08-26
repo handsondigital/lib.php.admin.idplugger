@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,20 +25,20 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin;
+namespace IdpluggerPromotion;
 
 use ArrayAccess;
 use DateTime;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\StreamInterface;
 use SplFileObject;
-use IdpluggerPromotionAdmin\Model\ModelInterface;
+use IdpluggerPromotion\Model\ModelInterface;
 
 /**
  * FormDataProcessor Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Model;
+namespace IdpluggerPromotion\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotionAdmin\ObjectSerializer;
+use \IdpluggerPromotion\ObjectSerializer;
 
 /**
  * UserGrantPermissions200Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class UserGrantPermissions200Response implements ModelInterface, ArrayAccess, \J
         'action' => 'string',
         'result' => 'string',
         'message' => 'string',
-        'user' => '\IdpluggerPromotionAdmin\Model\UserGrantPermissions200ResponseUserInner[]'
+        'user' => '\IdpluggerPromotion\Model\UserGrantPermissions200ResponseUserInner[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class UserGrantPermissions200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets user
      *
-     * @return \IdpluggerPromotionAdmin\Model\UserGrantPermissions200ResponseUserInner[]|null
+     * @return \IdpluggerPromotion\Model\UserGrantPermissions200ResponseUserInner[]|null
      */
     public function getUser()
     {
@@ -404,7 +404,7 @@ class UserGrantPermissions200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets user
      *
-     * @param \IdpluggerPromotionAdmin\Model\UserGrantPermissions200ResponseUserInner[]|null $user user
+     * @param \IdpluggerPromotion\Model\UserGrantPermissions200ResponseUserInner[]|null $user user
      *
      * @return self
      */

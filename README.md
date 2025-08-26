@@ -141,23 +141,40 @@ All URIs are relative to *https://api.idplugger.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AuthApi* | [**adminAuthRequestToken**](docs/Api/AuthApi.md#adminauthrequesttoken) | **POST** /admin/auth/request-token | Solicita envio de token de login por email
 *AuthApi* | [**authLogin**](docs/Api/AuthApi.md#authlogin) | **POST** /v3/login | Login na API
+*AuthApi* | [**authLoginByToken**](docs/Api/AuthApi.md#authloginbytoken) | **POST** /admin/auth/login | Login na API via e-mail e token
 *AuthApi* | [**authMe**](docs/Api/AuthApi.md#authme) | **GET** /v3/me | Dados na API
+*AuthApi* | [**authRefreshToken**](docs/Api/AuthApi.md#authrefreshtoken) | **POST** /admin/auth/refresh | Renova o do token de autenticação
 *MetricsApi* | [**metrics**](docs/Api/MetricsApi.md#metrics) | **GET** /v3/metrics | Devolve as métricas da promoção
 *PromotionApi* | [**promotionPullConfiguration**](docs/Api/PromotionApi.md#promotionpullconfiguration) | **POST** /v3/admin/pullconfiguration | Adicionar/Atualizar configurações de uma promoção ao orquestrador
 *PromotionApi* | [**promotionStart**](docs/Api/PromotionApi.md#promotionstart) | **POST** /v3/admin/promotion/start | Iniciar uma promoção na API
+*RolesApi* | [**rolesAttachPermissions**](docs/Api/RolesApi.md#rolesattachpermissions) | **POST** /v3/admin/roles/{id}/permissions | Atualizar permissões de uma role
+*RolesApi* | [**rolesDestroy**](docs/Api/RolesApi.md#rolesdestroy) | **DELETE** /v3/admin/roles/{id} | Remover role
+*RolesApi* | [**rolesIndex**](docs/Api/RolesApi.md#rolesindex) | **GET** /v3/admin/roles | Listar roles
+*RolesApi* | [**rolesPermissions**](docs/Api/RolesApi.md#rolespermissions) | **GET** /v3/admin/roles/{id}/permissions | Listar permissões de uma role
+*RolesApi* | [**rolesShow**](docs/Api/RolesApi.md#rolesshow) | **GET** /v3/admin/roles/{id} | Exibir detalhes da role
+*RolesApi* | [**rolesStore**](docs/Api/RolesApi.md#rolesstore) | **POST** /v3/admin/roles | Criar role
+*RolesApi* | [**rolesUpdate**](docs/Api/RolesApi.md#rolesupdate) | **PATCH** /v3/admin/roles/{id} | Atualizar role
 *StepsApi* | [**stepsAllow**](docs/Api/StepsApi.md#stepsallow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint
 *StepsApi* | [**stepsIndex**](docs/Api/StepsApi.md#stepsindex) | **GET** /v3/steps | Retorna todas as steps existentes
 *StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/unallow | Remove uma Step de um determinado endpoint
 *UserApi* | [**userGrantPermissions**](docs/Api/UserApi.md#usergrantpermissions) | **POST** /v3/admin/user/grantpermissions | Dar permissões a um usuário na API
 *UserApi* | [**userRegister**](docs/Api/UserApi.md#userregister) | **POST** /v3/admin/user/register | Registrar usuário na API
+*UserApi* | [**userShow**](docs/Api/UserApi.md#usershow) | **GET** /v3/admin/user/{uuid} | Visualizar dados do usuário na API
+*UserApi* | [**userUpdate**](docs/Api/UserApi.md#userupdate) | **PATCH** /v3/admin/user/{uuid} | Atualizar nome do usuário na API
 
 ## Models
 
+- [AdminAuthRequestToken200Response](docs/Model/AdminAuthRequestToken200Response.md)
+- [AdminAuthRequestTokenRequest](docs/Model/AdminAuthRequestTokenRequest.md)
 - [AuthLogin200Response](docs/Model/AuthLogin200Response.md)
 - [AuthLogin401Response](docs/Model/AuthLogin401Response.md)
+- [AuthLoginByToken200Response](docs/Model/AuthLoginByToken200Response.md)
+- [AuthLoginByTokenRequest](docs/Model/AuthLoginByTokenRequest.md)
 - [AuthLoginRequest](docs/Model/AuthLoginRequest.md)
 - [AuthMe200Response](docs/Model/AuthMe200Response.md)
+- [AuthRefreshTokenRequest](docs/Model/AuthRefreshTokenRequest.md)
 - [Metrics200Response](docs/Model/Metrics200Response.md)
 - [Metrics200ResponseUsersInner](docs/Model/Metrics200ResponseUsersInner.md)
 - [Metrics400Response](docs/Model/Metrics400Response.md)
@@ -169,6 +186,23 @@ Class | Method | HTTP request | Description
 - [PromotionStart200ResponseUser](docs/Model/PromotionStart200ResponseUser.md)
 - [PromotionStartRequest](docs/Model/PromotionStartRequest.md)
 - [PromotionStartRequestUser](docs/Model/PromotionStartRequestUser.md)
+- [RolesAttachPermissions200Response](docs/Model/RolesAttachPermissions200Response.md)
+- [RolesAttachPermissions422Response](docs/Model/RolesAttachPermissions422Response.md)
+- [RolesAttachPermissionsRequest](docs/Model/RolesAttachPermissionsRequest.md)
+- [RolesDestroy400Response](docs/Model/RolesDestroy400Response.md)
+- [RolesIndex200Response](docs/Model/RolesIndex200Response.md)
+- [RolesIndex200ResponseRolesInner](docs/Model/RolesIndex200ResponseRolesInner.md)
+- [RolesIndex500Response](docs/Model/RolesIndex500Response.md)
+- [RolesPermissions200Response](docs/Model/RolesPermissions200Response.md)
+- [RolesShow200Response](docs/Model/RolesShow200Response.md)
+- [RolesShow200ResponsePermissionsInner](docs/Model/RolesShow200ResponsePermissionsInner.md)
+- [RolesShow200ResponseRole](docs/Model/RolesShow200ResponseRole.md)
+- [RolesStore201Response](docs/Model/RolesStore201Response.md)
+- [RolesStore201ResponseRole](docs/Model/RolesStore201ResponseRole.md)
+- [RolesStore422Response](docs/Model/RolesStore422Response.md)
+- [RolesStoreRequest](docs/Model/RolesStoreRequest.md)
+- [RolesUpdate200Response](docs/Model/RolesUpdate200Response.md)
+- [RolesUpdateRequest](docs/Model/RolesUpdateRequest.md)
 - [StepsAllow201Response](docs/Model/StepsAllow201Response.md)
 - [StepsAllow409Response](docs/Model/StepsAllow409Response.md)
 - [StepsAllowRequest](docs/Model/StepsAllowRequest.md)
@@ -183,6 +217,16 @@ Class | Method | HTTP request | Description
 - [UserRegister200ResponseUserInner](docs/Model/UserRegister200ResponseUserInner.md)
 - [UserRegister500Response](docs/Model/UserRegister500Response.md)
 - [UserRegisterRequest](docs/Model/UserRegisterRequest.md)
+- [UserShow200Response](docs/Model/UserShow200Response.md)
+- [UserShow200ResponseUser](docs/Model/UserShow200ResponseUser.md)
+- [UserShow404Response](docs/Model/UserShow404Response.md)
+- [UserShow500Response](docs/Model/UserShow500Response.md)
+- [UserUpdate200Response](docs/Model/UserUpdate200Response.md)
+- [UserUpdate200ResponseUser](docs/Model/UserUpdate200ResponseUser.md)
+- [UserUpdate404Response](docs/Model/UserUpdate404Response.md)
+- [UserUpdate422Response](docs/Model/UserUpdate422Response.md)
+- [UserUpdate500Response](docs/Model/UserUpdate500Response.md)
+- [UserUpdateRequest](docs/Model/UserUpdateRequest.md)
 
 ## Authorization
 

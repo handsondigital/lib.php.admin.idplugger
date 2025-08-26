@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin\Model
+ * @package  IdpluggerPromotion\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Model;
+namespace IdpluggerPromotion\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package IdpluggerPromotionAdmin\Model
+ * @package IdpluggerPromotion\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Model;
+namespace IdpluggerPromotion\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotionAdmin\ObjectSerializer;
+use \IdpluggerPromotion\ObjectSerializer;
 
 /**
  * Metrics200Response Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,9 +57,9 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'coupons' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]',
-        'lucky_numbers' => '\IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]'
+        'users' => '\IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]',
+        'coupons' => '\IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]',
+        'lucky_numbers' => '\IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]'
     ];
 
     /**
@@ -306,7 +306,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets users
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null
      */
     public function getUsers()
     {
@@ -316,7 +316,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets users
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $users users
+     * @param \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null $users users
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets coupons
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null
      */
     public function getCoupons()
     {
@@ -343,7 +343,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets coupons
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $coupons coupons
+     * @param \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null $coupons coupons
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets lucky_numbers
      *
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null
+     * @return \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null
      */
     public function getLuckyNumbers()
     {
@@ -370,7 +370,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets lucky_numbers
      *
-     * @param \IdpluggerPromotionAdmin\Model\Metrics200ResponseUsersInner[]|null $lucky_numbers lucky_numbers
+     * @param \IdpluggerPromotion\Model\Metrics200ResponseUsersInner[]|null $lucky_numbers lucky_numbers
      *
      * @return self
      */

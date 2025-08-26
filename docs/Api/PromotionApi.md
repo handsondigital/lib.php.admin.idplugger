@@ -1,4 +1,4 @@
-# IdpluggerPromotionAdmin\PromotionApi
+# IdpluggerPromotion\PromotionApi
 
 All URIs are relative to https://api.idplugger.com, except if the operation defines another base path.
 
@@ -11,7 +11,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `promotionPullConfiguration()`
 
 ```php
-promotionPullConfiguration($promotion_pull_configuration_request): \IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response
+promotionPullConfiguration($promotion_pull_configuration_request): \IdpluggerPromotion\Model\PromotionPullConfiguration200Response
 ```
 
 Adicionar/Atualizar configurações de uma promoção ao orquestrador
@@ -24,16 +24,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\PromotionApi(
+$apiInstance = new IdpluggerPromotion\Api\PromotionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_pull_configuration_request = new \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequest(); // \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequest
+$promotion_pull_configuration_request = new \IdpluggerPromotion\Model\PromotionPullConfigurationRequest(); // \IdpluggerPromotion\Model\PromotionPullConfigurationRequest
 
 try {
     $result = $apiInstance->promotionPullConfiguration($promotion_pull_configuration_request);
@@ -47,11 +47,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_pull_configuration_request** | [**\IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequest**](../Model/PromotionPullConfigurationRequest.md)|  | [optional] |
+| **promotion_pull_configuration_request** | [**\IdpluggerPromotion\Model\PromotionPullConfigurationRequest**](../Model/PromotionPullConfigurationRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\PromotionPullConfiguration200Response**](../Model/PromotionPullConfiguration200Response.md)
+[**\IdpluggerPromotion\Model\PromotionPullConfiguration200Response**](../Model/PromotionPullConfiguration200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ try {
 ## `promotionStart()`
 
 ```php
-promotionStart($promotion_start_request): \IdpluggerPromotionAdmin\Model\PromotionStart200Response
+promotionStart($promotion_start_request): \IdpluggerPromotion\Model\PromotionStart200Response
 ```
 
 Iniciar uma promoção na API
@@ -82,16 +82,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\PromotionApi(
+$apiInstance = new IdpluggerPromotion\Api\PromotionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_start_request = new \IdpluggerPromotionAdmin\Model\PromotionStartRequest(); // \IdpluggerPromotionAdmin\Model\PromotionStartRequest
+$promotion_start_request = new \IdpluggerPromotion\Model\PromotionStartRequest(); // \IdpluggerPromotion\Model\PromotionStartRequest
 
 try {
     $result = $apiInstance->promotionStart($promotion_start_request);
@@ -105,11 +105,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_start_request** | [**\IdpluggerPromotionAdmin\Model\PromotionStartRequest**](../Model/PromotionStartRequest.md)|  | [optional] |
+| **promotion_start_request** | [**\IdpluggerPromotion\Model\PromotionStartRequest**](../Model/PromotionStartRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\PromotionStart200Response**](../Model/PromotionStart200Response.md)
+[**\IdpluggerPromotion\Model\PromotionStart200Response**](../Model/PromotionStart200Response.md)
 
 ### Authorization
 

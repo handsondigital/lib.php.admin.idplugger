@@ -1,4 +1,4 @@
-# IdpluggerPromotionAdmin\StepsApi
+# IdpluggerPromotion\StepsApi
 
 All URIs are relative to https://api.idplugger.com, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `stepsAllow()`
 
 ```php
-stepsAllow($steps_allow_request): \IdpluggerPromotionAdmin\Model\StepsAllow201Response
+stepsAllow($steps_allow_request): \IdpluggerPromotion\Model\StepsAllow201Response
 ```
 
 Inclui uma Step em um determinado endpoint
@@ -25,16 +25,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\StepsApi(
+$apiInstance = new IdpluggerPromotion\Api\StepsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$steps_allow_request = new \IdpluggerPromotionAdmin\Model\StepsAllowRequest(); // \IdpluggerPromotionAdmin\Model\StepsAllowRequest
+$steps_allow_request = new \IdpluggerPromotion\Model\StepsAllowRequest(); // \IdpluggerPromotion\Model\StepsAllowRequest
 
 try {
     $result = $apiInstance->stepsAllow($steps_allow_request);
@@ -48,11 +48,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **steps_allow_request** | [**\IdpluggerPromotionAdmin\Model\StepsAllowRequest**](../Model/StepsAllowRequest.md)|  | [optional] |
+| **steps_allow_request** | [**\IdpluggerPromotion\Model\StepsAllowRequest**](../Model/StepsAllowRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\StepsAllow201Response**](../Model/StepsAllow201Response.md)
+[**\IdpluggerPromotion\Model\StepsAllow201Response**](../Model/StepsAllow201Response.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ try {
 ## `stepsIndex()`
 
 ```php
-stepsIndex(): \IdpluggerPromotionAdmin\Model\StepsIndex201Response
+stepsIndex(): \IdpluggerPromotion\Model\StepsIndex201Response
 ```
 
 Retorna todas as steps existentes
@@ -83,10 +83,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\StepsApi(
+$apiInstance = new IdpluggerPromotion\Api\StepsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\StepsIndex201Response**](../Model/StepsIndex201Response.md)
+[**\IdpluggerPromotion\Model\StepsIndex201Response**](../Model/StepsIndex201Response.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 ## `stepsUnallow()`
 
 ```php
-stepsUnallow($steps_allow_request): \IdpluggerPromotionAdmin\Model\StepsUnallow201Response
+stepsUnallow($steps_allow_request): \IdpluggerPromotion\Model\StepsUnallow201Response
 ```
 
 Remove uma Step de um determinado endpoint
@@ -138,16 +138,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer (JWT) authorization: bearerAuth
-$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\StepsApi(
+$apiInstance = new IdpluggerPromotion\Api\StepsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$steps_allow_request = new \IdpluggerPromotionAdmin\Model\StepsAllowRequest(); // \IdpluggerPromotionAdmin\Model\StepsAllowRequest
+$steps_allow_request = new \IdpluggerPromotion\Model\StepsAllowRequest(); // \IdpluggerPromotion\Model\StepsAllowRequest
 
 try {
     $result = $apiInstance->stepsUnallow($steps_allow_request);
@@ -161,11 +161,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **steps_allow_request** | [**\IdpluggerPromotionAdmin\Model\StepsAllowRequest**](../Model/StepsAllowRequest.md)|  | [optional] |
+| **steps_allow_request** | [**\IdpluggerPromotion\Model\StepsAllowRequest**](../Model/StepsAllowRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\StepsUnallow201Response**](../Model/StepsUnallow201Response.md)
+[**\IdpluggerPromotion\Model\StepsUnallow201Response**](../Model/StepsUnallow201Response.md)
 
 ### Authorization
 

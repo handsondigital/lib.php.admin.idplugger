@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Model;
+namespace IdpluggerPromotion\Model;
 
 use \ArrayAccess;
-use \IdpluggerPromotionAdmin\ObjectSerializer;
+use \IdpluggerPromotion\ObjectSerializer;
 
 /**
  * PromotionPullConfigurationRequest Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class PromotionPullConfigurationRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'db' => '\IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb'
+        'db' => '\IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb'
     ];
 
     /**
@@ -292,7 +292,7 @@ class PromotionPullConfigurationRequest implements ModelInterface, ArrayAccess, 
     /**
      * Gets db
      *
-     * @return \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null
+     * @return \IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb|null
      */
     public function getDb()
     {
@@ -302,7 +302,7 @@ class PromotionPullConfigurationRequest implements ModelInterface, ArrayAccess, 
     /**
      * Sets db
      *
-     * @param \IdpluggerPromotionAdmin\Model\PromotionPullConfigurationRequestDb|null $db db
+     * @param \IdpluggerPromotion\Model\PromotionPullConfigurationRequestDb|null $db db
      *
      * @return self
      */

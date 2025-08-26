@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Api;
+namespace IdpluggerPromotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotionAdmin\ApiException;
-use IdpluggerPromotionAdmin\Configuration;
-use IdpluggerPromotionAdmin\FormDataProcessor;
-use IdpluggerPromotionAdmin\HeaderSelector;
-use IdpluggerPromotionAdmin\ObjectSerializer;
+use IdpluggerPromotion\ApiException;
+use IdpluggerPromotion\Configuration;
+use IdpluggerPromotion\FormDataProcessor;
+use IdpluggerPromotion\HeaderSelector;
+use IdpluggerPromotion\ObjectSerializer;
 
 /**
  * MetricsApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -138,9 +138,9 @@ class MetricsApi
      * @param  string|null $resolution Resolução das métricas. Exemplo: &#x60;minute&#x60;, &#x60;hour&#x60;, &#x60;day&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['metrics'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\Metrics200Response|\IdpluggerPromotionAdmin\Model\Metrics400Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
+     * @return \IdpluggerPromotion\Model\Metrics200Response|\IdpluggerPromotion\Model\Metrics400Response|\IdpluggerPromotion\Model\AuthLogin401Response
      */
     public function metrics($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
@@ -161,9 +161,9 @@ class MetricsApi
      * @param  string|null $resolution Resolução das métricas. Exemplo: &#x60;minute&#x60;, &#x60;hour&#x60;, &#x60;day&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['metrics'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\Metrics200Response|\IdpluggerPromotionAdmin\Model\Metrics400Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\Metrics200Response|\IdpluggerPromotion\Model\Metrics400Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function metricsWithHttpInfo($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
@@ -195,19 +195,19 @@ class MetricsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\Metrics200Response',
+                        '\IdpluggerPromotion\Model\Metrics200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\Metrics400Response',
+                        '\IdpluggerPromotion\Model\Metrics400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -229,7 +229,7 @@ class MetricsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\Metrics200Response',
+                '\IdpluggerPromotion\Model\Metrics200Response',
                 $request,
                 $response,
             );
@@ -238,7 +238,7 @@ class MetricsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\Metrics200Response',
+                        '\IdpluggerPromotion\Model\Metrics200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,7 +246,7 @@ class MetricsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\Metrics400Response',
+                        '\IdpluggerPromotion\Model\Metrics400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -254,7 +254,7 @@ class MetricsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -310,7 +310,7 @@ class MetricsApi
      */
     public function metricsAsyncWithHttpInfo($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\Metrics200Response';
+        $returnType = '\IdpluggerPromotion\Model\Metrics200Response';
         $request = $this->metricsRequest($promotion_id, $keys, $start_date, $end_date, $limit, $resolution, $contentType);
 
         return $this->client

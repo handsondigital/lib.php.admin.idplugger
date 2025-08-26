@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdpluggerPromotionAdmin\Api;
+namespace IdpluggerPromotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdpluggerPromotionAdmin\ApiException;
-use IdpluggerPromotionAdmin\Configuration;
-use IdpluggerPromotionAdmin\FormDataProcessor;
-use IdpluggerPromotionAdmin\HeaderSelector;
-use IdpluggerPromotionAdmin\ObjectSerializer;
+use IdpluggerPromotion\ApiException;
+use IdpluggerPromotion\Configuration;
+use IdpluggerPromotion\FormDataProcessor;
+use IdpluggerPromotion\HeaderSelector;
+use IdpluggerPromotion\ObjectSerializer;
 
 /**
  * AuthApi Class Doc Comment
  *
  * @category Class
- * @package  IdpluggerPromotionAdmin
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -74,10 +74,19 @@ class AuthApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'adminAuthRequestToken' => [
+            'application/json',
+        ],
         'authLogin' => [
             'application/json',
         ],
+        'authLoginByToken' => [
+            'application/json',
+        ],
         'authMe' => [
+            'application/json',
+        ],
+        'authRefreshToken' => [
             'application/json',
         ],
     ];
@@ -129,16 +138,291 @@ class AuthApi
     }
 
     /**
+     * Operation adminAuthRequestToken
+     *
+     * Solicita envio de token de login por email
+     *
+     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request admin_auth_request_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\AdminAuthRequestToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     */
+    public function adminAuthRequestToken($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
+    {
+        list($response) = $this->adminAuthRequestTokenWithHttpInfo($admin_auth_request_token_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation adminAuthRequestTokenWithHttpInfo
+     *
+     * Solicita envio de token de login por email
+     *
+     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\AdminAuthRequestToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function adminAuthRequestTokenWithHttpInfo($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
+    {
+        $request = $this->adminAuthRequestTokenRequest($admin_auth_request_token_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation adminAuthRequestTokenAsync
+     *
+     * Solicita envio de token de login por email
+     *
+     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminAuthRequestTokenAsync($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
+    {
+        return $this->adminAuthRequestTokenAsyncWithHttpInfo($admin_auth_request_token_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation adminAuthRequestTokenAsyncWithHttpInfo
+     *
+     * Solicita envio de token de login por email
+     *
+     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminAuthRequestTokenAsyncWithHttpInfo($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\AdminAuthRequestToken200Response';
+        $request = $this->adminAuthRequestTokenRequest($admin_auth_request_token_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'adminAuthRequestToken'
+     *
+     * @param  \IdpluggerPromotion\Model\AdminAuthRequestTokenRequest|null $admin_auth_request_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminAuthRequestToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function adminAuthRequestTokenRequest($admin_auth_request_token_request = null, string $contentType = self::contentTypes['adminAuthRequestToken'][0])
+    {
+
+
+
+        $resourcePath = '/admin/auth/request-token';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($admin_auth_request_token_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($admin_auth_request_token_request));
+            } else {
+                $httpBody = $admin_auth_request_token_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation authLogin
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request auth_login_request (optional)
+     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\AuthLogin200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
+     * @return \IdpluggerPromotion\Model\AuthLogin200Response|\IdpluggerPromotion\Model\AuthLogin401Response
      */
     public function authLogin($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
@@ -151,12 +435,12 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\AuthLogin200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\AuthLogin200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authLoginWithHttpInfo($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
@@ -188,13 +472,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
+                        '\IdpluggerPromotion\Model\AuthLogin200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -216,7 +500,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
+                '\IdpluggerPromotion\Model\AuthLogin200Response',
                 $request,
                 $response,
             );
@@ -225,7 +509,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin200Response',
+                        '\IdpluggerPromotion\Model\AuthLogin200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -233,7 +517,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +534,7 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -271,7 +555,7 @@ class AuthApi
      *
      * Login na API
      *
-     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -279,7 +563,7 @@ class AuthApi
      */
     public function authLoginAsyncWithHttpInfo($auth_login_request = null, string $contentType = self::contentTypes['authLogin'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\AuthLogin200Response';
+        $returnType = '\IdpluggerPromotion\Model\AuthLogin200Response';
         $request = $this->authLoginRequest($auth_login_request, $contentType);
 
         return $this->client
@@ -321,7 +605,7 @@ class AuthApi
     /**
      * Create request for operation 'authLogin'
      *
-     * @param  \IdpluggerPromotionAdmin\Model\AuthLoginRequest|null $auth_login_request (optional)
+     * @param  \IdpluggerPromotion\Model\AuthLoginRequest|null $auth_login_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLogin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -404,15 +688,290 @@ class AuthApi
     }
 
     /**
+     * Operation authLoginByToken
+     *
+     * Login na API via e-mail e token
+     *
+     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request auth_login_by_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     */
+    public function authLoginByToken($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
+    {
+        list($response) = $this->authLoginByTokenWithHttpInfo($auth_login_by_token_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation authLoginByTokenWithHttpInfo
+     *
+     * Login na API via e-mail e token
+     *
+     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function authLoginByTokenWithHttpInfo($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
+    {
+        $request = $this->authLoginByTokenRequest($auth_login_by_token_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation authLoginByTokenAsync
+     *
+     * Login na API via e-mail e token
+     *
+     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function authLoginByTokenAsync($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
+    {
+        return $this->authLoginByTokenAsyncWithHttpInfo($auth_login_by_token_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation authLoginByTokenAsyncWithHttpInfo
+     *
+     * Login na API via e-mail e token
+     *
+     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function authLoginByTokenAsyncWithHttpInfo($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\AuthLoginByToken200Response';
+        $request = $this->authLoginByTokenRequest($auth_login_by_token_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'authLoginByToken'
+     *
+     * @param  \IdpluggerPromotion\Model\AuthLoginByTokenRequest|null $auth_login_by_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authLoginByToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function authLoginByTokenRequest($auth_login_by_token_request = null, string $contentType = self::contentTypes['authLoginByToken'][0])
+    {
+
+
+
+        $resourcePath = '/admin/auth/login';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($auth_login_by_token_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($auth_login_by_token_request));
+            } else {
+                $httpBody = $auth_login_by_token_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation authMe
      *
      * Dados na API
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authMe'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\AuthMe200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response
+     * @return \IdpluggerPromotion\Model\AuthMe200Response|\IdpluggerPromotion\Model\AuthLogin401Response
      */
     public function authMe(string $contentType = self::contentTypes['authMe'][0])
     {
@@ -427,9 +986,9 @@ class AuthApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authMe'] to see the possible values for this operation
      *
-     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\AuthMe200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\AuthMe200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authMeWithHttpInfo(string $contentType = self::contentTypes['authMe'][0])
     {
@@ -461,13 +1020,13 @@ class AuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
+                        '\IdpluggerPromotion\Model\AuthMe200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $request,
                         $response,
                     );
@@ -489,7 +1048,7 @@ class AuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
+                '\IdpluggerPromotion\Model\AuthMe200Response',
                 $request,
                 $response,
             );
@@ -498,7 +1057,7 @@ class AuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthMe200Response',
+                        '\IdpluggerPromotion\Model\AuthMe200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -506,7 +1065,7 @@ class AuthApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\AuthLogin401Response',
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -550,7 +1109,7 @@ class AuthApi
      */
     public function authMeAsyncWithHttpInfo(string $contentType = self::contentTypes['authMe'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\AuthMe200Response';
+        $returnType = '\IdpluggerPromotion\Model\AuthMe200Response';
         $request = $this->authMeRequest($contentType);
 
         return $this->client
@@ -663,6 +1222,281 @@ class AuthApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation authRefreshToken
+     *
+     * Renova o do token de autenticação
+     *
+     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request auth_refresh_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response
+     */
+    public function authRefreshToken($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
+    {
+        list($response) = $this->authRefreshTokenWithHttpInfo($auth_refresh_token_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation authRefreshTokenWithHttpInfo
+     *
+     * Renova o do token de autenticação
+     *
+     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\AuthLoginByToken200Response|\IdpluggerPromotion\Model\AuthLogin401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function authRefreshTokenWithHttpInfo($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
+    {
+        $request = $this->authRefreshTokenRequest($auth_refresh_token_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AuthLoginByToken200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\AuthLogin401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation authRefreshTokenAsync
+     *
+     * Renova o do token de autenticação
+     *
+     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function authRefreshTokenAsync($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
+    {
+        return $this->authRefreshTokenAsyncWithHttpInfo($auth_refresh_token_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation authRefreshTokenAsyncWithHttpInfo
+     *
+     * Renova o do token de autenticação
+     *
+     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function authRefreshTokenAsyncWithHttpInfo($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\AuthLoginByToken200Response';
+        $request = $this->authRefreshTokenRequest($auth_refresh_token_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'authRefreshToken'
+     *
+     * @param  \IdpluggerPromotion\Model\AuthRefreshTokenRequest|null $auth_refresh_token_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authRefreshToken'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function authRefreshTokenRequest($auth_refresh_token_request = null, string $contentType = self::contentTypes['authRefreshToken'][0])
+    {
+
+
+
+        $resourcePath = '/admin/auth/refresh';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($auth_refresh_token_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($auth_refresh_token_request));
+            } else {
+                $httpBody = $auth_refresh_token_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
