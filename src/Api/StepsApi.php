@@ -420,7 +420,7 @@ class StepsApi
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotionAdmin\Model\StepsIndex201Response
+     * @return \IdpluggerPromotionAdmin\Model\StepsIndex200Response
      */
     public function stepsIndex($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
@@ -438,7 +438,7 @@ class StepsApi
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotionAdmin\Model\StepsIndex201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotionAdmin\Model\StepsIndex200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function stepsIndexWithHttpInfo($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
@@ -468,9 +468,9 @@ class StepsApi
 
 
             switch($statusCode) {
-                case 201:
+                case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsIndex200Response',
                         $request,
                         $response,
                     );
@@ -492,16 +492,16 @@ class StepsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
+                '\IdpluggerPromotionAdmin\Model\StepsIndex200Response',
                 $request,
                 $response,
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotionAdmin\Model\StepsIndex201Response',
+                        '\IdpluggerPromotionAdmin\Model\StepsIndex200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -547,7 +547,7 @@ class StepsApi
      */
     public function stepsIndexAsyncWithHttpInfo($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
-        $returnType = '\IdpluggerPromotionAdmin\Model\StepsIndex201Response';
+        $returnType = '\IdpluggerPromotionAdmin\Model\StepsIndex200Response';
         $request = $this->stepsIndexRequest($promotion_id, $contentType);
 
         return $this->client

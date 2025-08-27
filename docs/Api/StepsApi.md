@@ -70,7 +70,7 @@ try {
 ## `stepsIndex()`
 
 ```php
-stepsIndex($promotion_id): \IdpluggerPromotionAdmin\Model\StepsIndex201Response
+stepsIndex($promotion_id): \IdpluggerPromotionAdmin\Model\StepsIndex200Response
 ```
 
 Retorna todas as steps existentes
@@ -110,7 +110,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotionAdmin\Model\StepsIndex201Response**](../Model/StepsIndex201Response.md)
+[**\IdpluggerPromotionAdmin\Model\StepsIndex200Response**](../Model/StepsIndex200Response.md)
 
 ### Authorization
 

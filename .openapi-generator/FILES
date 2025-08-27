@@ -49,7 +49,8 @@ docs/Model/RolesUpdateRequest.md
 docs/Model/StepsAllow201Response.md
 docs/Model/StepsAllow409Response.md
 docs/Model/StepsAllowRequest.md
-docs/Model/StepsIndex201Response.md
+docs/Model/StepsIndex200Response.md
+docs/Model/StepsIndex200ResponseStepsValueValue.md
 docs/Model/StepsUnallow201Response.md
 docs/Model/StepsUnallow409Response.md
 docs/Model/UserGrantPermissions200Response.md
@@ -123,7 +124,8 @@ src/Model/RolesUpdateRequest.php
 src/Model/StepsAllow201Response.php
 src/Model/StepsAllow409Response.php
 src/Model/StepsAllowRequest.php
-src/Model/StepsIndex201Response.php
+src/Model/StepsIndex200Response.php
+src/Model/StepsIndex200ResponseStepsValueValue.php
 src/Model/StepsUnallow201Response.php
 src/Model/StepsUnallow409Response.php
 src/Model/UserGrantPermissions200Response.php
@@ -145,3 +147,5 @@ src/Model/UserUpdate422Response.php
 src/Model/UserUpdate500Response.php
 src/Model/UserUpdateRequest.php
 src/ObjectSerializer.php
+test/Model/StepsIndex200ResponseStepsValueValueTest.php
+test/Model/StepsIndex200ResponseTest.php
