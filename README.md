@@ -158,7 +158,7 @@ Class | Method | HTTP request | Description
 *RolesApi* | [**rolesUpdate**](docs/Api/RolesApi.md#rolesupdate) | **PATCH** /v3/admin/roles/{id} | Atualizar role
 *StepsApi* | [**stepsAllow**](docs/Api/StepsApi.md#stepsallow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint
 *StepsApi* | [**stepsIndex**](docs/Api/StepsApi.md#stepsindex) | **GET** /v3/steps | Retorna todas as steps existentes
-*StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/unallow | Remove uma Step de um determinado endpoint
+*StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/disallow | Remove uma Step de um determinado endpoint
 *UserApi* | [**userGrantPermissions**](docs/Api/UserApi.md#usergrantpermissions) | **POST** /v3/admin/user/grantpermissions | Dar permissões a um usuário na API
 *UserApi* | [**userRegister**](docs/Api/UserApi.md#userregister) | **POST** /v3/admin/user/register | Registrar usuário na API
 *UserApi* | [**userShow**](docs/Api/UserApi.md#usershow) | **GET** /v3/admin/user/{uuid} | Visualizar dados do usuário na API

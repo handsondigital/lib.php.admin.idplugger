@@ -6,7 +6,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 | ------------- | ------------- | ------------- |
 | [**stepsAllow()**](StepsApi.md#stepsAllow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint |
 | [**stepsIndex()**](StepsApi.md#stepsIndex) | **GET** /v3/steps | Retorna todas as steps existentes |
-| [**stepsUnallow()**](StepsApi.md#stepsUnallow) | **POST** /v3/steps/unallow | Remove uma Step de um determinado endpoint |
+| [**stepsUnallow()**](StepsApi.md#stepsUnallow) | **POST** /v3/steps/disallow | Remove uma Step de um determinado endpoint |
 
 
 ## `stepsAllow()`

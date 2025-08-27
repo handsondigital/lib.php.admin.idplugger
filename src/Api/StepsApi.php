@@ -881,7 +881,7 @@ class StepsApi
 
 
 
-        $resourcePath = '/v3/steps/unallow';
+        $resourcePath = '/v3/steps/disallow';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
