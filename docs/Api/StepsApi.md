@@ -70,7 +70,7 @@ try {
 ## `stepsIndex()`
 
 ```php
-stepsIndex(): \IdpluggerPromotionAdmin\Model\StepsIndex201Response
+stepsIndex($promotion_id): \IdpluggerPromotionAdmin\Model\StepsIndex201Response
 ```
 
 Retorna todas as steps existentes
@@ -92,9 +92,10 @@ $apiInstance = new IdpluggerPromotionAdmin\Api\StepsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$promotion_id = c27beaf2-31c2-4410-8701-a9230632a755; // string | UUID da promoção
 
 try {
-    $result = $apiInstance->stepsIndex();
+    $result = $apiInstance->stepsIndex($promotion_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StepsApi->stepsIndex: ', $e->getMessage(), PHP_EOL;
@@ -103,7 +104,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| UUID da promoção | [optional] |
 
 ### Return type
 

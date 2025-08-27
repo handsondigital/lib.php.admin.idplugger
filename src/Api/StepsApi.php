@@ -415,15 +415,16 @@ class StepsApi
      *
      * Retorna todas as steps existentes
      *
+     * @param  string|null $promotion_id UUID da promoção (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotionAdmin\Model\StepsIndex201Response
      */
-    public function stepsIndex(string $contentType = self::contentTypes['stepsIndex'][0])
+    public function stepsIndex($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
-        list($response) = $this->stepsIndexWithHttpInfo($contentType);
+        list($response) = $this->stepsIndexWithHttpInfo($promotion_id, $contentType);
         return $response;
     }
 
@@ -432,15 +433,16 @@ class StepsApi
      *
      * Retorna todas as steps existentes
      *
+     * @param  string|null $promotion_id UUID da promoção (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotionAdmin\Model\StepsIndex201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function stepsIndexWithHttpInfo(string $contentType = self::contentTypes['stepsIndex'][0])
+    public function stepsIndexWithHttpInfo($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
-        $request = $this->stepsIndexRequest($contentType);
+        $request = $this->stepsIndexRequest($promotion_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -516,14 +518,15 @@ class StepsApi
      *
      * Retorna todas as steps existentes
      *
+     * @param  string|null $promotion_id UUID da promoção (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function stepsIndexAsync(string $contentType = self::contentTypes['stepsIndex'][0])
+    public function stepsIndexAsync($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
-        return $this->stepsIndexAsyncWithHttpInfo($contentType)
+        return $this->stepsIndexAsyncWithHttpInfo($promotion_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -536,15 +539,16 @@ class StepsApi
      *
      * Retorna todas as steps existentes
      *
+     * @param  string|null $promotion_id UUID da promoção (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function stepsIndexAsyncWithHttpInfo(string $contentType = self::contentTypes['stepsIndex'][0])
+    public function stepsIndexAsyncWithHttpInfo($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
         $returnType = '\IdpluggerPromotionAdmin\Model\StepsIndex201Response';
-        $request = $this->stepsIndexRequest($contentType);
+        $request = $this->stepsIndexRequest($promotion_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -585,13 +589,15 @@ class StepsApi
     /**
      * Create request for operation 'stepsIndex'
      *
+     * @param  string|null $promotion_id UUID da promoção (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['stepsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function stepsIndexRequest(string $contentType = self::contentTypes['stepsIndex'][0])
+    public function stepsIndexRequest($promotion_id = null, string $contentType = self::contentTypes['stepsIndex'][0])
     {
+
 
 
         $resourcePath = '/v3/steps';
@@ -601,6 +607,15 @@ class StepsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $promotion_id,
+            'promotion_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
