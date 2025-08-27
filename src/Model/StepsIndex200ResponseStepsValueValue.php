@@ -60,7 +60,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => 'bool',
         'title' => 'string',
         'description' => 'string',
-        'active' => 'bool'
+        'active' => 'bool',
+        'depends_on' => 'string[]',
+        'deprecated' => 'bool'
     ];
 
     /**
@@ -74,7 +76,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => null,
         'title' => null,
         'description' => null,
-        'active' => null
+        'active' => null,
+        'depends_on' => null,
+        'deprecated' => null
     ];
 
     /**
@@ -86,7 +90,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => false,
         'title' => false,
         'description' => false,
-        'active' => false
+        'active' => false,
+        'depends_on' => false,
+        'deprecated' => false
     ];
 
     /**
@@ -178,7 +184,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => 'default',
         'title' => 'title',
         'description' => 'description',
-        'active' => 'active'
+        'active' => 'active',
+        'depends_on' => 'depends_on',
+        'deprecated' => 'deprecated'
     ];
 
     /**
@@ -190,7 +198,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => 'setDefault',
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'active' => 'setActive'
+        'active' => 'setActive',
+        'depends_on' => 'setDependsOn',
+        'deprecated' => 'setDeprecated'
     ];
 
     /**
@@ -202,7 +212,9 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         'default' => 'getDefault',
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'active' => 'getActive'
+        'active' => 'getActive',
+        'depends_on' => 'getDependsOn',
+        'deprecated' => 'getDeprecated'
     ];
 
     /**
@@ -266,6 +278,8 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
+        $this->setIfExists('depends_on', $data ?? [], null);
+        $this->setIfExists('deprecated', $data ?? [], null);
     }
 
     /**
@@ -414,6 +428,60 @@ class StepsIndex200ResponseStepsValueValue implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable active cannot be null');
         }
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets depends_on
+     *
+     * @return string[]|null
+     */
+    public function getDependsOn()
+    {
+        return $this->container['depends_on'];
+    }
+
+    /**
+     * Sets depends_on
+     *
+     * @param string[]|null $depends_on Dependências de outras validações
+     *
+     * @return self
+     */
+    public function setDependsOn($depends_on)
+    {
+        if (is_null($depends_on)) {
+            throw new \InvalidArgumentException('non-nullable depends_on cannot be null');
+        }
+        $this->container['depends_on'] = $depends_on;
+
+        return $this;
+    }
+
+    /**
+     * Gets deprecated
+     *
+     * @return bool|null
+     */
+    public function getDeprecated()
+    {
+        return $this->container['deprecated'];
+    }
+
+    /**
+     * Sets deprecated
+     *
+     * @param bool|null $deprecated Se a validação está obsoleta
+     *
+     * @return self
+     */
+    public function setDeprecated($deprecated)
+    {
+        if (is_null($deprecated)) {
+            throw new \InvalidArgumentException('non-nullable deprecated cannot be null');
+        }
+        $this->container['deprecated'] = $deprecated;
 
         return $this;
     }

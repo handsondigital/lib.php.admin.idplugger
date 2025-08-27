@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **title** | **string** | Título da validação | [optional]
 **description** | **string** | Detalhes da validação | [optional]
 **active** | **bool** | Se a validação está ativa | [optional]
+**depends_on** | **string[]** | Dependências de outras validações | [optional]
+**deprecated** | **bool** | Se a validação está obsoleta | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
