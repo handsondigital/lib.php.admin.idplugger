@@ -174,6 +174,7 @@ Class | Method | HTTP request | Description
 - [AuthLoginByTokenRequest](docs/Model/AuthLoginByTokenRequest.md)
 - [AuthLoginRequest](docs/Model/AuthLoginRequest.md)
 - [AuthMe200Response](docs/Model/AuthMe200Response.md)
+- [AuthMe200ResponsePromotionsInner](docs/Model/AuthMe200ResponsePromotionsInner.md)
 - [AuthRefreshTokenRequest](docs/Model/AuthRefreshTokenRequest.md)
 - [Metrics200Response](docs/Model/Metrics200Response.md)
 - [Metrics200ResponseUsersInner](docs/Model/Metrics200ResponseUsersInner.md)

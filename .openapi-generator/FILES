@@ -17,6 +17,7 @@ docs/Model/AuthLoginByToken200Response.md
 docs/Model/AuthLoginByTokenRequest.md
 docs/Model/AuthLoginRequest.md
 docs/Model/AuthMe200Response.md
+docs/Model/AuthMe200ResponsePromotionsInner.md
 docs/Model/AuthRefreshTokenRequest.md
 docs/Model/Metrics200Response.md
 docs/Model/Metrics200ResponseUsersInner.md
@@ -91,6 +92,7 @@ src/Model/AuthLoginByToken200Response.php
 src/Model/AuthLoginByTokenRequest.php
 src/Model/AuthLoginRequest.php
 src/Model/AuthMe200Response.php
+src/Model/AuthMe200ResponsePromotionsInner.php
 src/Model/AuthRefreshTokenRequest.php
 src/Model/Metrics200Response.php
 src/Model/Metrics200ResponseUsersInner.php
@@ -147,3 +149,4 @@ src/Model/UserUpdate422Response.php
 src/Model/UserUpdate500Response.php
 src/Model/UserUpdateRequest.php
 src/ObjectSerializer.php
+test/Model/AuthMe200ResponsePromotionsInnerTest.php

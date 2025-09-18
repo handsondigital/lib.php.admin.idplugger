@@ -1,6 +1,6 @@
 <?php
 /**
- * AuthMe200Response
+ * AuthMe200ResponsePromotionsInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
- * AuthMe200Response Class Doc Comment
+ * AuthMe200ResponsePromotionsInner Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotionAdmin
@@ -40,7 +40,7 @@ use \IdpluggerPromotionAdmin\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthMe200ResponsePromotionsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'auth_me_200_response';
+    protected static $openAPIModelName = 'auth_me_200_response_promotions_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'uuid' => 'string',
-        'username' => 'string',
-        'email' => 'string',
-        'name' => 'string',
-        'promotions' => '\IdpluggerPromotionAdmin\Model\AuthMe200ResponsePromotionsInner[]'
+        'name' => 'string'
     ];
 
     /**
@@ -73,10 +70,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'uuid' => null,
-        'username' => null,
-        'email' => null,
-        'name' => null,
-        'promotions' => null
+        'name' => null
     ];
 
     /**
@@ -86,10 +80,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'uuid' => false,
-        'username' => false,
-        'email' => false,
-        'name' => false,
-        'promotions' => false
+        'name' => false
     ];
 
     /**
@@ -179,10 +170,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'uuid' => 'uuid',
-        'username' => 'username',
-        'email' => 'email',
-        'name' => 'name',
-        'promotions' => 'promotions'
+        'name' => 'name'
     ];
 
     /**
@@ -192,10 +180,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'uuid' => 'setUuid',
-        'username' => 'setUsername',
-        'email' => 'setEmail',
-        'name' => 'setName',
-        'promotions' => 'setPromotions'
+        'name' => 'setName'
     ];
 
     /**
@@ -205,10 +190,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'uuid' => 'getUuid',
-        'username' => 'getUsername',
-        'email' => 'getEmail',
-        'name' => 'getName',
-        'promotions' => 'getPromotions'
+        'name' => 'getName'
     ];
 
     /**
@@ -269,10 +251,7 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('uuid', $data ?? [], null);
-        $this->setIfExists('username', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('promotions', $data ?? [], null);
     }
 
     /**
@@ -345,60 +324,6 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets username
-     *
-     * @return string|null
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     *
-     * @param string|null $username username
-     *
-     * @return self
-     */
-    public function setUsername($username)
-    {
-        if (is_null($username)) {
-            throw new \InvalidArgumentException('non-nullable username cannot be null');
-        }
-        $this->container['username'] = $username;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
-        }
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string|null
@@ -421,33 +346,6 @@ class AuthMe200Response implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets promotions
-     *
-     * @return \IdpluggerPromotionAdmin\Model\AuthMe200ResponsePromotionsInner[]|null
-     */
-    public function getPromotions()
-    {
-        return $this->container['promotions'];
-    }
-
-    /**
-     * Sets promotions
-     *
-     * @param \IdpluggerPromotionAdmin\Model\AuthMe200ResponsePromotionsInner[]|null $promotions Promoções que o usuário tem acesso
-     *
-     * @return self
-     */
-    public function setPromotions($promotions)
-    {
-        if (is_null($promotions)) {
-            throw new \InvalidArgumentException('non-nullable promotions cannot be null');
-        }
-        $this->container['promotions'] = $promotions;
 
         return $this;
     }
