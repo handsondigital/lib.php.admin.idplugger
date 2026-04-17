@@ -220,7 +220,7 @@ Class | Method | HTTP request | Description
 - [AdminPermissionsByCategory200ResponseContentInner](docs/Model/AdminPermissionsByCategory200ResponseContentInner.md)
 - [AdminPermissionsCategories200Response](docs/Model/AdminPermissionsCategories200Response.md)
 - [AdminPermissionsGrouped200Response](docs/Model/AdminPermissionsGrouped200Response.md)
-- [AdminPermissionsGrouped200ResponseContentValueInner](docs/Model/AdminPermissionsGrouped200ResponseContentValueInner.md)
+- [AdminPermissionsGrouped200ResponsePermissionsValueInner](docs/Model/AdminPermissionsGrouped200ResponsePermissionsValueInner.md)
 - [AdminPermissionsIndex200Response](docs/Model/AdminPermissionsIndex200Response.md)
 - [AdminPermissionsIndex200ResponseContentInner](docs/Model/AdminPermissionsIndex200ResponseContentInner.md)
 - [AdminPermissionsIndex200ResponseContentInnerRolesInner](docs/Model/AdminPermissionsIndex200ResponseContentInnerRolesInner.md)

@@ -86,7 +86,7 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'client_id' => false,
-        'campaign_id' => false,
+        'campaign_id' => true,
         'db' => false,
         'user' => false,
         'permissions' => false
@@ -461,7 +461,14 @@ class PromotionStartRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCampaignId($campaign_id)
     {
         if (is_null($campaign_id)) {
-            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('campaign_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['campaign_id'] = $campaign_id;
 

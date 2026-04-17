@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **last_page_url** | **string** |  | [optional]
 **next_page_url** | **string** |  | [optional]
 **path** | **string** |  | [optional]
-**per_page** | **int** |  | [optional]
+**per_page** | **string** |  | [optional]
 **prev_page_url** | **string** |  | [optional]
 **to** | **int** |  | [optional]
 **total** | **int** |  | [optional]

@@ -59,7 +59,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'entity' => 'string',
         'action' => 'string',
-        'content' => 'array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponseContentValueInner[]>'
+        'permissions' => 'array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponsePermissionsValueInner[]>'
     ];
 
     /**
@@ -72,7 +72,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'entity' => null,
         'action' => null,
-        'content' => null
+        'permissions' => null
     ];
 
     /**
@@ -83,7 +83,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static array $openAPINullables = [
         'entity' => false,
         'action' => false,
-        'content' => false
+        'permissions' => false
     ];
 
     /**
@@ -174,7 +174,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'entity' => 'entity',
         'action' => 'action',
-        'content' => 'content'
+        'permissions' => 'permissions'
     ];
 
     /**
@@ -185,7 +185,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'entity' => 'setEntity',
         'action' => 'setAction',
-        'content' => 'setContent'
+        'permissions' => 'setPermissions'
     ];
 
     /**
@@ -196,7 +196,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'entity' => 'getEntity',
         'action' => 'getAction',
-        'content' => 'getContent'
+        'permissions' => 'getPermissions'
     ];
 
     /**
@@ -258,7 +258,7 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     {
         $this->setIfExists('entity', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
-        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('permissions', $data ?? [], null);
     }
 
     /**
@@ -358,28 +358,28 @@ class AdminPermissionsGrouped200Response implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets content
+     * Gets permissions
      *
-     * @return array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponseContentValueInner[]>|null
+     * @return array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponsePermissionsValueInner[]>|null
      */
-    public function getContent()
+    public function getPermissions()
     {
-        return $this->container['content'];
+        return $this->container['permissions'];
     }
 
     /**
-     * Sets content
+     * Sets permissions
      *
-     * @param array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponseContentValueInner[]>|null $content content
+     * @param array<string,\IdpluggerPromotionAdmin\Model\AdminPermissionsGrouped200ResponsePermissionsValueInner[]>|null $permissions permissions
      *
      * @return self
      */
-    public function setContent($content)
+    public function setPermissions($permissions)
     {
-        if (is_null($content)) {
-            throw new \InvalidArgumentException('non-nullable content cannot be null');
+        if (is_null($permissions)) {
+            throw new \InvalidArgumentException('non-nullable permissions cannot be null');
         }
-        $this->container['content'] = $content;
+        $this->container['permissions'] = $permissions;
 
         return $this;
     }

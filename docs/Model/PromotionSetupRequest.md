@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **monitor_url** | **string** |  | [optional]
 **callback_url** | **string** |  |
 **callback_token** | **string** |  |
+**cpanel_ssh_port** | **int** | Porta SSH do servidor cPanel (padrão: 22200) | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

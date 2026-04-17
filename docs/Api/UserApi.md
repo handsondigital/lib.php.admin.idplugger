@@ -15,7 +15,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 ## `adminUsersList()`
 
 ```php
-adminUsersList($username, $email, $name, $role, $_include, $_per_page, $page): \IdpluggerPromotionAdmin\Model\AdminUsersList200Response
+adminUsersList($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page): \IdpluggerPromotionAdmin\Model\AdminUsersList200Response
 ```
 
 Listar usuários da API
@@ -41,12 +41,13 @@ $username = clientusername; // string | Filtrar por username (busca parcial)
 $email = cliente@example.com; // string | Filtrar por email (busca parcial)
 $name = Client Name; // string | Filtrar por nome (busca parcial)
 $role = admin; // string | Filtrar por role exata
+$promotion_id = c27beaf2-31c2-4410-8701-a9230632a755; // string | Filtrar usuários que possuem ao menos uma permissão na promoção informada
 $_include = permissions; // string | Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions
 $_per_page = 15; // int | Quantidade de registros por página
 $page = 1; // int | Número da página para paginação
 
 try {
-    $result = $apiInstance->adminUsersList($username, $email, $name, $role, $_include, $_per_page, $page);
+    $result = $apiInstance->adminUsersList($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->adminUsersList: ', $e->getMessage(), PHP_EOL;
@@ -61,6 +62,7 @@ try {
 | **email** | **string**| Filtrar por email (busca parcial) | [optional] |
 | **name** | **string**| Filtrar por nome (busca parcial) | [optional] |
 | **role** | **string**| Filtrar por role exata | [optional] |
+| **promotion_id** | **string**| Filtrar usuários que possuem ao menos uma permissão na promoção informada | [optional] |
 | **_include** | **string**| Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions | [optional] |
 | **_per_page** | **int**| Quantidade de registros por página | [optional] |
 | **page** | **int**| Número da página para paginação | [optional] |

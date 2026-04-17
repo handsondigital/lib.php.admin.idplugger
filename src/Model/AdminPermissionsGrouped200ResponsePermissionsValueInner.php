@@ -1,6 +1,6 @@
 <?php
 /**
- * AdminUsersList200ResponsePagination
+ * AdminPermissionsGrouped200ResponsePermissionsValueInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
- * AdminUsersList200ResponsePagination Class Doc Comment
+ * AdminPermissionsGrouped200ResponsePermissionsValueInner Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotionAdmin
@@ -40,7 +40,7 @@ use \IdpluggerPromotionAdmin\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess, \JsonSerializable
+class AdminPermissionsGrouped200ResponsePermissionsValueInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'admin_users_list_200_response_pagination';
+    protected static $openAPIModelName = 'admin_permissions_grouped_200_response_permissions_value_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,17 +57,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_page' => 'int',
-        'first_page_url' => 'string',
-        'from' => 'int',
-        'last_page' => 'int',
-        'last_page_url' => 'string',
-        'next_page_url' => 'string',
-        'path' => 'string',
-        'per_page' => 'string',
-        'prev_page_url' => 'string',
-        'to' => 'int',
-        'total' => 'int'
+        'id' => 'int',
+        'key' => 'string',
+        'title' => 'string',
+        'description' => 'string',
+        'roles' => 'object[]'
     ];
 
     /**
@@ -78,17 +72,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current_page' => null,
-        'first_page_url' => null,
-        'from' => null,
-        'last_page' => null,
-        'last_page_url' => null,
-        'next_page_url' => null,
-        'path' => null,
-        'per_page' => null,
-        'prev_page_url' => null,
-        'to' => null,
-        'total' => null
+        'id' => null,
+        'key' => null,
+        'title' => null,
+        'description' => null,
+        'roles' => null
     ];
 
     /**
@@ -97,17 +85,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'current_page' => false,
-        'first_page_url' => false,
-        'from' => false,
-        'last_page' => false,
-        'last_page_url' => false,
-        'next_page_url' => false,
-        'path' => false,
-        'per_page' => false,
-        'prev_page_url' => true,
-        'to' => false,
-        'total' => false
+        'id' => false,
+        'key' => false,
+        'title' => false,
+        'description' => false,
+        'roles' => false
     ];
 
     /**
@@ -196,17 +178,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'current_page' => 'current_page',
-        'first_page_url' => 'first_page_url',
-        'from' => 'from',
-        'last_page' => 'last_page',
-        'last_page_url' => 'last_page_url',
-        'next_page_url' => 'next_page_url',
-        'path' => 'path',
-        'per_page' => 'per_page',
-        'prev_page_url' => 'prev_page_url',
-        'to' => 'to',
-        'total' => 'total'
+        'id' => 'id',
+        'key' => 'key',
+        'title' => 'title',
+        'description' => 'description',
+        'roles' => 'roles'
     ];
 
     /**
@@ -215,17 +191,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'current_page' => 'setCurrentPage',
-        'first_page_url' => 'setFirstPageUrl',
-        'from' => 'setFrom',
-        'last_page' => 'setLastPage',
-        'last_page_url' => 'setLastPageUrl',
-        'next_page_url' => 'setNextPageUrl',
-        'path' => 'setPath',
-        'per_page' => 'setPerPage',
-        'prev_page_url' => 'setPrevPageUrl',
-        'to' => 'setTo',
-        'total' => 'setTotal'
+        'id' => 'setId',
+        'key' => 'setKey',
+        'title' => 'setTitle',
+        'description' => 'setDescription',
+        'roles' => 'setRoles'
     ];
 
     /**
@@ -234,17 +204,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'current_page' => 'getCurrentPage',
-        'first_page_url' => 'getFirstPageUrl',
-        'from' => 'getFrom',
-        'last_page' => 'getLastPage',
-        'last_page_url' => 'getLastPageUrl',
-        'next_page_url' => 'getNextPageUrl',
-        'path' => 'getPath',
-        'per_page' => 'getPerPage',
-        'prev_page_url' => 'getPrevPageUrl',
-        'to' => 'getTo',
-        'total' => 'getTotal'
+        'id' => 'getId',
+        'key' => 'getKey',
+        'title' => 'getTitle',
+        'description' => 'getDescription',
+        'roles' => 'getRoles'
     ];
 
     /**
@@ -304,17 +268,11 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('current_page', $data ?? [], null);
-        $this->setIfExists('first_page_url', $data ?? [], null);
-        $this->setIfExists('from', $data ?? [], null);
-        $this->setIfExists('last_page', $data ?? [], null);
-        $this->setIfExists('last_page_url', $data ?? [], null);
-        $this->setIfExists('next_page_url', $data ?? [], null);
-        $this->setIfExists('path', $data ?? [], null);
-        $this->setIfExists('per_page', $data ?? [], null);
-        $this->setIfExists('prev_page_url', $data ?? [], null);
-        $this->setIfExists('to', $data ?? [], null);
-        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('key', $data ?? [], null);
+        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('roles', $data ?? [], null);
     }
 
     /**
@@ -360,305 +318,136 @@ class AdminUsersList200ResponsePagination implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets current_page
+     * Gets id
      *
      * @return int|null
      */
-    public function getCurrentPage()
+    public function getId()
     {
-        return $this->container['current_page'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets current_page
+     * Sets id
      *
-     * @param int|null $current_page current_page
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setCurrentPage($current_page)
+    public function setId($id)
     {
-        if (is_null($current_page)) {
-            throw new \InvalidArgumentException('non-nullable current_page cannot be null');
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-        $this->container['current_page'] = $current_page;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets first_page_url
+     * Gets key
      *
      * @return string|null
      */
-    public function getFirstPageUrl()
+    public function getKey()
     {
-        return $this->container['first_page_url'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets first_page_url
+     * Sets key
      *
-     * @param string|null $first_page_url first_page_url
+     * @param string|null $key key
      *
      * @return self
      */
-    public function setFirstPageUrl($first_page_url)
+    public function setKey($key)
     {
-        if (is_null($first_page_url)) {
-            throw new \InvalidArgumentException('non-nullable first_page_url cannot be null');
+        if (is_null($key)) {
+            throw new \InvalidArgumentException('non-nullable key cannot be null');
         }
-        $this->container['first_page_url'] = $first_page_url;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets from
-     *
-     * @return int|null
-     */
-    public function getFrom()
-    {
-        return $this->container['from'];
-    }
-
-    /**
-     * Sets from
-     *
-     * @param int|null $from from
-     *
-     * @return self
-     */
-    public function setFrom($from)
-    {
-        if (is_null($from)) {
-            throw new \InvalidArgumentException('non-nullable from cannot be null');
-        }
-        $this->container['from'] = $from;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_page
-     *
-     * @return int|null
-     */
-    public function getLastPage()
-    {
-        return $this->container['last_page'];
-    }
-
-    /**
-     * Sets last_page
-     *
-     * @param int|null $last_page last_page
-     *
-     * @return self
-     */
-    public function setLastPage($last_page)
-    {
-        if (is_null($last_page)) {
-            throw new \InvalidArgumentException('non-nullable last_page cannot be null');
-        }
-        $this->container['last_page'] = $last_page;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_page_url
+     * Gets title
      *
      * @return string|null
      */
-    public function getLastPageUrl()
+    public function getTitle()
     {
-        return $this->container['last_page_url'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets last_page_url
+     * Sets title
      *
-     * @param string|null $last_page_url last_page_url
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setLastPageUrl($last_page_url)
+    public function setTitle($title)
     {
-        if (is_null($last_page_url)) {
-            throw new \InvalidArgumentException('non-nullable last_page_url cannot be null');
+        if (is_null($title)) {
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
-        $this->container['last_page_url'] = $last_page_url;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets next_page_url
+     * Gets description
      *
      * @return string|null
      */
-    public function getNextPageUrl()
+    public function getDescription()
     {
-        return $this->container['next_page_url'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets next_page_url
+     * Sets description
      *
-     * @param string|null $next_page_url next_page_url
+     * @param string|null $description description
      *
      * @return self
      */
-    public function setNextPageUrl($next_page_url)
+    public function setDescription($description)
     {
-        if (is_null($next_page_url)) {
-            throw new \InvalidArgumentException('non-nullable next_page_url cannot be null');
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-        $this->container['next_page_url'] = $next_page_url;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets path
+     * Gets roles
      *
-     * @return string|null
+     * @return object[]|null
      */
-    public function getPath()
+    public function getRoles()
     {
-        return $this->container['path'];
+        return $this->container['roles'];
     }
 
     /**
-     * Sets path
+     * Sets roles
      *
-     * @param string|null $path path
+     * @param object[]|null $roles roles
      *
      * @return self
      */
-    public function setPath($path)
+    public function setRoles($roles)
     {
-        if (is_null($path)) {
-            throw new \InvalidArgumentException('non-nullable path cannot be null');
+        if (is_null($roles)) {
+            throw new \InvalidArgumentException('non-nullable roles cannot be null');
         }
-        $this->container['path'] = $path;
-
-        return $this;
-    }
-
-    /**
-     * Gets per_page
-     *
-     * @return string|null
-     */
-    public function getPerPage()
-    {
-        return $this->container['per_page'];
-    }
-
-    /**
-     * Sets per_page
-     *
-     * @param string|null $per_page per_page
-     *
-     * @return self
-     */
-    public function setPerPage($per_page)
-    {
-        if (is_null($per_page)) {
-            throw new \InvalidArgumentException('non-nullable per_page cannot be null');
-        }
-        $this->container['per_page'] = $per_page;
-
-        return $this;
-    }
-
-    /**
-     * Gets prev_page_url
-     *
-     * @return string|null
-     */
-    public function getPrevPageUrl()
-    {
-        return $this->container['prev_page_url'];
-    }
-
-    /**
-     * Sets prev_page_url
-     *
-     * @param string|null $prev_page_url prev_page_url
-     *
-     * @return self
-     */
-    public function setPrevPageUrl($prev_page_url)
-    {
-        if (is_null($prev_page_url)) {
-            array_push($this->openAPINullablesSetToNull, 'prev_page_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prev_page_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['prev_page_url'] = $prev_page_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets to
-     *
-     * @return int|null
-     */
-    public function getTo()
-    {
-        return $this->container['to'];
-    }
-
-    /**
-     * Sets to
-     *
-     * @param int|null $to to
-     *
-     * @return self
-     */
-    public function setTo($to)
-    {
-        if (is_null($to)) {
-            throw new \InvalidArgumentException('non-nullable to cannot be null');
-        }
-        $this->container['to'] = $to;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     *
-     * @return int|null
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param int|null $total total
-     *
-     * @return self
-     */
-    public function setTotal($total)
-    {
-        if (is_null($total)) {
-            throw new \InvalidArgumentException('non-nullable total cannot be null');
-        }
-        $this->container['total'] = $total;
+        $this->container['roles'] = $roles;
 
         return $this;
     }

@@ -63,11 +63,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'string',
         'cpanel_username' => 'string',
         'cpanel_ip' => 'string',
-        'cpanel_password' => 'string',
+        'cpanel_api_token' => 'string',
         'db' => '\IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb',
         'monitor_url' => 'string',
         'callback_url' => 'string',
-        'callback_token' => 'string'
+        'callback_token' => 'string',
+        'cpanel_ssh_port' => 'int'
     ];
 
     /**
@@ -84,11 +85,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => null,
         'cpanel_username' => null,
         'cpanel_ip' => null,
-        'cpanel_password' => null,
+        'cpanel_api_token' => null,
         'db' => null,
         'monitor_url' => null,
         'callback_url' => 'uri',
-        'callback_token' => null
+        'callback_token' => null,
+        'cpanel_ssh_port' => null
     ];
 
     /**
@@ -103,11 +105,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => false,
         'cpanel_username' => false,
         'cpanel_ip' => false,
-        'cpanel_password' => false,
+        'cpanel_api_token' => false,
         'db' => false,
         'monitor_url' => false,
         'callback_url' => false,
-        'callback_token' => false
+        'callback_token' => false,
+        'cpanel_ssh_port' => true
     ];
 
     /**
@@ -202,11 +205,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'domain',
         'cpanel_username' => 'cpanel_username',
         'cpanel_ip' => 'cpanel_ip',
-        'cpanel_password' => 'cpanel_password',
+        'cpanel_api_token' => 'cpanel_api_token',
         'db' => 'db',
         'monitor_url' => 'monitor_url',
         'callback_url' => 'callback_url',
-        'callback_token' => 'callback_token'
+        'callback_token' => 'callback_token',
+        'cpanel_ssh_port' => 'cpanel_ssh_port'
     ];
 
     /**
@@ -221,11 +225,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'setDomain',
         'cpanel_username' => 'setCpanelUsername',
         'cpanel_ip' => 'setCpanelIp',
-        'cpanel_password' => 'setCpanelPassword',
+        'cpanel_api_token' => 'setCpanelApiToken',
         'db' => 'setDb',
         'monitor_url' => 'setMonitorUrl',
         'callback_url' => 'setCallbackUrl',
-        'callback_token' => 'setCallbackToken'
+        'callback_token' => 'setCallbackToken',
+        'cpanel_ssh_port' => 'setCpanelSshPort'
     ];
 
     /**
@@ -240,11 +245,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'getDomain',
         'cpanel_username' => 'getCpanelUsername',
         'cpanel_ip' => 'getCpanelIp',
-        'cpanel_password' => 'getCpanelPassword',
+        'cpanel_api_token' => 'getCpanelApiToken',
         'db' => 'getDb',
         'monitor_url' => 'getMonitorUrl',
         'callback_url' => 'getCallbackUrl',
-        'callback_token' => 'getCallbackToken'
+        'callback_token' => 'getCallbackToken',
+        'cpanel_ssh_port' => 'getCpanelSshPort'
     ];
 
     /**
@@ -310,11 +316,12 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('domain', $data ?? [], null);
         $this->setIfExists('cpanel_username', $data ?? [], null);
         $this->setIfExists('cpanel_ip', $data ?? [], null);
-        $this->setIfExists('cpanel_password', $data ?? [], null);
+        $this->setIfExists('cpanel_api_token', $data ?? [], null);
         $this->setIfExists('db', $data ?? [], null);
         $this->setIfExists('monitor_url', $data ?? [], null);
         $this->setIfExists('callback_url', $data ?? [], null);
         $this->setIfExists('callback_token', $data ?? [], null);
+        $this->setIfExists('cpanel_ssh_port', $data ?? [], null);
     }
 
     /**
@@ -359,8 +366,8 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['cpanel_ip'] === null) {
             $invalidProperties[] = "'cpanel_ip' can't be null";
         }
-        if ($this->container['cpanel_password'] === null) {
-            $invalidProperties[] = "'cpanel_password' can't be null";
+        if ($this->container['cpanel_api_token'] === null) {
+            $invalidProperties[] = "'cpanel_api_token' can't be null";
         }
         if ($this->container['db'] === null) {
             $invalidProperties[] = "'db' can't be null";
@@ -556,28 +563,28 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets cpanel_password
+     * Gets cpanel_api_token
      *
      * @return string
      */
-    public function getCpanelPassword()
+    public function getCpanelApiToken()
     {
-        return $this->container['cpanel_password'];
+        return $this->container['cpanel_api_token'];
     }
 
     /**
-     * Sets cpanel_password
+     * Sets cpanel_api_token
      *
-     * @param string $cpanel_password cpanel_password
+     * @param string $cpanel_api_token cpanel_api_token
      *
      * @return self
      */
-    public function setCpanelPassword($cpanel_password)
+    public function setCpanelApiToken($cpanel_api_token)
     {
-        if (is_null($cpanel_password)) {
-            throw new \InvalidArgumentException('non-nullable cpanel_password cannot be null');
+        if (is_null($cpanel_api_token)) {
+            throw new \InvalidArgumentException('non-nullable cpanel_api_token cannot be null');
         }
-        $this->container['cpanel_password'] = $cpanel_password;
+        $this->container['cpanel_api_token'] = $cpanel_api_token;
 
         return $this;
     }
@@ -686,6 +693,40 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable callback_token cannot be null');
         }
         $this->container['callback_token'] = $callback_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets cpanel_ssh_port
+     *
+     * @return int|null
+     */
+    public function getCpanelSshPort()
+    {
+        return $this->container['cpanel_ssh_port'];
+    }
+
+    /**
+     * Sets cpanel_ssh_port
+     *
+     * @param int|null $cpanel_ssh_port Porta SSH do servidor cPanel (padrão: 22200)
+     *
+     * @return self
+     */
+    public function setCpanelSshPort($cpanel_ssh_port)
+    {
+        if (is_null($cpanel_ssh_port)) {
+            array_push($this->openAPINullablesSetToNull, 'cpanel_ssh_port');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cpanel_ssh_port', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cpanel_ssh_port'] = $cpanel_ssh_port;
 
         return $this;
     }

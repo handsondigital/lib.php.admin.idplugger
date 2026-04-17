@@ -149,6 +149,7 @@ class UserApi
      * @param  string|null $email Filtrar por email (busca parcial) (optional)
      * @param  string|null $name Filtrar por nome (busca parcial) (optional)
      * @param  string|null $role Filtrar por role exata (optional)
+     * @param  string|null $promotion_id Filtrar usuários que possuem ao menos uma permissão na promoção informada (optional)
      * @param  string|null $_include Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions (optional)
      * @param  int|null $_per_page Quantidade de registros por página (optional)
      * @param  int|null $page Número da página para paginação (optional)
@@ -158,9 +159,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotionAdmin\Model\AdminUsersList200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\AdminUsersList500Response
      */
-    public function adminUsersList($username = null, $email = null, $name = null, $role = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
+    public function adminUsersList($username = null, $email = null, $name = null, $role = null, $promotion_id = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
     {
-        list($response) = $this->adminUsersListWithHttpInfo($username, $email, $name, $role, $_include, $_per_page, $page, $contentType);
+        list($response) = $this->adminUsersListWithHttpInfo($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page, $contentType);
         return $response;
     }
 
@@ -173,6 +174,7 @@ class UserApi
      * @param  string|null $email Filtrar por email (busca parcial) (optional)
      * @param  string|null $name Filtrar por nome (busca parcial) (optional)
      * @param  string|null $role Filtrar por role exata (optional)
+     * @param  string|null $promotion_id Filtrar usuários que possuem ao menos uma permissão na promoção informada (optional)
      * @param  string|null $_include Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions (optional)
      * @param  int|null $_per_page Quantidade de registros por página (optional)
      * @param  int|null $page Número da página para paginação (optional)
@@ -182,9 +184,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotionAdmin\Model\AdminUsersList200Response|\IdpluggerPromotionAdmin\Model\AuthLogin401Response|\IdpluggerPromotionAdmin\Model\AdminUsersList500Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adminUsersListWithHttpInfo($username = null, $email = null, $name = null, $role = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
+    public function adminUsersListWithHttpInfo($username = null, $email = null, $name = null, $role = null, $promotion_id = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
     {
-        $request = $this->adminUsersListRequest($username, $email, $name, $role, $_include, $_per_page, $page, $contentType);
+        $request = $this->adminUsersListRequest($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -292,6 +294,7 @@ class UserApi
      * @param  string|null $email Filtrar por email (busca parcial) (optional)
      * @param  string|null $name Filtrar por nome (busca parcial) (optional)
      * @param  string|null $role Filtrar por role exata (optional)
+     * @param  string|null $promotion_id Filtrar usuários que possuem ao menos uma permissão na promoção informada (optional)
      * @param  string|null $_include Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions (optional)
      * @param  int|null $_per_page Quantidade de registros por página (optional)
      * @param  int|null $page Número da página para paginação (optional)
@@ -300,9 +303,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUsersListAsync($username = null, $email = null, $name = null, $role = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
+    public function adminUsersListAsync($username = null, $email = null, $name = null, $role = null, $promotion_id = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
     {
-        return $this->adminUsersListAsyncWithHttpInfo($username, $email, $name, $role, $_include, $_per_page, $page, $contentType)
+        return $this->adminUsersListAsyncWithHttpInfo($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -319,6 +322,7 @@ class UserApi
      * @param  string|null $email Filtrar por email (busca parcial) (optional)
      * @param  string|null $name Filtrar por nome (busca parcial) (optional)
      * @param  string|null $role Filtrar por role exata (optional)
+     * @param  string|null $promotion_id Filtrar usuários que possuem ao menos uma permissão na promoção informada (optional)
      * @param  string|null $_include Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions (optional)
      * @param  int|null $_per_page Quantidade de registros por página (optional)
      * @param  int|null $page Número da página para paginação (optional)
@@ -327,10 +331,10 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUsersListAsyncWithHttpInfo($username = null, $email = null, $name = null, $role = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
+    public function adminUsersListAsyncWithHttpInfo($username = null, $email = null, $name = null, $role = null, $promotion_id = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
     {
         $returnType = '\IdpluggerPromotionAdmin\Model\AdminUsersList200Response';
-        $request = $this->adminUsersListRequest($username, $email, $name, $role, $_include, $_per_page, $page, $contentType);
+        $request = $this->adminUsersListRequest($username, $email, $name, $role, $promotion_id, $_include, $_per_page, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -375,6 +379,7 @@ class UserApi
      * @param  string|null $email Filtrar por email (busca parcial) (optional)
      * @param  string|null $name Filtrar por nome (busca parcial) (optional)
      * @param  string|null $role Filtrar por role exata (optional)
+     * @param  string|null $promotion_id Filtrar usuários que possuem ao menos uma permissão na promoção informada (optional)
      * @param  string|null $_include Incluir relacionamentos (separados por vírgula). Valores aceitos: permissions (optional)
      * @param  int|null $_per_page Quantidade de registros por página (optional)
      * @param  int|null $page Número da página para paginação (optional)
@@ -383,8 +388,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function adminUsersListRequest($username = null, $email = null, $name = null, $role = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
+    public function adminUsersListRequest($username = null, $email = null, $name = null, $role = null, $promotion_id = null, $_include = null, $_per_page = null, $page = null, string $contentType = self::contentTypes['adminUsersList'][0])
     {
+
 
 
 
@@ -432,6 +438,15 @@ class UserApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $role,
             'role', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $promotion_id,
+            'promotion_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
