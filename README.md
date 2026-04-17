@@ -70,7 +70,7 @@ Utilize as credenciais do usuário criado para testar se a API está respondendo
 
 # Postman Collection
 
-[<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
+[<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)\\n\\n# Limite de Frequência (Rate Limit)\\n\\nA resposta da **API Idplugger** quando o limite de frequência (rate limit) é atingido é um código de status HTTP **429 (Too Many Requests)**.\\n\\nDetalhes do retorno:\\n\\n1. **Código de Status HTTP**: 429 Too Many Requests.\\n2. **Corpo da Resposta (Body)**: Um JSON contendo a mensagem de erro: `{\"message\": \"Too Many Requests\"}`.\\n3. **Cabeçalhos HTTP (Headers)**:\\n   - `X-RateLimit-Limit`: O limite total permitido.\\n   - `X-RateLimit-Remaining`: Quantidade de requisições restantes.\\n   - `Retry-After`: Segundos a esperar antes da próxima tentativa.\\n   - `X-RateLimit-Reset`: Timestamp de quando o limite será zerado.
 
 
 ## Installation & Usage
@@ -88,11 +88,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/handsondigital/lib.php.admin.idplugger.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "handsondigital/lib.php.admin.idplugger": "*@dev"
   }
 }
 ```
@@ -119,18 +119,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new IdpluggerPromotionAdmin\Api\AuthApi(
+$apiInstance = new IdpluggerPromotionAdmin\Api\ApiLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$admin_auth_request_token_request = new \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest(); // \IdpluggerPromotionAdmin\Model\AdminAuthRequestTokenRequest
+$path = 'path_example'; // string | Filter by request path (partial match)
+$method = 'method_example'; // string | Filter by HTTP method (GET, POST, PUT, DELETE, etc.)
+$status = 56; // int | Filter by HTTP status code
+$username = 'username_example'; // string | Filter by API username
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter by start date (YYYY-MM-DD)
+$to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter by end date (YYYY-MM-DD)
+$page = 1; // int | Page number for pagination
+$_per_page = 15; // int | Number of items per page
 
 try {
-    $result = $apiInstance->adminAuthRequestToken($admin_auth_request_token_request);
+    $result = $apiInstance->adminLogsGet($path, $method, $status, $username, $from, $to, $page, $_per_page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->adminAuthRequestToken: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiLogsApi->adminLogsGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -141,13 +148,42 @@ All URIs are relative to *https://api.idplugger.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ApiLogsApi* | [**adminLogsGet**](docs/Api/ApiLogsApi.md#adminlogsget) | **GET** /admin/logs | List API logs
+*ApiLogsApi* | [**adminLogsIdGet**](docs/Api/ApiLogsApi.md#adminlogsidget) | **GET** /admin/logs/{id} | Get specific API log
 *AuthApi* | [**adminAuthRequestToken**](docs/Api/AuthApi.md#adminauthrequesttoken) | **POST** /admin/auth/request-token | Solicita envio de token de login por email
 *AuthApi* | [**authLogin**](docs/Api/AuthApi.md#authlogin) | **POST** /v3/login | Login na API
 *AuthApi* | [**authLoginByToken**](docs/Api/AuthApi.md#authloginbytoken) | **POST** /admin/auth/login | Login na API via e-mail e token
 *AuthApi* | [**authMe**](docs/Api/AuthApi.md#authme) | **GET** /v3/me | Dados na API
 *AuthApi* | [**authRefreshToken**](docs/Api/AuthApi.md#authrefreshtoken) | **POST** /admin/auth/refresh | Renova o do token de autenticação
+*ConfigsApi* | [**adminPromotionConfigsIndex**](docs/Api/ConfigsApi.md#adminpromotionconfigsindex) | **GET** /v3/admin/promotion/{promotion_id}/configs | Listar configurações de uma promoção
+*ConfigsApi* | [**adminPromotionConfigsShow**](docs/Api/ConfigsApi.md#adminpromotionconfigsshow) | **GET** /v3/admin/promotion/{promotion_id}/configs/{key} | Buscar configuração por chave
+*ConfigsApi* | [**adminPromotionConfigsStore**](docs/Api/ConfigsApi.md#adminpromotionconfigsstore) | **POST** /v3/admin/promotion/{promotion_id}/configs | Criar nova configuração
+*ConfigsApi* | [**adminPromotionConfigsUpdate**](docs/Api/ConfigsApi.md#adminpromotionconfigsupdate) | **PUT** /v3/admin/promotion/{promotion_id}/configs/{key} | Atualizar configuração por chave
+*ConfigsApi* | [**adminPromotionConfigsUpsert**](docs/Api/ConfigsApi.md#adminpromotionconfigsupsert) | **POST** /v3/admin/promotion/{promotion_id}/configs/upsert | Criar ou atualizar configuração por chave (upsert)
+*ConfigsApi* | [**adminPromotionConfigsValidKeys**](docs/Api/ConfigsApi.md#adminpromotionconfigsvalidkeys) | **GET** /v3/admin/promotion/{promotion_id}/configs/valid-keys | Listar chaves válidas do ConfigKeyEnum
+*CustomerServiceApi* | [**adminServiceCustomerApplications**](docs/Api/CustomerServiceApi.md#adminservicecustomerapplications) | **GET** /admin/service/customer/applications/{client_id} | Listar aplicações de um cliente no serviço de atendimento ao cliente
+*CustomerServiceApi* | [**adminServiceCustomerBrands**](docs/Api/CustomerServiceApi.md#adminservicecustomerbrands) | **GET** /admin/service/customer/brands/{client_id} | Listar marcas de um cliente do serviço de atendimento ao cliente
+*CustomerServiceApi* | [**adminServiceCustomerCampaigns**](docs/Api/CustomerServiceApi.md#adminservicecustomercampaigns) | **GET** /admin/service/customer/campaigns/{client_id} | Listar campanhas de um cliente no serviço de atendimento ao cliente
+*CustomerServiceApi* | [**adminServiceCustomerClients**](docs/Api/CustomerServiceApi.md#adminservicecustomerclients) | **GET** /admin/service/customer/clients | Listar clientes do serviço de atendimento ao cliente
+*ErrorReportsApi* | [**adminErrorsGet**](docs/Api/ErrorReportsApi.md#adminerrorsget) | **GET** /admin/errors | List error reports
+*ErrorReportsApi* | [**adminErrorsIdDelete**](docs/Api/ErrorReportsApi.md#adminerrorsiddelete) | **DELETE** /admin/errors/{id} | Delete error report
+*ErrorReportsApi* | [**adminErrorsIdGet**](docs/Api/ErrorReportsApi.md#adminerrorsidget) | **GET** /admin/errors/{id} | Get specific error report
+*ErrorsApi* | [**adminErrorsDestroy**](docs/Api/ErrorsApi.md#adminerrorsdestroy) | **DELETE** /v3/admin/errors/{id} | Deletar relatório de erro
+*ErrorsApi* | [**adminErrorsIndex**](docs/Api/ErrorsApi.md#adminerrorsindex) | **GET** /v3/admin/errors/ | Listar relatórios de erro
+*ErrorsApi* | [**adminErrorsShow**](docs/Api/ErrorsApi.md#adminerrorsshow) | **GET** /v3/admin/errors/{id} | Visualizar erro específico
+*LogsApi* | [**adminLogsIndex**](docs/Api/LogsApi.md#adminlogsindex) | **GET** /v3/admin/logs/ | Listar logs de requisições da API
+*LogsApi* | [**adminLogsShow**](docs/Api/LogsApi.md#adminlogsshow) | **GET** /v3/admin/logs/{id} | Visualizar log específico
 *MetricsApi* | [**metrics**](docs/Api/MetricsApi.md#metrics) | **GET** /v3/metrics | Devolve as métricas da promoção
+*PermissionsApi* | [**adminPermissionsByAction**](docs/Api/PermissionsApi.md#adminpermissionsbyaction) | **GET** /v3/admin/permissions/action | Buscar permissões por ação
+*PermissionsApi* | [**adminPermissionsByCategory**](docs/Api/PermissionsApi.md#adminpermissionsbycategory) | **GET** /v3/admin/permissions/category | Buscar permissões por categoria
+*PermissionsApi* | [**adminPermissionsCategories**](docs/Api/PermissionsApi.md#adminpermissionscategories) | **GET** /v3/admin/permissions/categories | Listar todas as categorias de permissões
+*PermissionsApi* | [**adminPermissionsGrouped**](docs/Api/PermissionsApi.md#adminpermissionsgrouped) | **GET** /v3/admin/permissions/grouped | Listar permissões agrupadas por categoria
+*PermissionsApi* | [**adminPermissionsIndex**](docs/Api/PermissionsApi.md#adminpermissionsindex) | **GET** /v3/admin/permissions/ | Listar todas as permissões
+*PermissionsApi* | [**adminPermissionsShow**](docs/Api/PermissionsApi.md#adminpermissionsshow) | **GET** /v3/admin/permissions/{key} | Buscar permissão específica por chave
+*PromotionApi* | [**adminPromotionCacheClear**](docs/Api/PromotionApi.md#adminpromotioncacheclear) | **POST** /v3/admin/promotion/{promotion_id}/cache/clear | Renova o cache de uma promoção na API
+*PromotionApi* | [**adminPromotionLuckyNumbersReset**](docs/Api/PromotionApi.md#adminpromotionluckynumbersreset) | **POST** /v3/admin/promotion/{promotion_id}/lucky-numbers/reset | Resetar números da sorte de uma promoção
 *PromotionApi* | [**promotionPullConfiguration**](docs/Api/PromotionApi.md#promotionpullconfiguration) | **POST** /v3/admin/pullconfiguration | Adicionar/Atualizar configurações de uma promoção ao orquestrador
+*PromotionApi* | [**promotionSetup**](docs/Api/PromotionApi.md#promotionsetup) | **POST** /v3/admin/promotion/setup | Setup automatizado de ambiente de promoção
 *PromotionApi* | [**promotionStart**](docs/Api/PromotionApi.md#promotionstart) | **POST** /v3/admin/promotion/start | Iniciar uma promoção na API
 *RolesApi* | [**rolesAttachPermissions**](docs/Api/RolesApi.md#rolesattachpermissions) | **POST** /v3/admin/roles/{id}/permissions | Atualizar permissões de uma role
 *RolesApi* | [**rolesDestroy**](docs/Api/RolesApi.md#rolesdestroy) | **DELETE** /v3/admin/roles/{id} | Remover role
@@ -159,8 +195,10 @@ Class | Method | HTTP request | Description
 *StepsApi* | [**stepsAllow**](docs/Api/StepsApi.md#stepsallow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint
 *StepsApi* | [**stepsIndex**](docs/Api/StepsApi.md#stepsindex) | **GET** /v3/steps | Retorna todas as steps existentes
 *StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/disallow | Remove uma Step de um determinado endpoint
+*UserApi* | [**adminUsersList**](docs/Api/UserApi.md#adminuserslist) | **GET** /v3/admin/user | Listar usuários da API
 *UserApi* | [**userGrantPermissions**](docs/Api/UserApi.md#usergrantpermissions) | **POST** /v3/admin/user/grantpermissions | Dar permissões a um usuário na API
 *UserApi* | [**userRegister**](docs/Api/UserApi.md#userregister) | **POST** /v3/admin/user/register | Registrar usuário na API
+*UserApi* | [**userResetPassword**](docs/Api/UserApi.md#userresetpassword) | **POST** /v3/admin/user/resetpassword | Resetar senha do usuário na API
 *UserApi* | [**userShow**](docs/Api/UserApi.md#usershow) | **GET** /v3/admin/user/{uuid} | Visualizar dados do usuário na API
 *UserApi* | [**userUpdate**](docs/Api/UserApi.md#userupdate) | **PATCH** /v3/admin/user/{uuid} | Atualizar nome do usuário na API
 
@@ -168,6 +206,68 @@ Class | Method | HTTP request | Description
 
 - [AdminAuthRequestToken200Response](docs/Model/AdminAuthRequestToken200Response.md)
 - [AdminAuthRequestTokenRequest](docs/Model/AdminAuthRequestTokenRequest.md)
+- [AdminErrorsDestroy200Response](docs/Model/AdminErrorsDestroy200Response.md)
+- [AdminErrorsIndex200Response](docs/Model/AdminErrorsIndex200Response.md)
+- [AdminErrorsIndex200ResponseContentInner](docs/Model/AdminErrorsIndex200ResponseContentInner.md)
+- [AdminErrorsShow200Response](docs/Model/AdminErrorsShow200Response.md)
+- [AdminErrorsShow200ResponseContent](docs/Model/AdminErrorsShow200ResponseContent.md)
+- [AdminLogsIndex200Response](docs/Model/AdminLogsIndex200Response.md)
+- [AdminLogsIndex200ResponseContentInner](docs/Model/AdminLogsIndex200ResponseContentInner.md)
+- [AdminLogsShow200Response](docs/Model/AdminLogsShow200Response.md)
+- [AdminLogsShow200ResponseContent](docs/Model/AdminLogsShow200ResponseContent.md)
+- [AdminPermissionsByAction200Response](docs/Model/AdminPermissionsByAction200Response.md)
+- [AdminPermissionsByCategory200Response](docs/Model/AdminPermissionsByCategory200Response.md)
+- [AdminPermissionsByCategory200ResponseContentInner](docs/Model/AdminPermissionsByCategory200ResponseContentInner.md)
+- [AdminPermissionsCategories200Response](docs/Model/AdminPermissionsCategories200Response.md)
+- [AdminPermissionsGrouped200Response](docs/Model/AdminPermissionsGrouped200Response.md)
+- [AdminPermissionsGrouped200ResponseContentValueInner](docs/Model/AdminPermissionsGrouped200ResponseContentValueInner.md)
+- [AdminPermissionsIndex200Response](docs/Model/AdminPermissionsIndex200Response.md)
+- [AdminPermissionsIndex200ResponseContentInner](docs/Model/AdminPermissionsIndex200ResponseContentInner.md)
+- [AdminPermissionsIndex200ResponseContentInnerRolesInner](docs/Model/AdminPermissionsIndex200ResponseContentInnerRolesInner.md)
+- [AdminPermissionsShow200Response](docs/Model/AdminPermissionsShow200Response.md)
+- [AdminPermissionsShow200ResponseContent](docs/Model/AdminPermissionsShow200ResponseContent.md)
+- [AdminPromotionCacheClear200Response](docs/Model/AdminPromotionCacheClear200Response.md)
+- [AdminPromotionCacheClear200ResponseContent](docs/Model/AdminPromotionCacheClear200ResponseContent.md)
+- [AdminPromotionCacheClear500Response](docs/Model/AdminPromotionCacheClear500Response.md)
+- [AdminPromotionConfigsIndex200Response](docs/Model/AdminPromotionConfigsIndex200Response.md)
+- [AdminPromotionConfigsIndex200ResponseCategoriesInnerValue](docs/Model/AdminPromotionConfigsIndex200ResponseCategoriesInnerValue.md)
+- [AdminPromotionConfigsIndex200ResponseConfigsValue](docs/Model/AdminPromotionConfigsIndex200ResponseConfigsValue.md)
+- [AdminPromotionConfigsIndex200ResponseConfigsValueMetadata](docs/Model/AdminPromotionConfigsIndex200ResponseConfigsValueMetadata.md)
+- [AdminPromotionConfigsIndex500Response](docs/Model/AdminPromotionConfigsIndex500Response.md)
+- [AdminPromotionConfigsShow200Response](docs/Model/AdminPromotionConfigsShow200Response.md)
+- [AdminPromotionConfigsShow200ResponseConfig](docs/Model/AdminPromotionConfigsShow200ResponseConfig.md)
+- [AdminPromotionConfigsShow404Response](docs/Model/AdminPromotionConfigsShow404Response.md)
+- [AdminPromotionConfigsStore201Response](docs/Model/AdminPromotionConfigsStore201Response.md)
+- [AdminPromotionConfigsStoreRequest](docs/Model/AdminPromotionConfigsStoreRequest.md)
+- [AdminPromotionConfigsUpdate200Response](docs/Model/AdminPromotionConfigsUpdate200Response.md)
+- [AdminPromotionConfigsUpdateRequest](docs/Model/AdminPromotionConfigsUpdateRequest.md)
+- [AdminPromotionConfigsUpsert200Response](docs/Model/AdminPromotionConfigsUpsert200Response.md)
+- [AdminPromotionConfigsValidKeys200Response](docs/Model/AdminPromotionConfigsValidKeys200Response.md)
+- [AdminPromotionConfigsValidKeys200ResponseValidKeysInner](docs/Model/AdminPromotionConfigsValidKeys200ResponseValidKeysInner.md)
+- [AdminPromotionLuckyNumbersReset200Response](docs/Model/AdminPromotionLuckyNumbersReset200Response.md)
+- [AdminPromotionLuckyNumbersReset500Response](docs/Model/AdminPromotionLuckyNumbersReset500Response.md)
+- [AdminServiceCustomerApplications200Response](docs/Model/AdminServiceCustomerApplications200Response.md)
+- [AdminServiceCustomerApplications200ResponseContentInner](docs/Model/AdminServiceCustomerApplications200ResponseContentInner.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerClient](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerClient.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerProduct](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerProduct.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerProductOneOf](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerProductOneOf.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerProgrammingInner](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerProgrammingInner.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerPromotionsInner](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerPromotionsInner.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerWorkflowSchedulesInner](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerWorkflowSchedulesInner.md)
+- [AdminServiceCustomerApplications200ResponseContentInnerWorkflowSchedulesInnerWorkflow](docs/Model/AdminServiceCustomerApplications200ResponseContentInnerWorkflowSchedulesInnerWorkflow.md)
+- [AdminServiceCustomerBrands200Response](docs/Model/AdminServiceCustomerBrands200Response.md)
+- [AdminServiceCustomerBrands200ResponseContentInner](docs/Model/AdminServiceCustomerBrands200ResponseContentInner.md)
+- [AdminServiceCustomerCampaigns200Response](docs/Model/AdminServiceCustomerCampaigns200Response.md)
+- [AdminServiceCustomerCampaigns200ResponseContentInner](docs/Model/AdminServiceCustomerCampaigns200ResponseContentInner.md)
+- [AdminServiceCustomerClients200Response](docs/Model/AdminServiceCustomerClients200Response.md)
+- [AdminServiceCustomerClients200ResponseContentInner](docs/Model/AdminServiceCustomerClients200ResponseContentInner.md)
+- [AdminServiceCustomerClients200ResponsePaging](docs/Model/AdminServiceCustomerClients200ResponsePaging.md)
+- [AdminUsersList200Response](docs/Model/AdminUsersList200Response.md)
+- [AdminUsersList200ResponsePagination](docs/Model/AdminUsersList200ResponsePagination.md)
+- [AdminUsersList200ResponseUsersInner](docs/Model/AdminUsersList200ResponseUsersInner.md)
+- [AdminUsersList500Response](docs/Model/AdminUsersList500Response.md)
+- [ApiLog](docs/Model/ApiLog.md)
+- [ApiLogPaginated](docs/Model/ApiLogPaginated.md)
 - [AuthLogin200Response](docs/Model/AuthLogin200Response.md)
 - [AuthLogin401Response](docs/Model/AuthLogin401Response.md)
 - [AuthLoginByToken200Response](docs/Model/AuthLoginByToken200Response.md)
@@ -176,13 +276,23 @@ Class | Method | HTTP request | Description
 - [AuthMe200Response](docs/Model/AuthMe200Response.md)
 - [AuthMe200ResponsePromotionsInner](docs/Model/AuthMe200ResponsePromotionsInner.md)
 - [AuthRefreshTokenRequest](docs/Model/AuthRefreshTokenRequest.md)
+- [ErrorReport](docs/Model/ErrorReport.md)
+- [ErrorReportPaginated](docs/Model/ErrorReportPaginated.md)
+- [ErrorResponse](docs/Model/ErrorResponse.md)
 - [Metrics200Response](docs/Model/Metrics200Response.md)
 - [Metrics200ResponseUsersInner](docs/Model/Metrics200ResponseUsersInner.md)
 - [Metrics400Response](docs/Model/Metrics400Response.md)
+- [Pagination](docs/Model/Pagination.md)
+- [PaginationLinksInner](docs/Model/PaginationLinksInner.md)
 - [PromotionPullConfiguration200Response](docs/Model/PromotionPullConfiguration200Response.md)
 - [PromotionPullConfiguration500Response](docs/Model/PromotionPullConfiguration500Response.md)
 - [PromotionPullConfigurationRequest](docs/Model/PromotionPullConfigurationRequest.md)
 - [PromotionPullConfigurationRequestDb](docs/Model/PromotionPullConfigurationRequestDb.md)
+- [PromotionSetup202Response](docs/Model/PromotionSetup202Response.md)
+- [PromotionSetup422Response](docs/Model/PromotionSetup422Response.md)
+- [PromotionSetup500Response](docs/Model/PromotionSetup500Response.md)
+- [PromotionSetupRequest](docs/Model/PromotionSetupRequest.md)
+- [PromotionSetupRequestDb](docs/Model/PromotionSetupRequestDb.md)
 - [PromotionStart200Response](docs/Model/PromotionStart200Response.md)
 - [PromotionStart200ResponseUser](docs/Model/PromotionStart200ResponseUser.md)
 - [PromotionStartRequest](docs/Model/PromotionStartRequest.md)
@@ -211,14 +321,19 @@ Class | Method | HTTP request | Description
 - [StepsIndex200ResponseStepsValueValue](docs/Model/StepsIndex200ResponseStepsValueValue.md)
 - [StepsUnallow201Response](docs/Model/StepsUnallow201Response.md)
 - [StepsUnallow409Response](docs/Model/StepsUnallow409Response.md)
+- [SuccessResponse](docs/Model/SuccessResponse.md)
 - [UserGrantPermissions200Response](docs/Model/UserGrantPermissions200Response.md)
 - [UserGrantPermissions200ResponseUserInner](docs/Model/UserGrantPermissions200ResponseUserInner.md)
 - [UserGrantPermissions500Response](docs/Model/UserGrantPermissions500Response.md)
 - [UserGrantPermissionsRequest](docs/Model/UserGrantPermissionsRequest.md)
 - [UserRegister200Response](docs/Model/UserRegister200Response.md)
-- [UserRegister200ResponseUserInner](docs/Model/UserRegister200ResponseUserInner.md)
+- [UserRegister200ResponseUser](docs/Model/UserRegister200ResponseUser.md)
 - [UserRegister500Response](docs/Model/UserRegister500Response.md)
 - [UserRegisterRequest](docs/Model/UserRegisterRequest.md)
+- [UserResetPassword200Response](docs/Model/UserResetPassword200Response.md)
+- [UserResetPassword200ResponseUser](docs/Model/UserResetPassword200ResponseUser.md)
+- [UserResetPassword500Response](docs/Model/UserResetPassword500Response.md)
+- [UserResetPasswordRequest](docs/Model/UserResetPasswordRequest.md)
 - [UserShow200Response](docs/Model/UserShow200Response.md)
 - [UserShow200ResponseUser](docs/Model/UserShow200ResponseUser.md)
 - [UserShow404Response](docs/Model/UserShow404Response.md)
