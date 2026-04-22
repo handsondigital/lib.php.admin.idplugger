@@ -317,4 +317,3 @@ src/Model/UserUpdate422Response.php
 src/Model/UserUpdate500Response.php
 src/Model/UserUpdateRequest.php
 src/ObjectSerializer.php
-test/Model/AdminPermissionsGrouped200ResponsePermissionsValueInnerTest.php

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **domain** | **string** |  |
 **cpanel_username** | **string** |  |
 **cpanel_ip** | **string** |  |
-**cpanel_api_token** | **string** |  |
+**cpanel_password** | **string** |  |
 **db** | [**\IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb**](PromotionSetupRequestDb.md) |  |
 **monitor_url** | **string** |  | [optional]
 **callback_url** | **string** |  |

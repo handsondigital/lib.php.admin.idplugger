@@ -63,7 +63,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'string',
         'cpanel_username' => 'string',
         'cpanel_ip' => 'string',
-        'cpanel_api_token' => 'string',
+        'cpanel_password' => 'string',
         'db' => '\IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb',
         'monitor_url' => 'string',
         'callback_url' => 'string',
@@ -85,7 +85,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => null,
         'cpanel_username' => null,
         'cpanel_ip' => null,
-        'cpanel_api_token' => null,
+        'cpanel_password' => null,
         'db' => null,
         'monitor_url' => null,
         'callback_url' => 'uri',
@@ -105,7 +105,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => false,
         'cpanel_username' => false,
         'cpanel_ip' => false,
-        'cpanel_api_token' => false,
+        'cpanel_password' => false,
         'db' => false,
         'monitor_url' => false,
         'callback_url' => false,
@@ -205,7 +205,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'domain',
         'cpanel_username' => 'cpanel_username',
         'cpanel_ip' => 'cpanel_ip',
-        'cpanel_api_token' => 'cpanel_api_token',
+        'cpanel_password' => 'cpanel_password',
         'db' => 'db',
         'monitor_url' => 'monitor_url',
         'callback_url' => 'callback_url',
@@ -225,7 +225,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'setDomain',
         'cpanel_username' => 'setCpanelUsername',
         'cpanel_ip' => 'setCpanelIp',
-        'cpanel_api_token' => 'setCpanelApiToken',
+        'cpanel_password' => 'setCpanelPassword',
         'db' => 'setDb',
         'monitor_url' => 'setMonitorUrl',
         'callback_url' => 'setCallbackUrl',
@@ -245,7 +245,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'domain' => 'getDomain',
         'cpanel_username' => 'getCpanelUsername',
         'cpanel_ip' => 'getCpanelIp',
-        'cpanel_api_token' => 'getCpanelApiToken',
+        'cpanel_password' => 'getCpanelPassword',
         'db' => 'getDb',
         'monitor_url' => 'getMonitorUrl',
         'callback_url' => 'getCallbackUrl',
@@ -316,7 +316,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('domain', $data ?? [], null);
         $this->setIfExists('cpanel_username', $data ?? [], null);
         $this->setIfExists('cpanel_ip', $data ?? [], null);
-        $this->setIfExists('cpanel_api_token', $data ?? [], null);
+        $this->setIfExists('cpanel_password', $data ?? [], null);
         $this->setIfExists('db', $data ?? [], null);
         $this->setIfExists('monitor_url', $data ?? [], null);
         $this->setIfExists('callback_url', $data ?? [], null);
@@ -366,8 +366,8 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['cpanel_ip'] === null) {
             $invalidProperties[] = "'cpanel_ip' can't be null";
         }
-        if ($this->container['cpanel_api_token'] === null) {
-            $invalidProperties[] = "'cpanel_api_token' can't be null";
+        if ($this->container['cpanel_password'] === null) {
+            $invalidProperties[] = "'cpanel_password' can't be null";
         }
         if ($this->container['db'] === null) {
             $invalidProperties[] = "'db' can't be null";
@@ -563,28 +563,28 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets cpanel_api_token
+     * Gets cpanel_password
      *
      * @return string
      */
-    public function getCpanelApiToken()
+    public function getCpanelPassword()
     {
-        return $this->container['cpanel_api_token'];
+        return $this->container['cpanel_password'];
     }
 
     /**
-     * Sets cpanel_api_token
+     * Sets cpanel_password
      *
-     * @param string $cpanel_api_token cpanel_api_token
+     * @param string $cpanel_password cpanel_password
      *
      * @return self
      */
-    public function setCpanelApiToken($cpanel_api_token)
+    public function setCpanelPassword($cpanel_password)
     {
-        if (is_null($cpanel_api_token)) {
-            throw new \InvalidArgumentException('non-nullable cpanel_api_token cannot be null');
+        if (is_null($cpanel_password)) {
+            throw new \InvalidArgumentException('non-nullable cpanel_password cannot be null');
         }
-        $this->container['cpanel_api_token'] = $cpanel_api_token;
+        $this->container['cpanel_password'] = $cpanel_password;
 
         return $this;
     }
