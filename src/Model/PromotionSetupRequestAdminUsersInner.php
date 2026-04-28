@@ -1,6 +1,6 @@
 <?php
 /**
- * PromotionSetupRequest
+ * PromotionSetupRequestAdminUsersInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotionAdmin\ObjectSerializer;
 
 /**
- * PromotionSetupRequest Class Doc Comment
+ * PromotionSetupRequestAdminUsersInner Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotionAdmin
@@ -40,7 +40,7 @@ use \IdpluggerPromotionAdmin\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PromotionSetupRequestAdminUsersInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'promotion_setup_request';
+    protected static $openAPIModelName = 'promotion_setup_request_admin_users_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,19 +57,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'workflow_schedule_id' => 'int',
-        'client_id' => 'int',
-        'campaign_id' => 'int',
-        'domain' => 'string',
-        'cpanel_username' => 'string',
-        'cpanel_ip' => 'string',
-        'cpanel_password' => 'string',
-        'db' => '\IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb',
-        'monitor_url' => 'string',
-        'callback_url' => 'string',
-        'callback_token' => 'string',
-        'cpanel_ssh_port' => 'int',
-        'admin_users' => '\IdpluggerPromotionAdmin\Model\PromotionSetupRequestAdminUsersInner[]'
+        'name' => 'string',
+        'email' => 'string',
+        'username' => 'string'
     ];
 
     /**
@@ -80,19 +70,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'workflow_schedule_id' => null,
-        'client_id' => null,
-        'campaign_id' => null,
-        'domain' => null,
-        'cpanel_username' => null,
-        'cpanel_ip' => null,
-        'cpanel_password' => null,
-        'db' => null,
-        'monitor_url' => null,
-        'callback_url' => 'uri',
-        'callback_token' => null,
-        'cpanel_ssh_port' => null,
-        'admin_users' => null
+        'name' => null,
+        'email' => 'email',
+        'username' => null
     ];
 
     /**
@@ -101,19 +81,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'workflow_schedule_id' => false,
-        'client_id' => false,
-        'campaign_id' => true,
-        'domain' => false,
-        'cpanel_username' => false,
-        'cpanel_ip' => false,
-        'cpanel_password' => false,
-        'db' => false,
-        'monitor_url' => false,
-        'callback_url' => false,
-        'callback_token' => false,
-        'cpanel_ssh_port' => true,
-        'admin_users' => true
+        'name' => false,
+        'email' => false,
+        'username' => false
     ];
 
     /**
@@ -202,19 +172,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'workflow_schedule_id' => 'workflow_schedule_id',
-        'client_id' => 'client_id',
-        'campaign_id' => 'campaign_id',
-        'domain' => 'domain',
-        'cpanel_username' => 'cpanel_username',
-        'cpanel_ip' => 'cpanel_ip',
-        'cpanel_password' => 'cpanel_password',
-        'db' => 'db',
-        'monitor_url' => 'monitor_url',
-        'callback_url' => 'callback_url',
-        'callback_token' => 'callback_token',
-        'cpanel_ssh_port' => 'cpanel_ssh_port',
-        'admin_users' => 'admin_users'
+        'name' => 'name',
+        'email' => 'email',
+        'username' => 'username'
     ];
 
     /**
@@ -223,19 +183,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'workflow_schedule_id' => 'setWorkflowScheduleId',
-        'client_id' => 'setClientId',
-        'campaign_id' => 'setCampaignId',
-        'domain' => 'setDomain',
-        'cpanel_username' => 'setCpanelUsername',
-        'cpanel_ip' => 'setCpanelIp',
-        'cpanel_password' => 'setCpanelPassword',
-        'db' => 'setDb',
-        'monitor_url' => 'setMonitorUrl',
-        'callback_url' => 'setCallbackUrl',
-        'callback_token' => 'setCallbackToken',
-        'cpanel_ssh_port' => 'setCpanelSshPort',
-        'admin_users' => 'setAdminUsers'
+        'name' => 'setName',
+        'email' => 'setEmail',
+        'username' => 'setUsername'
     ];
 
     /**
@@ -244,19 +194,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'workflow_schedule_id' => 'getWorkflowScheduleId',
-        'client_id' => 'getClientId',
-        'campaign_id' => 'getCampaignId',
-        'domain' => 'getDomain',
-        'cpanel_username' => 'getCpanelUsername',
-        'cpanel_ip' => 'getCpanelIp',
-        'cpanel_password' => 'getCpanelPassword',
-        'db' => 'getDb',
-        'monitor_url' => 'getMonitorUrl',
-        'callback_url' => 'getCallbackUrl',
-        'callback_token' => 'getCallbackToken',
-        'cpanel_ssh_port' => 'getCpanelSshPort',
-        'admin_users' => 'getAdminUsers'
+        'name' => 'getName',
+        'email' => 'getEmail',
+        'username' => 'getUsername'
     ];
 
     /**
@@ -316,19 +256,9 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('workflow_schedule_id', $data ?? [], null);
-        $this->setIfExists('client_id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('domain', $data ?? [], null);
-        $this->setIfExists('cpanel_username', $data ?? [], null);
-        $this->setIfExists('cpanel_ip', $data ?? [], null);
-        $this->setIfExists('cpanel_password', $data ?? [], null);
-        $this->setIfExists('db', $data ?? [], null);
-        $this->setIfExists('monitor_url', $data ?? [], null);
-        $this->setIfExists('callback_url', $data ?? [], null);
-        $this->setIfExists('callback_token', $data ?? [], null);
-        $this->setIfExists('cpanel_ssh_port', $data ?? [], null);
-        $this->setIfExists('admin_users', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('username', $data ?? [], null);
     }
 
     /**
@@ -358,32 +288,14 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['workflow_schedule_id'] === null) {
-            $invalidProperties[] = "'workflow_schedule_id' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['client_id'] === null) {
-            $invalidProperties[] = "'client_id' can't be null";
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
         }
-        if ($this->container['domain'] === null) {
-            $invalidProperties[] = "'domain' can't be null";
-        }
-        if ($this->container['cpanel_username'] === null) {
-            $invalidProperties[] = "'cpanel_username' can't be null";
-        }
-        if ($this->container['cpanel_ip'] === null) {
-            $invalidProperties[] = "'cpanel_ip' can't be null";
-        }
-        if ($this->container['cpanel_password'] === null) {
-            $invalidProperties[] = "'cpanel_password' can't be null";
-        }
-        if ($this->container['db'] === null) {
-            $invalidProperties[] = "'db' can't be null";
-        }
-        if ($this->container['callback_url'] === null) {
-            $invalidProperties[] = "'callback_url' can't be null";
-        }
-        if ($this->container['callback_token'] === null) {
-            $invalidProperties[] = "'callback_token' can't be null";
+        if ($this->container['username'] === null) {
+            $invalidProperties[] = "'username' can't be null";
         }
         return $invalidProperties;
     }
@@ -401,373 +313,82 @@ class PromotionSetupRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets workflow_schedule_id
-     *
-     * @return int
-     */
-    public function getWorkflowScheduleId()
-    {
-        return $this->container['workflow_schedule_id'];
-    }
-
-    /**
-     * Sets workflow_schedule_id
-     *
-     * @param int $workflow_schedule_id workflow_schedule_id
-     *
-     * @return self
-     */
-    public function setWorkflowScheduleId($workflow_schedule_id)
-    {
-        if (is_null($workflow_schedule_id)) {
-            throw new \InvalidArgumentException('non-nullable workflow_schedule_id cannot be null');
-        }
-        $this->container['workflow_schedule_id'] = $workflow_schedule_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_id
-     *
-     * @return int
-     */
-    public function getClientId()
-    {
-        return $this->container['client_id'];
-    }
-
-    /**
-     * Sets client_id
-     *
-     * @param int $client_id client_id
-     *
-     * @return self
-     */
-    public function setClientId($client_id)
-    {
-        if (is_null($client_id)) {
-            throw new \InvalidArgumentException('non-nullable client_id cannot be null');
-        }
-        $this->container['client_id'] = $client_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets campaign_id
-     *
-     * @return int|null
-     */
-    public function getCampaignId()
-    {
-        return $this->container['campaign_id'];
-    }
-
-    /**
-     * Sets campaign_id
-     *
-     * @param int|null $campaign_id campaign_id
-     *
-     * @return self
-     */
-    public function setCampaignId($campaign_id)
-    {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['campaign_id'] = $campaign_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain
+     * Gets name
      *
      * @return string
      */
-    public function getDomain()
+    public function getName()
     {
-        return $this->container['domain'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets domain
+     * Sets name
      *
-     * @param string $domain domain
+     * @param string $name name
      *
      * @return self
      */
-    public function setDomain($domain)
+    public function setName($name)
     {
-        if (is_null($domain)) {
-            throw new \InvalidArgumentException('non-nullable domain cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['domain'] = $domain;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets cpanel_username
+     * Gets email
      *
      * @return string
      */
-    public function getCpanelUsername()
+    public function getEmail()
     {
-        return $this->container['cpanel_username'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets cpanel_username
+     * Sets email
      *
-     * @param string $cpanel_username cpanel_username
+     * @param string $email email
      *
      * @return self
      */
-    public function setCpanelUsername($cpanel_username)
+    public function setEmail($email)
     {
-        if (is_null($cpanel_username)) {
-            throw new \InvalidArgumentException('non-nullable cpanel_username cannot be null');
+        if (is_null($email)) {
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        $this->container['cpanel_username'] = $cpanel_username;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets cpanel_ip
+     * Gets username
      *
      * @return string
      */
-    public function getCpanelIp()
+    public function getUsername()
     {
-        return $this->container['cpanel_ip'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets cpanel_ip
+     * Sets username
      *
-     * @param string $cpanel_ip cpanel_ip
+     * @param string $username username
      *
      * @return self
      */
-    public function setCpanelIp($cpanel_ip)
+    public function setUsername($username)
     {
-        if (is_null($cpanel_ip)) {
-            throw new \InvalidArgumentException('non-nullable cpanel_ip cannot be null');
+        if (is_null($username)) {
+            throw new \InvalidArgumentException('non-nullable username cannot be null');
         }
-        $this->container['cpanel_ip'] = $cpanel_ip;
-
-        return $this;
-    }
-
-    /**
-     * Gets cpanel_password
-     *
-     * @return string
-     */
-    public function getCpanelPassword()
-    {
-        return $this->container['cpanel_password'];
-    }
-
-    /**
-     * Sets cpanel_password
-     *
-     * @param string $cpanel_password cpanel_password
-     *
-     * @return self
-     */
-    public function setCpanelPassword($cpanel_password)
-    {
-        if (is_null($cpanel_password)) {
-            throw new \InvalidArgumentException('non-nullable cpanel_password cannot be null');
-        }
-        $this->container['cpanel_password'] = $cpanel_password;
-
-        return $this;
-    }
-
-    /**
-     * Gets db
-     *
-     * @return \IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb
-     */
-    public function getDb()
-    {
-        return $this->container['db'];
-    }
-
-    /**
-     * Sets db
-     *
-     * @param \IdpluggerPromotionAdmin\Model\PromotionSetupRequestDb $db db
-     *
-     * @return self
-     */
-    public function setDb($db)
-    {
-        if (is_null($db)) {
-            throw new \InvalidArgumentException('non-nullable db cannot be null');
-        }
-        $this->container['db'] = $db;
-
-        return $this;
-    }
-
-    /**
-     * Gets monitor_url
-     *
-     * @return string|null
-     */
-    public function getMonitorUrl()
-    {
-        return $this->container['monitor_url'];
-    }
-
-    /**
-     * Sets monitor_url
-     *
-     * @param string|null $monitor_url monitor_url
-     *
-     * @return self
-     */
-    public function setMonitorUrl($monitor_url)
-    {
-        if (is_null($monitor_url)) {
-            throw new \InvalidArgumentException('non-nullable monitor_url cannot be null');
-        }
-        $this->container['monitor_url'] = $monitor_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets callback_url
-     *
-     * @return string
-     */
-    public function getCallbackUrl()
-    {
-        return $this->container['callback_url'];
-    }
-
-    /**
-     * Sets callback_url
-     *
-     * @param string $callback_url callback_url
-     *
-     * @return self
-     */
-    public function setCallbackUrl($callback_url)
-    {
-        if (is_null($callback_url)) {
-            throw new \InvalidArgumentException('non-nullable callback_url cannot be null');
-        }
-        $this->container['callback_url'] = $callback_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets callback_token
-     *
-     * @return string
-     */
-    public function getCallbackToken()
-    {
-        return $this->container['callback_token'];
-    }
-
-    /**
-     * Sets callback_token
-     *
-     * @param string $callback_token callback_token
-     *
-     * @return self
-     */
-    public function setCallbackToken($callback_token)
-    {
-        if (is_null($callback_token)) {
-            throw new \InvalidArgumentException('non-nullable callback_token cannot be null');
-        }
-        $this->container['callback_token'] = $callback_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets cpanel_ssh_port
-     *
-     * @return int|null
-     */
-    public function getCpanelSshPort()
-    {
-        return $this->container['cpanel_ssh_port'];
-    }
-
-    /**
-     * Sets cpanel_ssh_port
-     *
-     * @param int|null $cpanel_ssh_port Porta SSH do servidor cPanel (padrão: 22200)
-     *
-     * @return self
-     */
-    public function setCpanelSshPort($cpanel_ssh_port)
-    {
-        if (is_null($cpanel_ssh_port)) {
-            array_push($this->openAPINullablesSetToNull, 'cpanel_ssh_port');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cpanel_ssh_port', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['cpanel_ssh_port'] = $cpanel_ssh_port;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_users
-     *
-     * @return \IdpluggerPromotionAdmin\Model\PromotionSetupRequestAdminUsersInner[]|null
-     */
-    public function getAdminUsers()
-    {
-        return $this->container['admin_users'];
-    }
-
-    /**
-     * Sets admin_users
-     *
-     * @param \IdpluggerPromotionAdmin\Model\PromotionSetupRequestAdminUsersInner[]|null $admin_users Usuários do workflow a cadastrar como root na plataforma. Se omitido ou vazio, nenhum usuário é criado.
-     *
-     * @return self
-     */
-    public function setAdminUsers($admin_users)
-    {
-        if (is_null($admin_users)) {
-            array_push($this->openAPINullablesSetToNull, 'admin_users');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('admin_users', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['admin_users'] = $admin_users;
+        $this->container['username'] = $username;
 
         return $this;
     }

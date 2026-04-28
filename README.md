@@ -292,6 +292,7 @@ Class | Method | HTTP request | Description
 - [PromotionSetup422Response](docs/Model/PromotionSetup422Response.md)
 - [PromotionSetup500Response](docs/Model/PromotionSetup500Response.md)
 - [PromotionSetupRequest](docs/Model/PromotionSetupRequest.md)
+- [PromotionSetupRequestAdminUsersInner](docs/Model/PromotionSetupRequestAdminUsersInner.md)
 - [PromotionSetupRequestDb](docs/Model/PromotionSetupRequestDb.md)
 - [PromotionStart200Response](docs/Model/PromotionStart200Response.md)
 - [PromotionStart200ResponseUser](docs/Model/PromotionStart200ResponseUser.md)

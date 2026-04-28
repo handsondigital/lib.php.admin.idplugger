@@ -104,6 +104,7 @@ docs/Model/PromotionSetup202Response.md
 docs/Model/PromotionSetup422Response.md
 docs/Model/PromotionSetup500Response.md
 docs/Model/PromotionSetupRequest.md
+docs/Model/PromotionSetupRequestAdminUsersInner.md
 docs/Model/PromotionSetupRequestDb.md
 docs/Model/PromotionStart200Response.md
 docs/Model/PromotionStart200ResponseUser.md
@@ -264,6 +265,7 @@ src/Model/PromotionSetup202Response.php
 src/Model/PromotionSetup422Response.php
 src/Model/PromotionSetup500Response.php
 src/Model/PromotionSetupRequest.php
+src/Model/PromotionSetupRequestAdminUsersInner.php
 src/Model/PromotionSetupRequestDb.php
 src/Model/PromotionStart200Response.php
 src/Model/PromotionStart200ResponseUser.php
@@ -317,3 +319,4 @@ src/Model/UserUpdate422Response.php
 src/Model/UserUpdate500Response.php
 src/Model/UserUpdateRequest.php
 src/ObjectSerializer.php
+test/Model/PromotionSetupRequestAdminUsersInnerTest.php
