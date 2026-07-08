@@ -181,6 +181,7 @@ Class | Method | HTTP request | Description
 *PermissionsApi* | [**adminPermissionsIndex**](docs/Api/PermissionsApi.md#adminpermissionsindex) | **GET** /v3/admin/permissions/ | Listar todas as permissões
 *PermissionsApi* | [**adminPermissionsShow**](docs/Api/PermissionsApi.md#adminpermissionsshow) | **GET** /v3/admin/permissions/{key} | Buscar permissão específica por chave
 *PromotionApi* | [**adminPromotionCacheClear**](docs/Api/PromotionApi.md#adminpromotioncacheclear) | **POST** /v3/admin/promotion/{promotion_id}/cache/clear | Renova o cache de uma promoção na API
+*PromotionApi* | [**adminPromotionInactivate**](docs/Api/PromotionApi.md#adminpromotioninactivate) | **POST** /v3/admin/promotion/{promotion_id}/inactivate | Inativar uma promoção
 *PromotionApi* | [**adminPromotionLuckyNumbersReset**](docs/Api/PromotionApi.md#adminpromotionluckynumbersreset) | **POST** /v3/admin/promotion/{promotion_id}/lucky-numbers/reset | Resetar números da sorte de uma promoção
 *PromotionApi* | [**promotionPullConfiguration**](docs/Api/PromotionApi.md#promotionpullconfiguration) | **POST** /v3/admin/pullconfiguration | Adicionar/Atualizar configurações de uma promoção ao orquestrador
 *PromotionApi* | [**promotionSetup**](docs/Api/PromotionApi.md#promotionsetup) | **POST** /v3/admin/promotion/setup | Setup automatizado de ambiente de promoção
@@ -195,6 +196,11 @@ Class | Method | HTTP request | Description
 *StepsApi* | [**stepsAllow**](docs/Api/StepsApi.md#stepsallow) | **POST** /v3/steps/allow | Inclui uma Step em um determinado endpoint
 *StepsApi* | [**stepsIndex**](docs/Api/StepsApi.md#stepsindex) | **GET** /v3/steps | Retorna todas as steps existentes
 *StepsApi* | [**stepsUnallow**](docs/Api/StepsApi.md#stepsunallow) | **POST** /v3/steps/disallow | Remove uma Step de um determinado endpoint
+*TemplatesApi* | [**templatesDelete**](docs/Api/TemplatesApi.md#templatesdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/templates/{templateKey} | Restaurar template para o padrão (deletar customização)
+*TemplatesApi* | [**templatesIndex**](docs/Api/TemplatesApi.md#templatesindex) | **GET** /v3/promotion/{promotion_id}/cms/templates | Listar templates de e-mail da promoção
+*TemplatesApi* | [**templatesShow**](docs/Api/TemplatesApi.md#templatesshow) | **GET** /v3/promotion/{promotion_id}/cms/templates/{templateKey} | Buscar um template específico
+*TemplatesApi* | [**templatesUpdate**](docs/Api/TemplatesApi.md#templatesupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/templates | Atualizar um ou mais templates de e-mail
+*TemplatesApi* | [**templatesVariables**](docs/Api/TemplatesApi.md#templatesvariables) | **GET** /v3/promotion/{promotion_id}/cms/templates/variables | Listar variáveis disponíveis para os templates de e-mail
 *UserApi* | [**adminUsersList**](docs/Api/UserApi.md#adminuserslist) | **GET** /v3/admin/user | Listar usuários da API
 *UserApi* | [**userGrantPermissions**](docs/Api/UserApi.md#usergrantpermissions) | **POST** /v3/admin/user/grantpermissions | Dar permissões a um usuário na API
 *UserApi* | [**userRegister**](docs/Api/UserApi.md#userregister) | **POST** /v3/admin/user/register | Registrar usuário na API
@@ -244,6 +250,9 @@ Class | Method | HTTP request | Description
 - [AdminPromotionConfigsUpsert200Response](docs/Model/AdminPromotionConfigsUpsert200Response.md)
 - [AdminPromotionConfigsValidKeys200Response](docs/Model/AdminPromotionConfigsValidKeys200Response.md)
 - [AdminPromotionConfigsValidKeys200ResponseValidKeysInner](docs/Model/AdminPromotionConfigsValidKeys200ResponseValidKeysInner.md)
+- [AdminPromotionInactivate200Response](docs/Model/AdminPromotionInactivate200Response.md)
+- [AdminPromotionInactivate401Response](docs/Model/AdminPromotionInactivate401Response.md)
+- [AdminPromotionInactivate500Response](docs/Model/AdminPromotionInactivate500Response.md)
 - [AdminPromotionLuckyNumbersReset200Response](docs/Model/AdminPromotionLuckyNumbersReset200Response.md)
 - [AdminPromotionLuckyNumbersReset500Response](docs/Model/AdminPromotionLuckyNumbersReset500Response.md)
 - [AdminServiceCustomerApplications200Response](docs/Model/AdminServiceCustomerApplications200Response.md)
@@ -323,6 +332,8 @@ Class | Method | HTTP request | Description
 - [StepsUnallow201Response](docs/Model/StepsUnallow201Response.md)
 - [StepsUnallow409Response](docs/Model/StepsUnallow409Response.md)
 - [SuccessResponse](docs/Model/SuccessResponse.md)
+- [TemplatesUpdateRequest](docs/Model/TemplatesUpdateRequest.md)
+- [TemplatesUpdateRequestTemplatesInner](docs/Model/TemplatesUpdateRequestTemplatesInner.md)
 - [UserGrantPermissions200Response](docs/Model/UserGrantPermissions200Response.md)
 - [UserGrantPermissions200ResponseUserInner](docs/Model/UserGrantPermissions200ResponseUserInner.md)
 - [UserGrantPermissions500Response](docs/Model/UserGrantPermissions500Response.md)

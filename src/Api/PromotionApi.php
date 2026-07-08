@@ -77,6 +77,9 @@ class PromotionApi
         'adminPromotionCacheClear' => [
             'application/json',
         ],
+        'adminPromotionInactivate' => [
+            'application/json',
+        ],
         'adminPromotionLuckyNumbersReset' => [
             'application/json',
         ],
@@ -362,6 +365,306 @@ class PromotionApi
 
 
         $resourcePath = '/v3/admin/promotion/{promotion_id}/cache/clear';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($promotion_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'promotion_id' . '}',
+                ObjectSerializer::toPathValue($promotion_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation adminPromotionInactivate
+     *
+     * Inativar uma promoção
+     *
+     * @param  string $promotion_id UUID da promoção (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminPromotionInactivate'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response|\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate401Response|\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate500Response
+     */
+    public function adminPromotionInactivate($promotion_id, string $contentType = self::contentTypes['adminPromotionInactivate'][0])
+    {
+        list($response) = $this->adminPromotionInactivateWithHttpInfo($promotion_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation adminPromotionInactivateWithHttpInfo
+     *
+     * Inativar uma promoção
+     *
+     * @param  string $promotion_id UUID da promoção (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminPromotionInactivate'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotionAdmin\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response|\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate401Response|\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate500Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function adminPromotionInactivateWithHttpInfo($promotion_id, string $contentType = self::contentTypes['adminPromotionInactivate'][0])
+    {
+        $request = $this->adminPromotionInactivateRequest($promotion_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate401Response',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate500Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate500Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation adminPromotionInactivateAsync
+     *
+     * Inativar uma promoção
+     *
+     * @param  string $promotion_id UUID da promoção (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminPromotionInactivate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminPromotionInactivateAsync($promotion_id, string $contentType = self::contentTypes['adminPromotionInactivate'][0])
+    {
+        return $this->adminPromotionInactivateAsyncWithHttpInfo($promotion_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation adminPromotionInactivateAsyncWithHttpInfo
+     *
+     * Inativar uma promoção
+     *
+     * @param  string $promotion_id UUID da promoção (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminPromotionInactivate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminPromotionInactivateAsyncWithHttpInfo($promotion_id, string $contentType = self::contentTypes['adminPromotionInactivate'][0])
+    {
+        $returnType = '\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response';
+        $request = $this->adminPromotionInactivateRequest($promotion_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'adminPromotionInactivate'
+     *
+     * @param  string $promotion_id UUID da promoção (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adminPromotionInactivate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function adminPromotionInactivateRequest($promotion_id, string $contentType = self::contentTypes['adminPromotionInactivate'][0])
+    {
+
+        // verify the required parameter 'promotion_id' is set
+        if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $promotion_id when calling adminPromotionInactivate'
+            );
+        }
+
+
+        $resourcePath = '/v3/admin/promotion/{promotion_id}/inactivate';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

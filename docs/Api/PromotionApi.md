@@ -5,6 +5,7 @@ All URIs are relative to https://api.idplugger.com, except if the operation defi
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**adminPromotionCacheClear()**](PromotionApi.md#adminPromotionCacheClear) | **POST** /v3/admin/promotion/{promotion_id}/cache/clear | Renova o cache de uma promoção na API |
+| [**adminPromotionInactivate()**](PromotionApi.md#adminPromotionInactivate) | **POST** /v3/admin/promotion/{promotion_id}/inactivate | Inativar uma promoção |
 | [**adminPromotionLuckyNumbersReset()**](PromotionApi.md#adminPromotionLuckyNumbersReset) | **POST** /v3/admin/promotion/{promotion_id}/lucky-numbers/reset | Resetar números da sorte de uma promoção |
 | [**promotionPullConfiguration()**](PromotionApi.md#promotionPullConfiguration) | **POST** /v3/admin/pullconfiguration | Adicionar/Atualizar configurações de uma promoção ao orquestrador |
 | [**promotionSetup()**](PromotionApi.md#promotionSetup) | **POST** /v3/admin/promotion/setup | Setup automatizado de ambiente de promoção |
@@ -55,6 +56,64 @@ try {
 ### Return type
 
 [**\IdpluggerPromotionAdmin\Model\AdminPromotionCacheClear200Response**](../Model/AdminPromotionCacheClear200Response.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `adminPromotionInactivate()`
+
+```php
+adminPromotionInactivate($promotion_id): \IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response
+```
+
+Inativar uma promoção
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = IdpluggerPromotionAdmin\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new IdpluggerPromotionAdmin\Api\PromotionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$promotion_id = 693c1917-7051-43d6-93ab-a49a0e2dde00; // string | UUID da promoção
+
+try {
+    $result = $apiInstance->adminPromotionInactivate($promotion_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PromotionApi->adminPromotionInactivate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| UUID da promoção | |
+
+### Return type
+
+[**\IdpluggerPromotionAdmin\Model\AdminPromotionInactivate200Response**](../Model/AdminPromotionInactivate200Response.md)
 
 ### Authorization
 

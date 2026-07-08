@@ -15,6 +15,7 @@ docs/Api/PermissionsApi.md
 docs/Api/PromotionApi.md
 docs/Api/RolesApi.md
 docs/Api/StepsApi.md
+docs/Api/TemplatesApi.md
 docs/Api/UserApi.md
 docs/Model/AdminAuthRequestToken200Response.md
 docs/Model/AdminAuthRequestTokenRequest.md
@@ -56,6 +57,9 @@ docs/Model/AdminPromotionConfigsUpdateRequest.md
 docs/Model/AdminPromotionConfigsUpsert200Response.md
 docs/Model/AdminPromotionConfigsValidKeys200Response.md
 docs/Model/AdminPromotionConfigsValidKeys200ResponseValidKeysInner.md
+docs/Model/AdminPromotionInactivate200Response.md
+docs/Model/AdminPromotionInactivate401Response.md
+docs/Model/AdminPromotionInactivate500Response.md
 docs/Model/AdminPromotionLuckyNumbersReset200Response.md
 docs/Model/AdminPromotionLuckyNumbersReset500Response.md
 docs/Model/AdminServiceCustomerApplications200Response.md
@@ -135,6 +139,8 @@ docs/Model/StepsIndex200ResponseStepsValueValue.md
 docs/Model/StepsUnallow201Response.md
 docs/Model/StepsUnallow409Response.md
 docs/Model/SuccessResponse.md
+docs/Model/TemplatesUpdateRequest.md
+docs/Model/TemplatesUpdateRequestTemplatesInner.md
 docs/Model/UserGrantPermissions200Response.md
 docs/Model/UserGrantPermissions200ResponseUserInner.md
 docs/Model/UserGrantPermissions500Response.md
@@ -171,6 +177,7 @@ src/Api/PermissionsApi.php
 src/Api/PromotionApi.php
 src/Api/RolesApi.php
 src/Api/StepsApi.php
+src/Api/TemplatesApi.php
 src/Api/UserApi.php
 src/ApiException.php
 src/Configuration.php
@@ -216,6 +223,9 @@ src/Model/AdminPromotionConfigsUpdateRequest.php
 src/Model/AdminPromotionConfigsUpsert200Response.php
 src/Model/AdminPromotionConfigsValidKeys200Response.php
 src/Model/AdminPromotionConfigsValidKeys200ResponseValidKeysInner.php
+src/Model/AdminPromotionInactivate200Response.php
+src/Model/AdminPromotionInactivate401Response.php
+src/Model/AdminPromotionInactivate500Response.php
 src/Model/AdminPromotionLuckyNumbersReset200Response.php
 src/Model/AdminPromotionLuckyNumbersReset500Response.php
 src/Model/AdminServiceCustomerApplications200Response.php
@@ -296,6 +306,8 @@ src/Model/StepsIndex200ResponseStepsValueValue.php
 src/Model/StepsUnallow201Response.php
 src/Model/StepsUnallow409Response.php
 src/Model/SuccessResponse.php
+src/Model/TemplatesUpdateRequest.php
+src/Model/TemplatesUpdateRequestTemplatesInner.php
 src/Model/UserGrantPermissions200Response.php
 src/Model/UserGrantPermissions200ResponseUserInner.php
 src/Model/UserGrantPermissions500Response.php
@@ -319,4 +331,9 @@ src/Model/UserUpdate422Response.php
 src/Model/UserUpdate500Response.php
 src/Model/UserUpdateRequest.php
 src/ObjectSerializer.php
-test/Model/PromotionSetupRequestAdminUsersInnerTest.php
+test/Api/TemplatesApiTest.php
+test/Model/AdminPromotionInactivate200ResponseTest.php
+test/Model/AdminPromotionInactivate401ResponseTest.php
+test/Model/AdminPromotionInactivate500ResponseTest.php
+test/Model/TemplatesUpdateRequestTemplatesInnerTest.php
+test/Model/TemplatesUpdateRequestTest.php
